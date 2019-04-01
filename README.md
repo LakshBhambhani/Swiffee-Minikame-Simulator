@@ -1,6 +1,6 @@
 # Quadruped - JAVA
 
-Things Done:
+Things Done:<br>
 1)Basic Application created. Need to add things to that application
 
 Things to do:
