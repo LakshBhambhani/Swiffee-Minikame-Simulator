@@ -30,11 +30,12 @@ public class Swiffee {
 		}
 	}
 	
-	public void whileLoop() {
-		
-	}
-	
-	public void forLoops() {
-		
+	public boolean ifCondition(boolean check) {
+		if(check) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

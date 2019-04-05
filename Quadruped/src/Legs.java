@@ -1,4 +1,4 @@
 
-public class Legs {
+public class Legs extends Body{
 
 }

@@ -7,13 +7,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-public class Simulator extends JPanel{
+public class SimulatorWindow extends JFrame{
 	
 	private JTextArea programInput, terminal;
 	private JButton run;
 	
-	public Simulator() {
-		super("Simulator");
+	public SimulatorWindow() {
+		super("SimulatorWindow");
 		
 		setUpGUI();
 		programInput.setText("test");
@@ -54,8 +54,8 @@ public class Simulator extends JPanel{
 	}
 
 	public static void main(String[] args) {
-		    Simulator window = new Simulator();
-		    window.setBounds(100, 70, 700, 600);
+		    SimulatorWindow window = new SimulatorWindow();
+		    window.setBounds(100, 70, 1250, 1000);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		    window.setVisible(true);										// makes the window visible
 	}

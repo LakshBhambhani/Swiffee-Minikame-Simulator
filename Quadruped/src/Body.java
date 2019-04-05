@@ -1,4 +1,4 @@
 
-public class Body {
+public class Body extends Quadruped{
 
 }
