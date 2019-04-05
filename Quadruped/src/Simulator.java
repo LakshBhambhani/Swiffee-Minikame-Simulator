@@ -11,6 +11,7 @@ public class Simulator extends JPanel{
 	public void paintComponent(Graphics g)									// Called automatically when the panel needs repainting
   	{
     super.paintComponent(g);
+    
   	}
 
 	public static void main(String[] args)
