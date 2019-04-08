@@ -1,5 +1,12 @@
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,35 +19,106 @@ public class SimulatorWindow extends JFrame{
 	private JTextArea programInput, terminal;
 	private JButton run;
 	
+	private boolean inputIsClicked = false;
+	private boolean terminalIsClicked =  false;
+	
 	public SimulatorWindow() {
 		super("SimulatorWindow");
+		Swiffee swiffee = new Swiffee();
 		
 		setUpGUI();
-		programInput.setText("test");
+		programInput.setText("Swiffee IDE");
+		terminal.setText("Terminal");
+		
+		refresh();
 	}
 	
 	private void setUpGUI() {
 		
-	    programInput = new JTextArea(13, 15);
+	    programInput = new JTextArea(20, 20);
 	    programInput.setLineWrap(true);
 	    programInput.setWrapStyleWord(true);
 	    
+	    programInput.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mouseClicked(MouseEvent e) {
+	          if(!inputIsClicked) {
+	        	  programInput.setText("");
+		          inputIsClicked = true;
+	          } 
+	        }
+	    });	 
 	    JScrollPane programInputPane = new JScrollPane(programInput,
 	              ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 	              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	    
-	    terminal = new JTextArea(13, 15);
+	    terminal = new JTextArea(20, 20);
 	    terminal.setLineWrap(true);
 	    terminal.setWrapStyleWord(true);
-	    terminal.setEditable(false);
+	    terminal.setEditable(true);
+	    terminal.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mouseClicked(MouseEvent e) {
+	          if(!terminalIsClicked) {
+	        	  terminal.setText("user@terminal: ");
+		          terminalIsClicked = true;
+	          } 
+	        }
+	    });	 
+	    terminal.addKeyListener(new KeyListener(){
+	        public void keyPressed(KeyEvent e){
+	            if(e.getKeyCode() == KeyEvent.VK_ENTER){
+	            	int num = terminal.getText().lastIndexOf("user@terminal");
+	            	boolean whiteSpace = Character.isWhitespace(terminal.getText().indexOf(":", num) + 2);
+	            	String text;
+	            	if(whiteSpace) {
+		            	text = terminal.getText().substring(terminal.getText().indexOf(":", num) + 2, terminal.getText().length()).trim();
+
+	            	}
+	            	else {
+		            	text = terminal.getText().substring(terminal.getText().indexOf(":", num) + 1, terminal.getText().length()).trim();
+
+	            	}
+	            	System.out.println("Terminal Input:" + text);
+	            	
+	            	terminal.setText(terminal.getText() + "\n" + Swiffee.process(text));
+	            	
+	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
+//	            	terminal.setCaretPosition(terminal.getText().trim().length() + 1);	// doesn't work. Terminal error: bad position
+	            	
+	            	
+	            }
+	        }
+
+	        public void keyTyped(KeyEvent e) {
+	        }
+
+	        public void keyReleased(KeyEvent e) {
+	        }
+	    });
 	    
 	    JScrollPane terminalPane = new JScrollPane(terminal,
 	              ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 	              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	    
-	    run = new JButton("Run");
-	    run.addActionListener(null);
+	    run = new JButton("Run"){
+	        {
+	            setSize(180, 75);
+	            setMaximumSize(getSize());
+	        }
+	    };
 	    
+	    ActionListener sendListener = new ActionListener() {
+	    	   public void actionPerformed(ActionEvent e) {
+	    	          if (e.getSource() == run){
+	    	                String str = programInput.getText();
+	    	                Swiffee.processFile(str);
+	    	                }
+	    	    }
+	    	};
+	    	
+	    run.addActionListener(sendListener);
+	    	
 	    Box box1 = Box.createVerticalBox();
 	    box1.add(Box.createVerticalStrut(10));
 	    box1.add(programInputPane);
@@ -52,6 +130,16 @@ public class SimulatorWindow extends JFrame{
 	    c.setLayout (new FlowLayout(FlowLayout.TRAILING, 20, 20));
 	    c.add(box1);
 	}
+	
+	public void refresh() {
+	    String text = programInput.getText();
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	  {
+	    refresh();
+	  }
+
 
 	public static void main(String[] args) {
 		    SimulatorWindow window = new SimulatorWindow();
