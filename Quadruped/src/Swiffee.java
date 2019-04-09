@@ -9,6 +9,13 @@ public class Swiffee {
 	private static List<Integer> values = new ArrayList<Integer>();
 	private static List<String> names = new ArrayList<String>();
 	
+	private static String EQUALS = "=";
+	private static String LESSTHAN  = "<";
+	private static String GREATERTHAN = ">";
+	private static String NOTEQUALTO = "!=";
+	private static String LESSTHANEQUALTO =  "<=";
+	private static String GREATERTHANEQUALTO = ">=";
+	
 
 	private static void moveForward() {
 		Body.moveForward();
@@ -48,7 +55,7 @@ public class Swiffee {
 			turnRight();
 			return "Turning Right";
 		}
-		else if(text.contains("=")){
+		else if(text.contains("=") && !text.contains("if")){
 			System.out.println("Variable Created:");
 			System.out.println("Name: " + text.substring(0, text.indexOf("=")).trim());
 			System.out.println("Value: " + Integer.parseInt(text.substring(text.indexOf("=")+1).trim()));
@@ -65,6 +72,39 @@ public class Swiffee {
 			int timeDelay = Integer.parseInt(text.substring(text.indexOf("(")+1, text.length()-1));
 			TimeUnit.SECONDS.sleep(timeDelay);
 			return "In sleep for " + timeDelay + " seconds";
+		}
+		else if(text.contains("if")) {
+			String conditionStatement = text.substring(text.indexOf("f") + 2).trim();
+			System.out.println("Condition Statement: " + conditionStatement);
+			String condition1 = "";
+			String condition2 = "";
+			String operator = "";
+			int whitespaces = 0;
+			for(int i = 0; i < conditionStatement.length(); i++) {
+				if(Character.isWhitespace(conditionStatement.charAt(i))){
+					whitespaces++;
+					
+				}
+				else {
+					if(whitespaces == 0) {
+						condition1 = condition1 + conditionStatement.charAt(i);
+					}
+					else if(whitespaces == 1) {
+						operator = operator + conditionStatement.charAt(i);
+					}
+					else if(whitespaces == 2) {
+						condition2 = condition2 + conditionStatement.charAt(i);
+					}
+				}
+			}
+			
+			System.out.println("condition1: " + condition1);
+			System.out.println("operator: " + operator);
+			System.out.println("condition2: " + condition2);
+				
+		}
+		else {
+			return "error";
 		}
 		return "";
 	}

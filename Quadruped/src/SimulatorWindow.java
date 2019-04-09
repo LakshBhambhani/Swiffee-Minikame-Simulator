@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -91,7 +92,20 @@ public class SimulatorWindow extends JFrame{
 	            	}
 	            	else {
 	            		try {
-							terminal.setText(terminal.getText() + "\n" + Swiffee.process(text));
+	            			String str = Swiffee.process(text);
+	            			boolean error = false;
+	            			System.out.println(error);
+	            			if(str.equals("error")) {
+	            				terminal.setForeground(Color.RED);
+	            				terminal.setText(terminal.getText() + "error");
+	            				error = false;
+	            			}
+	            			else {
+	            				if(error != true) {
+									terminal.setText(terminal.getText() + "\n" + str);
+	            				}
+	            			}
+							
 						} catch (InterruptedException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -134,8 +148,18 @@ public class SimulatorWindow extends JFrame{
 								// TODO Auto-generated catch block
 								e2.printStackTrace();
 							}
+							boolean error = false;
 							for(int i = 0; i < returnValues.size(); i++) {
-								terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+								if(returnValues.get(i).toString().trim().equals("error")) {
+									System.out.println("Any errors: " + error);
+									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+									error = true;
+								}
+								else {
+									if(error != true){
+										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+									}
+								}
     	                	}
 	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
 	    	                }
