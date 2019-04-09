@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -21,6 +22,7 @@ public class SimulatorWindow extends JFrame{
 	
 	private boolean inputIsClicked = false;
 	private boolean terminalIsClicked =  false;
+	private boolean buttonIsClicked = false;
 	
 	public SimulatorWindow() {
 		super("Quadruped Simulator");
@@ -56,15 +58,17 @@ public class SimulatorWindow extends JFrame{
 	    terminal.setLineWrap(true);
 	    terminal.setWrapStyleWord(true);
 	    terminal.setEditable(true);
-	    terminal.addMouseListener(new MouseAdapter() {
-	        @Override
-	        public void mouseClicked(MouseEvent e) {
-	          if(!terminalIsClicked) {
-	        	  terminal.setText("user@terminal: ");
-		          terminalIsClicked = true;
-	          } 
-	        }
-	    });	 
+	    if(!buttonIsClicked) {
+	    	terminal.addMouseListener(new MouseAdapter() {
+		        @Override
+		        public void mouseClicked(MouseEvent e) {
+		          if(!terminalIsClicked && !buttonIsClicked) {
+		        	  terminal.setText("user@terminal: ");
+			          terminalIsClicked = true;
+		          } 
+		        }
+		    });	
+	    }
 	    terminal.addKeyListener(new KeyListener(){
 	        public void keyPressed(KeyEvent e){
 	            if(e.getKeyCode() == KeyEvent.VK_ENTER){
@@ -81,9 +85,20 @@ public class SimulatorWindow extends JFrame{
 	            	}
 	            	System.out.println("Terminal Input:" + text);
 	            	
-	            	terminal.setText(terminal.getText() + "\n" + Swiffee.process(text));
+	            	if(text.equals("clear")) {
+	            		terminal.setText("user@terminal: ");
+	            		
+	            	}
+	            	else {
+	            		try {
+							terminal.setText(terminal.getText() + "\n" + Swiffee.process(text));
+						} catch (InterruptedException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+	            		terminal.setText(terminal.getText() + "\nuser@terminal:");
+	            	}
 	            	
-	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
 //	            	terminal.setCaretPosition(terminal.getText().trim().length() + 1);	// doesn't work. Terminal error: bad position
 	            	
 	            	
@@ -112,8 +127,19 @@ public class SimulatorWindow extends JFrame{
 	    	   public void actionPerformed(ActionEvent e) {
 	    	          if (e.getSource() == run){
 	    	                String str = programInput.getText();
-	    	                Swiffee.processFile(str);
+	    	                List<String> returnValues = null;
+							try {
+								returnValues = Swiffee.processFile(str);
+							} catch (InterruptedException e2) {
+								// TODO Auto-generated catch block
+								e2.printStackTrace();
+							}
+							for(int i = 0; i < returnValues.size(); i++) {
+								terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+    	                	}
+	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
 	    	                }
+	    	          buttonIsClicked = true;
 	    	    }
 	    	};
 	    	

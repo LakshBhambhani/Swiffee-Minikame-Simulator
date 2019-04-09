@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -30,7 +31,7 @@ public class Swiffee {
 		values.add(value);
 	}
 	
-	public static String process(String text) {
+	public static String process(String text) throws InterruptedException {
 		if(text.equals("moveForward()")){
 			moveForward();
 			return "Moving Forward";
@@ -60,20 +61,31 @@ public class Swiffee {
 			System.out.println(names.indexOf(name));
 			return String.valueOf(values.get(names.indexOf(name)));
 		}
+		else if(text.contains("time.sleep(")) {
+			int timeDelay = Integer.parseInt(text.substring(text.indexOf("(")+1, text.length()-1));
+			TimeUnit.SECONDS.sleep(timeDelay);
+			return "In sleep for " + timeDelay + " seconds";
+		}
 		return "";
 	}
 	
-	public static String processFile(String fileText) {
+	public static List<String> processFile(String fileText) throws InterruptedException {
 		
 		System.out.println("Processing from file");
 		String[] linesOfCode;
 		linesOfCode = fileText.split(";");
 		System.out.println(Arrays.toString(linesOfCode));
+		System.out.println("Lines of Code: " + linesOfCode.length);
+		
+		List<String> returnValues = new ArrayList<String>();
+
 		
 		for(int i = 0; i < linesOfCode.length; i++) {
-			String currentLine = linesOfCode[0];
-			process(currentLine);
+			String currentLine = linesOfCode[i];
+			System.out.println("Current Line + Output: " + currentLine.trim() + process(currentLine.trim()).trim());
+			returnValues.add(process(currentLine.trim()).trim());
 		}
-		return "processed 1";
+		
+		return returnValues;
 	}
 }
