@@ -23,7 +23,7 @@ public class SimulatorWindow extends JFrame{
 	private boolean terminalIsClicked =  false;
 	
 	public SimulatorWindow() {
-		super("SimulatorWindow");
+		super("Quadruped Simulator");
 		Swiffee swiffee = new Swiffee();
 		
 		setUpGUI();

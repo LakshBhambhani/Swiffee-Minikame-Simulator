@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Swiffee {
 	
@@ -64,7 +65,15 @@ public class Swiffee {
 	
 	public static String processFile(String fileText) {
 		
-		System.out.println("Processed 1");
+		System.out.println("Processing from file");
+		String[] linesOfCode;
+		linesOfCode = fileText.split(";");
+		System.out.println(Arrays.toString(linesOfCode));
+		
+		for(int i = 0; i < linesOfCode.length; i++) {
+			String currentLine = linesOfCode[0];
+			process(currentLine);
+		}
 		return "processed 1";
 	}
 }
