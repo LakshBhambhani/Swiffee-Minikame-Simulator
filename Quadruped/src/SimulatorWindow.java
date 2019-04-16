@@ -16,6 +16,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
+/*
+ * @author Laksh 
+ */
+
 public class SimulatorWindow extends JFrame{
 	
 	private JTextArea programInput, terminal;
@@ -27,7 +31,7 @@ public class SimulatorWindow extends JFrame{
 	
 	public SimulatorWindow() {
 		super("Quadruped Simulator");
-		Swiffee swiffee = new Swiffee();
+		Java java = new Java();
 		
 		setUpGUI();
 		programInput.setText("Swiffee IDE");
@@ -92,7 +96,7 @@ public class SimulatorWindow extends JFrame{
 	            	}
 	            	else {
 	            		try {
-	            			String str = Swiffee.process(text);
+	            			String str = Java.process(text);
 	            			boolean error = false;
 	            			System.out.println(error);
 	            			if(str.equals("error")) {
@@ -143,7 +147,7 @@ public class SimulatorWindow extends JFrame{
 	    	                String str = programInput.getText();
 	    	                List<String> returnValues = null;
 							try {
-								returnValues = Swiffee.processFile(str);
+								returnValues = Java.processFile(str);
 							} catch (InterruptedException e2) {
 								// TODO Auto-generated catch block
 								e2.printStackTrace();

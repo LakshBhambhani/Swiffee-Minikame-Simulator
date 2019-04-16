@@ -3,7 +3,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Swiffee {
+public class Java {
 	
 	private String text;
 	private static List<Integer> values = new ArrayList<Integer>();
@@ -62,8 +62,9 @@ public class Swiffee {
 			createInt(text.substring(0, text.indexOf("=")).trim(), Integer.parseInt(text.substring(text.indexOf("=")+1).trim()));
 			return "";
 		}
-		else if(text.contains("echo")) {
-			String name = text.substring(text.indexOf("o") + 2).trim();
+		else if(text.contains("System.out.println(")) {
+			System.out.println("Printing something");
+			String name = text.substring(text.indexOf("(") + 1, text.indexOf(")")).trim();
 			System.out.println(name);
 			System.out.println(names.indexOf(name));
 			return String.valueOf(values.get(names.indexOf(name)));
