@@ -1,0 +1,29 @@
+import java.awt.Graphics;													// all the java classes imported into this program
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Container;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+
+public class Simulator extends JPanel{
+
+	public void paintComponent(Graphics g)									// Called automatically when the panel needs repainting
+  	{
+		super.paintComponent(g);
+  	}
+
+	public static void main(String[] args) {
+		SimulatorWindow window = new SimulatorWindow();
+		window.setBounds(100, 70, 1250, 1000);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setBackground(Color.DARK_GRAY);
+		
+		Simulator panel = new Simulator();
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(100, 100, 1250, 1000);
+		Container c = window.getContentPane();
+		c.add(panel);
+		window.setVisible(true);
+	}
+}
