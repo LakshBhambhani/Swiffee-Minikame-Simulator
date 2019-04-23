@@ -3,8 +3,11 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class FullBody {
+	
 	private Image bodyImage;
 	private Image legTL, legTR, legBL, legBR;
+	private Body body;
+	private Legs legs;
 	
 	public FullBody() {
 		
@@ -14,11 +17,11 @@ public class FullBody {
 		legBL = (new ImageIcon("leg3.jpg")).getImage();
 		legBR = (new ImageIcon("leg4.jpg")).getImage();
 		
-		Body body = new Body(bodyImage);
-		Legs legs = new Legs(legTL, legTR, legBL, legBR);
+		body = new Body(100, 100, bodyImage);
+		legs = new Legs(legTL, legTR, legBL, legBR);
 	}
 	
 	public void draw(Graphics g) {
-		
+		body.draw(g);
 	}
 }

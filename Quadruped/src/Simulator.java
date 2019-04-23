@@ -7,14 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 
-public class Simulator extends JPanel{
+public class Simulator extends JPanel {
+	
+	public Simulator() {
+	    setBackground(Color.WHITE);
+		setBounds(0, 0, 1000, 1000);
+	}
 
 	public void paintComponent(Graphics g) {	// Called automatically when the panel needs repainting
 		super.paintComponent(g);
 		FullBody fullBody = new FullBody();
+		fullBody.draw(g);
 		
-//		fullBody.draw(g);
 	}
 
-
+	
 }

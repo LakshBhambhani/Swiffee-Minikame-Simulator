@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -173,7 +174,15 @@ public class SimulatorWindow extends JFrame{
 	    	
 	    run.addActionListener(sendListener);
 	    	
+	    Simulator panel = new Simulator();
+	    panel.setBackground(Color.WHITE);
+	    Box box = Box.createVerticalBox();
+	    box.add(panel);
+//	    box.add(Box.createVerticalStrut(100));
+	    box.add(Box.createHorizontalStrut(800));
+	    
 	    Box box1 = Box.createVerticalBox();
+//	    box1.add(panel);;
 	    box1.add(Box.createVerticalStrut(10));
 	    box1.add(programInputPane);
 	    box1.add(Box.createVerticalStrut(20));
@@ -182,7 +191,9 @@ public class SimulatorWindow extends JFrame{
 	    box1.add(terminalPane);
 	    Container c = getContentPane();
 	    c.setLayout (new FlowLayout(FlowLayout.TRAILING, 20, 20));
+	    c.add(box);
 	    c.add(box1);
+	    
 	}
 	
 	public void refresh() {
@@ -197,8 +208,15 @@ public class SimulatorWindow extends JFrame{
 
 	public static void main(String[] args) {
 		    SimulatorWindow window = new SimulatorWindow();
-		    window.setBounds(100, 70, 1250, 1000);
+		    window.setBounds(100, 70, 1250, 800);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		    
+//		    Simulator panel = new Simulator();
+//		    panel.setBounds(100, 70, 600, 1000);
+//		    panel.setBackground(Color.WHITE);
+//		    Container y = window.getContentPane();
+//		    y.add(panel);
+		    
 		    window.setVisible(true);										// makes the window visible
 	}
 }
