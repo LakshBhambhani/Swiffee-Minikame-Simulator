@@ -1,0 +1,182 @@
+from adafruit_servokit import ServoKit 
+import time
+
+kit = ServoKit(channels=16)
+
+class Quadruped():
+
+    def homePos(self):
+        kit.servo[4].angle = 40
+        kit.servo[5].angle = 110
+        kit.servo[6].angle = 130
+        kit.servo[7].angle = 70
+        kit.servo[8].angle = 130
+        kit.servo[9].angle = 70
+        kit.servo[10].angle = 40
+        kit.servo[11].angle = 110
+        print('switching to home position')
+
+    def walkForward(self):
+        kit.servo[7].angle = 50
+        kit.servo[9].angle = 50
+       
+
+        time.sleep(0.2)
+        
+        kit.servo[6].angle = 150
+        kit.servo[8].angle = 110
+        kit.servo[4].angle = 60
+        kit.servo[10].angle = 20
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 70
+        kit.servo[9].angle = 70
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 130
+        kit.servo[11].angle = 130
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 110
+        kit.servo[8].angle = 150
+        kit.servo[4].angle = 20
+        kit.servo[10].angle = 60
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 110
+        kit.servo[11].angle = 110
+
+        time.sleep(0.2)
+
+        print('Walking Forward')
+
+    def turnLeft(self):
+        kit.servo[5].angle = 130
+        kit.servo[11].angle = 130
+
+        time.sleep(0.2)
+
+        kit.servo[4].angle = 10
+        kit.servo[10].angle = 10
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 110
+        kit.servo[11].angle = 110
+
+        time.sleep(0.2)
+
+        kit.servo[4].angle = 40
+        kit.servo[10].angle = 40
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 50
+        kit.servo[9].angle = 50
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 80
+        kit.servo[8].angle = 80
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 70
+        kit.servo[9].angle = 70
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 130
+        kit.servo[8].angle = 130
+
+        time.sleep(0.2)
+
+        print('turning left')
+
+    def turnRight(self):
+        kit.servo[5].angle = 130
+        kit.servo[11].angle = 130
+
+        time.sleep(0.2)
+
+        kit.servo[4].angle = 140
+        kit.servo[10].angle = 140
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 110
+        kit.servo[11].angle = 110
+
+        time.sleep(0.2)
+
+        kit.servo[4].angle = 40
+        kit.servo[10].angle = 40
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 50
+        kit.servo[9].angle = 50
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 180
+        kit.servo[8].angle = 180
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 70
+        kit.servo[9].angle = 70
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 130
+        kit.servo[8].angle = 130
+
+        time.sleep(0.2)
+
+        print('turning right')
+
+    def bow():
+        kit.servo[5].angle = 140
+        kit.servo[7].angle = 15
+        kit.servo[9].angle = 130
+        kit.servo[11].angle = 30
+
+        print('bowing')
+
+    def bendBack():
+        kit.servo[5].angle = 30
+        kit.servo[7].angle = 130
+        kit.servo[9].angle = 15
+        kit.servo[11].angle = 140
+
+        print('bending back')
+
+    def pushUp():
+        kit.servo[4].angle = 130
+        kit.servo[5].angle = 130
+        kit.servo[6].angle = 30
+        kit.servo[7].angle = 50
+
+        kit.servo[8].angle = 170
+        kit.servo[9].angle = 50
+        kit.servo[10].angle = 10
+        kit.servo[11].angle = 130
+
+        time.sleep(1)
+
+        for i in range(5):
+            for  k in range(25):
+                kit.servo[5].angle = 130 + k
+                kit.servo[7].angle = 50 - k
+                time.sleep(0.2)
+            for  k in range(25):
+                kit.servo[5].angle = 155 - k
+                kit.servo[7].angle = 25 + k
+                time.sleep(0.2)
+
+        print('Finished 5 push ups')
