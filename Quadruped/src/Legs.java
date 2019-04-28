@@ -1,15 +1,18 @@
 import java.awt.Image;
+import java.awt.Graphics;
 
 public class Legs {
 	
-	private Image legTL, legTR, legBL, legBR; // Top left, top right, back left, back right
+	private Image leg; // Top left, top right, back left, back right
+	private CoordinateSystem coordinates;
 	
-	public Legs(Image legTL, Image legTR, Image legBL, Image legBR) {
-		this.legTL = legTL;
-		this.legTR = legTR;
-		this.legBL = legBL;
-		this.legBR = legBR;
-
+	public Legs(int x, int y, Image leg) {
+		this.leg = leg;
+		coordinates = new CoordinateSystem(x, y, leg);
+	}
+	
+	public void draw(Graphics g) {
+		coordinates.drawImage(g, leg);
 	}
 
 

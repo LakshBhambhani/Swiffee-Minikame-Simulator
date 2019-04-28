@@ -7,21 +7,22 @@ public class FullBody {
 	private Image bodyImage;
 	private Image legTL, legTR, legBL, legBR;
 	private Body body;
-	private Legs legs;
+	private Legs leg1, leg2, leg3, leg4;
 	
 	public FullBody() {
 		
-		bodyImage = (new ImageIcon("body.jpg")).getImage();
+		bodyImage = (new ImageIcon("body2.jpg")).getImage();
 		legTL = (new ImageIcon("leg1.jpg")).getImage();
 		legTR = (new ImageIcon("leg2.jpg")).getImage();
 		legBL = (new ImageIcon("leg3.jpg")).getImage();
 		legBR = (new ImageIcon("leg4.jpg")).getImage();
 		
-		body = new Body(100, 100, bodyImage);
-		legs = new Legs(legTL, legTR, legBL, legBR);
+		body = new Body(500, 300, bodyImage);
+//		leg1 = new Legs(200, 200, legTL);
 	}
 	
 	public void draw(Graphics g) {
 		body.draw(g);
+//		leg1.draw(g);
 	}
 }
