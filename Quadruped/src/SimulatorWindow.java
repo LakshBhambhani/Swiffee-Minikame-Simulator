@@ -43,7 +43,7 @@ public class SimulatorWindow extends JFrame{
 	
 	private void setUpGUI() {
 		
-	    programInput = new JTextArea(20, 20);
+	    programInput = new JTextArea(17, 20);
 	    programInput.setLineWrap(true);
 	    programInput.setWrapStyleWord(true);
 	    
@@ -60,7 +60,7 @@ public class SimulatorWindow extends JFrame{
 	              ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 	              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	    
-	    terminal = new JTextArea(20, 20);
+	    terminal = new JTextArea(17, 20);
 	    terminal.setLineWrap(true);
 	    terminal.setWrapStyleWord(true);
 	    terminal.setEditable(true);
@@ -174,25 +174,30 @@ public class SimulatorWindow extends JFrame{
 	    	
 	    run.addActionListener(sendListener);
 	    	
+	    //Box containing the panel (pictures)
 	    Simulator panel = new Simulator();
-	    panel.setBackground(Color.WHITE);
-	    Box box = Box.createVerticalBox();
-	    box.add(panel);
-//	    box.add(Box.createVerticalStrut(100));
-	    box.add(Box.createHorizontalStrut(800));
-	    
 	    Box box1 = Box.createVerticalBox();
-//	    box1.add(panel);;
-	    box1.add(Box.createVerticalStrut(10));
-	    box1.add(programInputPane);
-	    box1.add(Box.createVerticalStrut(20));
-	    box1.add(run);
-	    box1.add(Box.createVerticalStrut(20));
-	    box1.add(terminalPane);
+	    box1.add(panel);
+	    box1.add(Box.createVerticalStrut(-700));
+	    box1.add(Box.createHorizontalStrut(900));
+	    
+	    //Box containing the text boxes and run button
+	    Box box2 = Box.createVerticalBox();
+	    box2.add(programInputPane);
+	    box2.add(Box.createVerticalStrut(20));
+	    box2.add(run);
+	    box2.add(Box.createVerticalStrut(20));
+	    box2.add(terminalPane);
+	    
+	    //Box combining the two
+	    Box box = Box.createHorizontalBox();
+	    box.add(box1);
+	    box.add(Box.createHorizontalStrut(20));
+	    box.add(box2);
+	    
 	    Container c = getContentPane();
-	    c.setLayout (new FlowLayout(FlowLayout.TRAILING, 20, 20));
+	    c.setLayout (new FlowLayout(FlowLayout.CENTER, 20, 20));
 	    c.add(box);
-	    c.add(box1);
 	    
 	}
 	
@@ -208,7 +213,7 @@ public class SimulatorWindow extends JFrame{
 
 	public static void main(String[] args) {
 		    SimulatorWindow window = new SimulatorWindow();
-		    window.setBounds(100, 70, 1250, 800);
+		    window.setBounds(70, 50, 1250, 700);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		    
 //		    Simulator panel = new Simulator();
