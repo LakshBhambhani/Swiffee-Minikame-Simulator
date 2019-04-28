@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ConnectToBot {
 	
 	private static String user = "pi";
-    private static String password = "Lhbhambhani1107$";
+    private static String password = "quadruped";
     private static String host = "raspberrypi.local";
     int port = 22;
 
@@ -42,7 +42,7 @@ public class ConnectToBot {
 //                    System.out.println(line);
 //                }
 //            }
-        	remoteLs();
+        	remoteMkdir();
         } catch (JSchException e) {
             e.printStackTrace();
         }
