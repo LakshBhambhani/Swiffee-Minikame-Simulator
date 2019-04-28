@@ -1,6 +1,6 @@
-#import Quadruped
+import Quadruped
 
-#quad = Quadruped.Quadruped()
+quad = Quadruped.Quadruped()
 
 filepath = 'Test.txt'  
 with open(filepath) as fp:  
@@ -9,13 +9,10 @@ with open(filepath) as fp:
    while line:
         #print("Line {}: {}".format(cnt, line.strip()))
         if line.strip() == "moveForward()":
-            print("Moving Forward")
-           #quad.walkForward()
+            quad.walkForward()
         if line.strip() == "turnLeft()":
-            #quad.turnLeft()
-            print("Turning left")
+            quad.turnLeft()
         if line.strip() == "turnRight()":
-            #quad.turnRight
-            print("Turning right")
+            quad.turnRight
         line = fp.readline()
         cnt += 1

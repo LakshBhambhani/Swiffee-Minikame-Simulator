@@ -6,14 +6,14 @@ kit = ServoKit(channels=16)
 class Quadruped():
 
     def homePos(self):
-        kit.servo[4].angle = 40
-        kit.servo[5].angle = 110
-        kit.servo[6].angle = 130
-        kit.servo[7].angle = 70
-        kit.servo[8].angle = 130
-        kit.servo[9].angle = 70
-        kit.servo[10].angle = 40
-        kit.servo[11].angle = 110
+        kit.servo[4].angle = 40     #FL HIP
+        kit.servo[5].angle = 110    #FL FOOT
+        kit.servo[6].angle = 130    #FR HIP
+        kit.servo[7].angle = 70     #FR FOOT
+        kit.servo[8].angle = 130    #BL HIP
+        kit.servo[9].angle = 70     #BL FOOT
+        kit.servo[10].angle = 40    #BR HIP
+        kit.servo[11].angle = 110   #BR FOOT
         print('switching to home position')
 
     def walkForward(self):

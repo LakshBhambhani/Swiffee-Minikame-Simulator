@@ -9,12 +9,12 @@ public class Java {
 	private static List<Integer> values = new ArrayList<Integer>();
 	private static List<String> names = new ArrayList<String>();
 	
-	private static String EQUALS = "=";
-	private static String LESSTHAN  = "<";
-	private static String GREATERTHAN = ">";
-	private static String NOTEQUALTO = "!=";
-	private static String LESSTHANEQUALTO =  "<=";
-	private static String GREATERTHANEQUALTO = ">=";
+	private static final String EQUALS = "=";
+	private static final String LESSTHAN  = "<";
+	private static final String GREATERTHAN = ">";
+	private static final String NOTEQUALTO = "!=";
+	private static final String LESSTHANEQUALTO =  "<=";
+	private static final String GREATERTHANEQUALTO = ">=";
 	
 
 	private static void moveForward() {
@@ -31,6 +31,22 @@ public class Java {
 	
 	private static void turnRight() {
 		Body.turnRight();
+	}
+	
+	private static void homePos() {
+		Body.homePos();
+	}
+	
+	private static void bow() {
+		Body.bow();
+	}
+	
+	private static void bendBack() {
+		Body.bendBack();
+	}
+	
+	private static void pushUp() {
+		Body.pushUp();
 	}
 	
 	private static void createInt(String name, int value) {
@@ -54,6 +70,22 @@ public class Java {
 		else if(text.equals("turnRight()")){
 			turnRight();
 			return "Turning Right";
+		}
+		if(text.equals("homePos()")){
+			homePos();
+			return "Returning to home Position";
+		}
+		else if(text.equals("bow()")){
+			bow();
+			return "Bowing";
+		}
+		else if(text.equals("bendBack()")){
+			bendBack();
+			return "Bending Back";
+		}
+		else if(text.equals("pushUp()")){
+			pushUp();
+			return "Completing 5 pushups";
 		}
 		else if(text.contains("=") && !text.contains("if")){
 			System.out.println("Variable Created:");
