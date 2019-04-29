@@ -172,13 +172,13 @@ class Quadruped():
         time.sleep(1)
 
         for i in range(5):
-            for  k in range(60):
+            for  k in range(80):
                 kit.servo[5].angle = 60 + k
                 kit.servo[7].angle = 130 - k
-                time.sleep(0.01)
-            for  k in range(60):
+                time.sleep(0.001)
+            for  k in range(80):
                 kit.servo[5].angle = 100 - k
                 kit.servo[7].angle = 90 + k
-                time.sleep(0.01)
+                time.sleep(0.001)
 
         print('Finished 5 push ups')
