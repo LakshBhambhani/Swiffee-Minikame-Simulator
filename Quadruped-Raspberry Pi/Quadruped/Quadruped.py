@@ -162,7 +162,7 @@ class Quadruped():
         kit.servo[4].angle = 130
         kit.servo[5].angle = 60
         kit.servo[6].angle = 60
-        kit.servo[7].angle = 100
+        kit.servo[7].angle = 120
 
         kit.servo[8].angle = 170
         kit.servo[9].angle = 50
