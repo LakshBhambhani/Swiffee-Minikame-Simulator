@@ -5,9 +5,10 @@ quad = Quadruped.Quadruped()
 
 try:
     for x in range(5):
-         quad.bow
+         quad.bow()
          time.sleep(1)
-         quad.bend     
+         quad.bend()     
+     
      
 except:
     quad.homePos()
