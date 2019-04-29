@@ -145,6 +145,7 @@ class Quadruped():
         kit.servo[7].angle = 15
         kit.servo[9].angle = 130
         kit.servo[11].angle = 30
+        time.sleep(0.2)
 
         print('bowing')
 
@@ -153,7 +154,8 @@ class Quadruped():
         kit.servo[7].angle = 130
         kit.servo[9].angle = 15
         kit.servo[11].angle = 140
-
+        time.sleep(0.2)
+        
         print('bending back')
 
     def pushUp():
