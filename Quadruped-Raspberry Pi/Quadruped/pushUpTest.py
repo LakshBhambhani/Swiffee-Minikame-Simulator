@@ -4,9 +4,11 @@ import time
 quad = Quadruped.Quadruped()
 
 try:
-    quad.homePos()
-    quad.pushUp()
-    time.sleep(5)       
+    for x in range(5):
+         quad.bow
+         time.sleep(1)
+         quad.bend     
+     
 except:
     quad.homePos()
 
