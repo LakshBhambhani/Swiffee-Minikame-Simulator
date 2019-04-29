@@ -25,7 +25,7 @@ public class ScpTo {
 			}
 			sftpBean.close();
 		} else {
-			System.out.println("Connect failed.");
+			System.err.println("Connection failed.");
 		}
 	}
 
