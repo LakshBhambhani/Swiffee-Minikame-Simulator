@@ -160,7 +160,7 @@ class Quadruped():
 
     def pushUp(self):
         kit.servo[4].angle = 130
-        kit.servo[5].angle = 60
+        kit.servo[5].angle = 70
         kit.servo[6].angle = 60
         kit.servo[7].angle = 130
 
@@ -173,11 +173,11 @@ class Quadruped():
 
         for i in range(5):
             for  k in range(80):
-                kit.servo[5].angle = 60 + k
+                kit.servo[5].angle = 70 + k
                 kit.servo[7].angle = 130 - k
                 time.sleep(0.001)
             for  k in range(80):
-                kit.servo[5].angle = 100 - k
+                kit.servo[5].angle = 110 - k
                 kit.servo[7].angle = 90 + k
                 time.sleep(0.001)
 
