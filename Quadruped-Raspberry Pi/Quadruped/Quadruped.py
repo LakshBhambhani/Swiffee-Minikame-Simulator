@@ -172,11 +172,11 @@ class Quadruped():
         time.sleep(1)
 
         for i in range(5):
-            for  k in range(50):
+            for  k in range(40):
                 kit.servo[5].angle = 110 + k
                 kit.servo[7].angle = 70 - k
                 time.sleep(0.01)
-            for  k in range(50):
+            for  k in range(40):
                 kit.servo[5].angle = 175 - k
                 kit.servo[7].angle = 5 + k
                 time.sleep(0.01)
