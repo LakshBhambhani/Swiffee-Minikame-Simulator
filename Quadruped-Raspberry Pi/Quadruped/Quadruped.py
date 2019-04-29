@@ -159,7 +159,7 @@ class Quadruped():
         print('bending back')
 
     def pushUp(self):
-        kit.servo[4].angle = 150
+        kit.servo[4].angle = 130
         kit.servo[5].angle = 130
         kit.servo[6].angle = 60
         kit.servo[7].angle = 30
