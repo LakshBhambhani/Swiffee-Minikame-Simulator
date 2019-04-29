@@ -3,6 +3,9 @@ import time
 
 quad = Quadruped.Quadruped()
 
-quad.bow()
-time.sleep(1)
-quad.bendBack()     
+try:
+    quad.pushUp()
+    time.sleep(1)       
+except:
+    quad.homePos()
+
