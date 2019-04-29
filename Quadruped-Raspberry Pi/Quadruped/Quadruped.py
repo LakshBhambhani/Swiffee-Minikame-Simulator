@@ -140,7 +140,7 @@ class Quadruped():
 
         print('turning right')
 
-    def bow():
+    def bow(self):
         kit.servo[5].angle = 140
         kit.servo[7].angle = 15
         kit.servo[9].angle = 130
@@ -149,7 +149,7 @@ class Quadruped():
 
         print('bowing')
 
-    def bendBack():
+    def bendBack(self):
         kit.servo[5].angle = 30
         kit.servo[7].angle = 130
         kit.servo[9].angle = 15
@@ -158,7 +158,7 @@ class Quadruped():
         
         print('bending back')
 
-    def pushUp():
+    def pushUp(self):
         kit.servo[4].angle = 130
         kit.servo[5].angle = 130
         kit.servo[6].angle = 30
