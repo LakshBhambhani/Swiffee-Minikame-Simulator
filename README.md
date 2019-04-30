@@ -1,4 +1,4 @@
-# Minikame Simulator
+# Swiffee - Minikame Simulator
 
 @author Laksh Bhambhani, Megan Choy
 @date April 9, 2019
