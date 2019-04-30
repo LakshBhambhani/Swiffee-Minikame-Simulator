@@ -185,9 +185,9 @@ class Quadruped():
         
     def jump(self):
         kit.servo[4].angle = 10     #FL HIP
-        kit.servo[5].angle = 30    #FL FOOT
+        kit.servo[5].angle = 20    #FL FOOT
         kit.servo[6].angle = 170    #FR HIP
-        kit.servo[7].angle = 130     #FR FOOT
+        kit.servo[7].angle = 140     #FR FOOT
         kit.servo[8].angle = 15    #BL HIP
         kit.servo[9].angle = 70     #BL FOOT
         kit.servo[10].angle = 135    #BR HIP
