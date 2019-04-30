@@ -184,7 +184,7 @@ class Quadruped():
         print('Finished 5 push ups')
         
     def jump(self):
-        kit.servo[4].angle = 40     #FL HIP
+        kit.servo[4].angle = 140     #FL HIP
         kit.servo[5].angle = 110    #FL FOOT
         kit.servo[6].angle = 140    #FR HIP
         kit.servo[7].angle = 70     #FR FOOT
