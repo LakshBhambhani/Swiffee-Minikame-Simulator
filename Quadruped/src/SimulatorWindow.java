@@ -7,8 +7,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
 import java.awt.event.*;
 import java.util.List;
+import java.awt.Image.*;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -37,6 +39,7 @@ public class SimulatorWindow extends JFrame{
 		super("Quadruped Simulator");
 		Java java = new Java();
 		
+				
 		setUpGUI();
 		programInput.setText("Swiffee IDE");
 		terminal.setText("Terminal");
@@ -203,7 +206,8 @@ public class SimulatorWindow extends JFrame{
 		    SimulatorWindow window = new SimulatorWindow();
 		    window.setBounds(100, 70, 1250, 1000);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		    window.setVisible(true);										// makes the window visible
+		    window.setVisible(true);	// makes the window visible
+		    
 		    
 		   
 	}

@@ -22,26 +22,6 @@ public class ConnectToBot {
         String remoteFile = "mc.java";
 
         try {
-//            JSch jsch = new JSch();
-//            Session session = jsch.getSession(user, host, port);
-//            session.setPassword(password);
-//            session.setConfig("StrictHostKeyChecking", "no");
-//            System.out.println("Establishing Connection...");
-//            session.connect();
-//            System.out.println("Connection established.");
-//            System.out.println("Crating SFTP Channel.");
-//            ChannelSftp sftpChannel = (ChannelSftp) session.openChannel("sftp");
-//            sftpChannel.connect();
-//            System.out.println("SFTP Channel created.");
-//
-//            InputStream inputStream = sftpChannel.get(remoteFile);
-//
-//            try (Scanner scanner = new Scanner(new InputStreamReader(inputStream))) {
-//                while (scanner.hasNextLine()) {
-//                    String line = scanner.nextLine();
-//                    System.out.println(line);
-//                }
-//            }
         	remoteMkdir();
         } catch (JSchException e) {
             e.printStackTrace();
@@ -130,7 +110,7 @@ public class ConnectToBot {
         s.disconnect();    
       }
       
-      public static void remoteScp() throws JSchException, IOException {
+      public static void remoteExecute() throws JSchException, IOException {
           JSch js = new JSch();
           Session s = js.getSession(user, host, 22);
           s.setPassword(password);
@@ -142,7 +122,7 @@ public class ConnectToBot {
           Channel c = s.openChannel("exec");
           ChannelExec ce = (ChannelExec) c;
 
-          ce.setCommand("scp");
+          ce.setCommand("python3 ProcessFile.py");
           ce.setErrStream(System.err);
 
           ce.connect();

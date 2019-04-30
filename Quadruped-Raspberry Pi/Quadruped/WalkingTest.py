@@ -4,8 +4,9 @@ import time
 quad = Quadruped.Quadruped()
 
 try:
-    print("Running push up test")
-    quad.pushUp()
+    print("Running walking test")
+    for x in range(6):
+    	quad.walkForward();
     time.sleep(1)       
 except:
     quad.homePos()
