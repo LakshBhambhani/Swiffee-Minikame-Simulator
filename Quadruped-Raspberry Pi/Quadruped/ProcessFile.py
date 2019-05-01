@@ -17,8 +17,10 @@ with open(filepath) as fp:
             quad.turnRight()
         if line.strip() == "pushUp()":
             quad.pushUp()
-        if line.strip() == "jump()":
-            quad.jump()
+        if line.strip() == "jumpUp()":
+            quad.jumpUp()
+        if line.strip() == "jumpBack()":
+            quad.jumpBack()
         if line.strip() == "homePos()":
             quad.homePos()
         if line.strip() == "bow()":
