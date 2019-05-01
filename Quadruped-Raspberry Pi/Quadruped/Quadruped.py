@@ -195,10 +195,12 @@ class Quadruped():
 
         time.sleep(3)
         
-        kit.servo[8].angle = 180     #BL FOOT
-        kit.servo[10].angle = 0    #BR HIP
+        
         kit.servo[9].angle = 140     #BL FOOT
         kit.servo[11].angle = 40   #BR FOOT
+        time.sleep(0.01)
+        kit.servo[8].angle = 180     #BL FOOT
+        kit.servo[10].angle = 0    #BR HIP
         
         time.sleep(0.1)
         
