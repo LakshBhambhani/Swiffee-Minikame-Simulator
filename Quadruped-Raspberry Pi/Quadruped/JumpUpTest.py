@@ -4,7 +4,7 @@ import time
 quad = Quadruped.Quadruped()
 
 try:
-    quad.jump()
+    quad.jumpUp()
         
 except:
     quad.homePos()

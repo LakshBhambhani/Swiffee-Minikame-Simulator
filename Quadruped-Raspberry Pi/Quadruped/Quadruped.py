@@ -183,7 +183,7 @@ class Quadruped():
 
         print('Finished 5 push ups')
         
-    def jump(self):
+    def jumpUp(self):
         kit.servo[4].angle = 10     #FL HIP
         kit.servo[5].angle = 20    #FL FOOT
         kit.servo[6].angle = 170    #FR HIP
@@ -219,3 +219,41 @@ class Quadruped():
 #         kit.servo[7].angle = 0     #FR FOOT
 #         kit.servo[9].angle = 0     #BL FOOT
 #         kit.servo[11].angle = 180   #BR FOOT
+    
+    def jumpBack(self):
+        kit.servo[4].angle = 10     #FL HIP
+        kit.servo[5].angle = 20    #FL FOOT
+        kit.servo[6].angle = 170    #FR HIP
+        kit.servo[7].angle = 120     #FR FOOT
+        kit.servo[8].angle = 0    #BL HIP
+        kit.servo[9].angle = 70     #BL FOOT
+        kit.servo[10].angle = 160    #BR HIP
+        kit.servo[11].angle = 110   #BR FOOT
+
+        time.sleep(3)
+        
+        
+        kit.servo[9].angle = 140     #BL FOOT
+        kit.servo[11].angle = 40   #BR FOOT
+#         time.sleep(0.01)
+#         kit.servo[8].angle = 180     #BL FOOT
+#         kit.servo[10].angle = 0    #BR HIP
+        
+        time.sleep(0.5)
+        
+        kit.servo[4].angle = 40     #FL HIP
+        kit.servo[5].angle = 110    #FL FOOT
+        kit.servo[6].angle = 130    #FR HIP
+        kit.servo[7].angle = 70     #FR FOOT
+        kit.servo[8].angle = 130    #BL HIP
+        kit.servo[9].angle = 70     #BL FOOT
+        kit.servo[10].angle = 40    #BR HIP
+        kit.servo[11].angle = 110   #BR FOOT
+        
+#         time.sleep(2)
+#         
+#         kit.servo[5].angle = 180    #FL FOOT
+#         kit.servo[7].angle = 0     #FR FOOT
+#         kit.servo[9].angle = 0     #BL FOOT
+#         kit.servo[11].angle = 180   #BR FOOT
+
