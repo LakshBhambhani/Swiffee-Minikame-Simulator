@@ -2,7 +2,7 @@ import Quadruped
 
 quad = Quadruped.Quadruped()
 
-filepath = 'Commands.txt'  
+filepath = 'Swiffee-Minikame-Simulator/QuadrupedPi/Quadruped/Commands.txt'  
 with open(filepath) as fp:  
    line = fp.readline()
    cnt = 1
