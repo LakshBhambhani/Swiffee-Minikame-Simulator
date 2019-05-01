@@ -16,7 +16,7 @@ public class ScpTo {
 		if (blResult) {
 			System.out.println("Connection successful");
 			
-			blResult = sftpBean.uploadFile( "\\Commands.txt","\\Swiffee-Minikame-Simulator/Quadruped-Raspberry Pi/Quadruped");
+			blResult = sftpBean.uploadFile( "\\Commands.txt","\\Swiffee-Minikame-Simulator/QuadrupedPi/Quadruped");
 			if(blResult) {
 				System.out.println("upload successful");
 			}
