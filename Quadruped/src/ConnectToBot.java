@@ -17,14 +17,14 @@ public class ConnectToBot {
     private static String host = "raspberrypi.local";
     int port = 22;
 
-    public static void main(String args[]) throws IOException, SftpException {
-        
-        try {
-        	remoteExecute();
-        } catch (JSchException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String args[]) throws IOException, SftpException {
+//        
+//        try {
+//        	remoteExecute();
+//        } catch (JSchException e) {
+//            e.printStackTrace();
+//        }
+//    }
     
     public static void remoteLs() throws JSchException, IOException {
         JSch js = new JSch();

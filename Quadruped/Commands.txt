@@ -1,6 +1,3 @@
 moveForward()
-turnLeft()
-turnRight()
 moveForward()
-turnRight()
-moveForward()
+jumpUp()

@@ -1,17 +1,20 @@
+import java.io.IOException;
 import java.util.Vector;
 
 import com.jcraft.jsch.ChannelSftp.LsEntry;
+import com.jcraft.jsch.JSchException;
 
 
 public class ScpTo {
 
 	// main class let exec demo
-	public static void main(String[] args) {
+	public static void sendTo() throws JSchException, IOException {
 		// TODO Auto-generated method stub
 		//now we start up run
 		SFTPBean sftpBean = new SFTPBean();
+		ConnectToBot ctbObject = new ConnectToBot();
 
-		boolean blResult = sftpBean.connect("192.168.0.28", 22, "pi", "quadruped");
+		boolean blResult = sftpBean.connect("raspberrypi.local", 22, "pi", "quadruped");
 
 		if (blResult) {
 			System.out.println("Connection successful");
