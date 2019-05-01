@@ -188,9 +188,9 @@ class Quadruped():
         kit.servo[5].angle = 20    #FL FOOT
         kit.servo[6].angle = 170    #FR HIP
         kit.servo[7].angle = 120     #FR FOOT
-        kit.servo[8].angle = 15    #BL HIP
+        kit.servo[8].angle = 5    #BL HIP
         kit.servo[9].angle = 70     #BL FOOT
-        kit.servo[10].angle = 135    #BR HIP
+        kit.servo[10].angle = 140    #BR HIP
         kit.servo[11].angle = 110   #BR FOOT
 
         time.sleep(3)
