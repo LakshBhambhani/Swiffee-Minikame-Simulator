@@ -17,6 +17,9 @@ try:
         quad.bow()
         time.sleep(1)
         quad.bendBack()
+    quad.pushUp()
+    time.sleep(2)
+    quad.jump()
         
 except:
     quad.homePos()
