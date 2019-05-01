@@ -122,7 +122,7 @@ public class ConnectToBot {
           Channel c = s.openChannel("exec");
           ChannelExec ce = (ChannelExec) c;
 
-          ce.setCommand("python3 Swiffee-Minikame-Simulator/Quadruped-Raspberry\\ Pi/Quadruped/ProcessFile.py");
+          ce.setCommand("python3 Swiffee-Minikame-Simulator/Quadruped-Raspberry Pi/Quadruped/ProcessFile.py");
           ce.setErrStream(System.err);
 
           ce.connect();
