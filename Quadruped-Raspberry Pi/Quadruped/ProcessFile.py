@@ -14,7 +14,7 @@ with open(filepath) as fp:
         if line.strip() == "turnLeft()":
             quad.turnLeft()
         if line.strip() == "turnRight()":
-            quad.turnRight
+            quad.turnRight()
         if line.strip() == "pushUp()":
             quad.pushUp()
         if line.strip() == "jump()":
