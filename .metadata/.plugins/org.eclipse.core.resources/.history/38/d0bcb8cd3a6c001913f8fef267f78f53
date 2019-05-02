@@ -1,0 +1,29 @@
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class SimulatorMenu extends JMenuBar {
+
+	private JMenuItem exitItem, loadItem, kitItem, helpItem;
+	
+	public SimulatorMenu() {
+	    JMenu fileMenu = new JMenu("File");
+	    fileMenu.setMnemonic('F');
+
+	    FileAction fileAction = new FileAction();
+	    openItem = new JMenuItem("Open...");
+	    openItem.setMnemonic('O');
+	    openItem.addActionListener(fileAction);
+	    saveItem = new JMenuItem("Save...");
+	    saveItem.setMnemonic('S');
+	    saveItem.addActionListener(fileAction);
+	    exitItem = new JMenuItem("Exit");
+	    exitItem.setMnemonic('x');
+	    exitItem.addActionListener(fileAction);
+	    fileMenu.add(openItem);
+	    fileMenu.add(saveItem);
+	    fileMenu.addSeparator();
+	    fileMenu.add(exitItem);
+	    add(fileMenu);
+	}
+}
