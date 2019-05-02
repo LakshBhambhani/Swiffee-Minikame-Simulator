@@ -8,11 +8,20 @@ This program makes a simulation of a Quadruped moving, but it can also be used t
 There is also a simulation of the Quadruped to mimic what it would look like in real life. To code, there is a simple IDE and a terminal to show how the Quadruped is working and if there are any errors. New coders can easily code with simple methods that can be used in many ways.
 
 Instructions:
-Open the window and start coding with The Swiffee API: 
+Open the window and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language):
 
 Classes used:
 Java - the analyzer of the code the user inputs
 SimulatorWindow - the window and graphics of the Quadruped
+Simulator - the panel drawing the body and legs of the Quadruped
 Body - the blueprint class representing the body of the Quadruped
 Legs - the blueprint class representing the legs of the Quadruped
 FullBody - the class instantiating the Body and Legs classes
+ConnectToBot - 
+SFTPBean - 
+RemoteExecute - 
+ScpTo - 
+SendAndExecute - 
+
+Responsibilities:
+Laksh does things not in java while I do simple simulator stuff
