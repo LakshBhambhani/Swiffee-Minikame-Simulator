@@ -1,5 +1,7 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,6 +41,7 @@ public class SimulatorWindow extends JFrame{
 		super("Quadruped Simulator");
 		Java java = new Java();
 		
+		setJMenuBar(new SimulatorMenu(this));
 				
 		setUpGUI();
 		programInput.setText("Swiffee IDE");
@@ -49,7 +52,7 @@ public class SimulatorWindow extends JFrame{
 	
 	private void setUpGUI() {
 		
-	    programInput = new JTextArea(20, 20);
+	    programInput = new JTextArea(15, 20);
 	    programInput.setLineWrap(true);
 	    programInput.setWrapStyleWord(true);
 	    
@@ -66,7 +69,7 @@ public class SimulatorWindow extends JFrame{
 	              ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
 	              ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 	    
-	    terminal = new JTextArea(20, 20);
+	    terminal = new JTextArea(15, 20);
 	    terminal.setLineWrap(true);
 	    terminal.setWrapStyleWord(true);
 	    terminal.setEditable(true);
@@ -180,33 +183,61 @@ public class SimulatorWindow extends JFrame{
 	    	
 	    run.addActionListener(sendListener);
 	    	
+	    //Box containing the panel (pictures)
+	    Simulator panel = new Simulator();
 	    Box box1 = Box.createVerticalBox();
-	    box1.add(Box.createVerticalStrut(10));
-	    box1.add(programInputPane);
-	    box1.add(Box.createVerticalStrut(20));
-	    box1.add(run);
-	    box1.add(Box.createVerticalStrut(20));
-	    box1.add(terminalPane);
+	    panel.setPreferredSize(new Dimension (800, 600));
+	    box1.add(panel);
+
+	    
+	    //Box containing the text boxes and run button
+	    Box box2 = Box.createVerticalBox();
+	    programInputPane.setPreferredSize(new Dimension (200, 10));
+	    box2.add(programInputPane);
+	    box2.add(Box.createVerticalStrut(20));
+	    box2.add(run);
+	    box2.add(Box.createVerticalStrut(20));
+	    terminalPane.setPreferredSize(new Dimension (200, 10));
+	    box2.add(terminalPane);
+	    
+	    //Box combining the two
+	    Box box = Box.createHorizontalBox();
+	    box.add(box1);
+	    box.add(Box.createHorizontalStrut(20));
+	    box.add(box2);
+	    
 	    Container c = getContentPane();
-	    c.setLayout (new FlowLayout(FlowLayout.TRAILING, 20, 20));
-	    c.add(box1);
+	    c.setLayout (new FlowLayout(FlowLayout.CENTER, 20, 20));
+	    c.add(box);
+	    
 	}
 	
 	public void refresh() {
 	    String text = programInput.getText();
 	}
 	
-	public void actionPerformed(ActionEvent e)
-	  {
+	public void actionPerformed(ActionEvent e) {
 	    refresh();
-	  }
+	}
+	
+	public void setText(String text) {
+		programInput.setText(text);
+	}
 
 
 	public static void main(String[] args) {
 		    SimulatorWindow window = new SimulatorWindow();
-		    window.setBounds(100, 70, 1250, 1000);
+		    window.setBounds(0, 0, 1100, 700);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		    window.setVisible(true);	// makes the window visible
+		    
+		    
+//		    Simulator panel = new Simulator();
+//		    panel.setBounds(100, 70, 600, 1000);
+//		    panel.setBackground(Color.WHITE);
+//		    Container y = window.getContentPane();
+//		    y.add(panel);
+		    
+		    window.setVisible(true);										// makes the window visible
 		    
 		    
 		   
