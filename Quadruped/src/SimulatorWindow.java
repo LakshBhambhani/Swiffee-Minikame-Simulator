@@ -9,7 +9,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
+import java.awt.event.*;
 import java.util.List;
+import java.awt.Image.*;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -17,9 +20,12 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.*;
 
 /*
- * @author Laksh 
+ * @author for main window: Megan
+ * @author for terminal & IDE placement: Laksh
+ * 
  */
 
 public class SimulatorWindow extends JFrame{
@@ -36,6 +42,7 @@ public class SimulatorWindow extends JFrame{
 		Java java = new Java();
 		
 		setJMenuBar(new SimulatorMenu(this));
+				
 		setUpGUI();
 		programInput.setText("Swiffee IDE");
 		terminal.setText("Terminal");
@@ -231,5 +238,8 @@ public class SimulatorWindow extends JFrame{
 //		    y.add(panel);
 		    
 		    window.setVisible(true);										// makes the window visible
+		    
+		    
+		   
 	}
 }

@@ -28,5 +28,19 @@ public class Body {
 	
 	public void draw(Graphics g) {
 	  coordinates.drawImage(g, body);
+	public static void homePos() {
+		
+	}
+	
+	public static void bow() {
+		
+	}
+	
+	public static void bendBack() {
+		
+	}
+	
+	public static void pushUp() {
+		
 	}
 }
