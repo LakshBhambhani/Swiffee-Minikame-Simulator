@@ -11,15 +11,15 @@ Instructions:
 Open the window and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language):
 
 Classes used:
-Java - the analyzer of the code the user inputs
-SimulatorWindow - the window and graphics of the Quadruped
-Simulator - the panel drawing the body and legs of the Quadruped
-Body - the blueprint class representing the body of the Quadruped
-Legs - the blueprint class representing the legs of the Quadruped
-FullBody - the class instantiating the Body and Legs classes
-SFTPBean - protocol for sending the code the user programmed to the robot
-ScpTo - actually sends code from laptop to robot
-ConnectToBot - executes the code on the robot
+Java - the analyzer of the code the user inputs 
+SimulatorWindow - the window and graphics of the Quadruped 
+Simulator - the panel drawing the body and legs of the Quadruped 
+Body - the blueprint class representing the body of the Quadruped 
+Legs - the blueprint class representing the legs of the Quadruped 
+FullBody - the class instantiating the Body and Legs classes 
+SFTPBean - protocol for sending the code the user programmed to the robot 
+ScpTo - calls SFTPBean to send code to robot
+ConnectToBot - executes the code on the robot 
 
 Responsibilities:
 Laksh does things not in java while I do simple simulator stuff
