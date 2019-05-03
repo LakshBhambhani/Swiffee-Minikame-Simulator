@@ -16,13 +16,13 @@ Classes used:
 | --- | --- | --- | --- |
 | Java | the analyzer of the code the user inputs | public static List<String> proccessFile | private static List<Integer> values, private static List<String> names |
 | SimulatorWindow | the window and graphics of the Quadruped |
-Simulator - the panel drawing the body and legs of the Quadruped 
-Body - the blueprint class representing the body of the Quadruped 
-Legs - the blueprint class representing the legs of the Quadruped 
-FullBody - the class instantiating the Body and Legs classes 
-SFTPBean - protocol for sending the code the user programmed to the robot 
-ScpTo - calls SFTPBean to send code to robot
-ConnectToBot - executes the code on the robot 
+| Simulator | the panel drawing the body and legs of the Quadruped |
+| Body | the blueprint class representing the body of the Quadruped |
+| Legs | the blueprint class representing the legs of the Quadruped |
+| FullBody | the class instantiating the Body and Legs classes |
+| SFTPBean | protocol for sending the code the user programmed to the robot |
+| ScpTo | calls SFTPBean to send code to robot |
+| ConnectToBot | executes the code on the robot |
 
 Responsibilities:
 Laksh does things not in java while I do simple simulator stuff
