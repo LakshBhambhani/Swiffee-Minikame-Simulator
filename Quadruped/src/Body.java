@@ -28,6 +28,7 @@ public class Body {
 	
 	public void draw(Graphics g) {
 	  coordinates.drawImage(g, body);
+	}
 	public static void homePos() {
 		
 	}
@@ -42,5 +43,13 @@ public class Body {
 	
 	public static void pushUp() {
 		
+	}
+	
+	public static void jumpUp() {
+		
+	}
+
+	public static void jumpBack() {
+	
 	}
 }

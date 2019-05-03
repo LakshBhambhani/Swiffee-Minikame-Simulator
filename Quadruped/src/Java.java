@@ -49,6 +49,14 @@ public class Java {
 		Body.pushUp();
 	}
 	
+	private static void jumpUp() {
+		Body.jumpUp();
+	}
+	
+	private static void jumpBack() {
+		Body.jumpBack();
+	}
+	
 	private static void createInt(String name, int value) {
 		names.add(name);
 		values.add(value);
@@ -86,6 +94,14 @@ public class Java {
 		else if(text.equals("pushUp()")){
 			pushUp();
 			return "Completing 5 pushups";
+		}
+		else if(text.equals("jumpUp()")){
+			pushUp();
+			return "Jumping Up";
+		}
+		else if(text.equals("jumpBack()")){
+			pushUp();
+			return "Jumping Back";
 		}
 		else if(text.contains("=") && !text.contains("if")){
 			System.out.println("Variable Created:");

@@ -28,20 +28,20 @@ public class FullBody {
 		legTR = (new ImageIcon("leg2.png")).getImage();
 		legBL = (new ImageIcon("leg3.png")).getImage();
 		legBR = (new ImageIcon("leg4.png")).getImage();
+		BufferedImage bimg;
+		try {
+			bimg = ImageIO.read(new File("body.png"));
+			bodyWidth          = bimg.getWidth();
+			bodyHeight         = bimg.getHeight();
+			System.out.println(width/2);
+			System.out.println(bodyWidth);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-//		try {
-//			BufferedImage bufferedImage = ImageIO.read(new File("body.png"));
-//			
-//			bodyWidth = bufferedImage.getWidth();
-//			System.out.print((width/2) + "");
-//			bodyHeight = bufferedImage.getHeight();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		
-		
-		body = new Body(width/2, height/2, bodyImage);
+		body = new Body(width/2 + 90, height/2 + 110, bodyImage);
 		leg1 = new Legs(width/2 + 30, height/2 + 110, legTL);
 		leg2 = new Legs(width/2 + 30, height/2 + 110, legTR);
 		leg3 = new Legs(width/2 + 30, height/2 + 110, legBL);
