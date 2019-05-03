@@ -11,8 +11,9 @@ Instructions:
 Open the window and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language):
 
 Classes used:
+
 | Class Name | Description | Methods | Fields |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Java | the analyzer of the code the user inputs | public static List<String> proccessFile | private static List<Integer> values, private static List<String> names |
 | SimulatorWindow | the window and graphics of the Quadruped |
 Simulator - the panel drawing the body and legs of the Quadruped 
