@@ -13,7 +13,6 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let forward = UIButton()
         let stop = UIButton()
         let reverse = UIButton()
@@ -118,6 +117,8 @@ class FirstViewController: UIViewController {
         jumpBack.topAnchor.constraint(equalTo: bendBack.bottomAnchor, constant: 30).isActive = true
         jumpBack.widthAnchor.constraint(equalToConstant: view.frame.size.width*3/4).isActive = true
         jumpBack.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        
 
         
         

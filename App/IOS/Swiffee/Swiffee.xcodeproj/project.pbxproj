@@ -13,6 +13,9 @@
 		691DDCBC22796B0E004D5884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691DDCBA22796B0E004D5884 /* Main.storyboard */; };
 		691DDCBE22796B0F004D5884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691DDCBD22796B0F004D5884 /* Assets.xcassets */; };
 		691DDCC122796B0F004D5884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691DDCBF22796B0F004D5884 /* LaunchScreen.storyboard */; };
+		693F293222800A8900F31A7F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 693F293122800A8900F31A7F /* libz.tbd */; };
+		693F293422800A9000F31A7F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693F293322800A9000F31A7F /* CFNetwork.framework */; };
+		693F294022800C7F00F31A7F /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693F293F22800C7F00F31A7F /* NMSSH.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		691DDCBD22796B0F004D5884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		691DDCC022796B0F004D5884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		691DDCC222796B0F004D5884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		693F293122800A8900F31A7F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		693F293322800A9000F31A7F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		693F293F22800C7F00F31A7F /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/NMSSH-iOS-bywkyibfkcvbswgnqfmefdozoafy/Build/Products/Debug-iphonesimulator/NMSSH.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693F294022800C7F00F31A7F /* NMSSH.framework in Frameworks */,
+				693F293422800A9000F31A7F /* CFNetwork.framework in Frameworks */,
+				693F293222800A8900F31A7F /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,7 @@
 			children = (
 				691DDCB322796B0E004D5884 /* Swiffee */,
 				691DDCB222796B0E004D5884 /* Products */,
+				693F293022800A8800F31A7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +75,16 @@
 				691DDCC222796B0F004D5884 /* Info.plist */,
 			);
 			path = Swiffee;
+			sourceTree = "<group>";
+		};
+		693F293022800A8800F31A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				693F293F22800C7F00F31A7F /* NMSSH.framework */,
+				693F293322800A9000F31A7F /* CFNetwork.framework */,
+				693F293122800A8900F31A7F /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
