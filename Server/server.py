@@ -1,7 +1,10 @@
 import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
+import Quadruped
 
 app = Flask(__name__)
+
+quad = Quadruped.Quadruped()
 
 GPIO.setmode(GPIO.BCM)
 
@@ -92,40 +95,22 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
+      quad.walkForward()
    if action1 == "turnLeft":
       message = "Turning Left"
+      quad.turnLeft()
    if action1 == "turnRight":
       message = "Turning Right"
-   if action1 == "leanRight":
-      message = "Leaning Right"
-   if action1 == "leanLeft":
-      message = "Leaning Left"
+      quad.turnRight()
    if action1 == "homePos":
       message = "Switching to Home Position"
+      quad.homePos()
    if action1 == "bow":
       message = "Bowing"
+      quad.bow()
    if action1 == "bendBack":
       message = "Bending Back"
-   if action1 == "homePosArm":
-      message = "Switching to Home Position Arm"
-   if action1 == "grab":
-      message = "Grabbing"
-   if action1 == "release":
-      message = "Releasing"
-   if action1 == "horizontalFront":
-      message = "Switching to Horizontal Front"
-   if action1 == "verticalFront":
-      message = "Switching to Vertical Front"
-   if action1 == "horizontalBack":
-      message = "Switching to Horizontal Back"
-   if action1 == "verticalBack":
-      message = "Switching Vertical Back"
-   if action1 == "avoidObstacles":
-      message = "Avoiding Obstacles"
-   if action1 == "armDemo":
-      message = "Starting Arm Demo"
-   if action1 == "leanDemo":
-      message = "Starting Lean Demo"
+      quad.bendBack()
    # For each pin, read the pin state and store it in the pins dictionary:
    for pin in pins:
       pins[pin]['state'] = GPIO.input(pin)
