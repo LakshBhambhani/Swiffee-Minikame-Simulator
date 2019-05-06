@@ -13,8 +13,8 @@ Open the window and start coding with The Java API (no need to worry, you need t
 Classes used:
 
 | Class Name | Description |
-| --- | --- | --- | --- |
-| Java | the analyzer of the code the user inputs | values, private static List<String> names |
+| --- | --- |
+| Java | the analyzer of the code the user inputs |
 | SimulatorWindow | the window and graphics of the Quadruped |
 | Simulator | the panel drawing the body and legs of the Quadruped |
 | Body | the blueprint class representing the body of the Quadruped |
