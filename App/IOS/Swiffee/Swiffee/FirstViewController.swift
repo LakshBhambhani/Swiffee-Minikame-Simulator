@@ -24,7 +24,9 @@ class FirstViewController: UIViewController, WKUIDelegate {
     let jumpBack = UIButton()
     let pushUp = UIButton()
     
-    let botIp = "http://192.168.0.28"
+    let object = SettingsViewController()
+    
+    var botIp : String!
 
     
     override func viewDidLoad() {
@@ -138,79 +140,90 @@ class FirstViewController: UIViewController, WKUIDelegate {
         jumpBack.heightAnchor.constraint(equalToConstant: 20).isActive = true
         jumpBack.addTarget(self, action: #selector(jumpBackAction), for: .touchUpInside)
         
-        let url = URL(string: botIp);
-        let request = URLRequest(url: url!);
-        webView.load(request);
+//        let url = URL(string: object.IP);
+//        let request = URLRequest(url: url!);
+//        webView.load(request);
     }
+   
     
     @objc func forwardAction(sender: UIButton!) {
         print("Forward Clicked")
-        let url = URL(string: botIp + "/walkForward");
+        let url = URL(string: object.IP + "/walkForward");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func stopAction(sender: UIButton!) {
         print("Stop Clicked")
-        let url = URL(string: botIp + "/homePos");
+        let url = URL(string: object.IP + "/homePos");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func reverseAction(sender: UIButton!) {
         print("Reverse Clicked")
-        let url = URL(string: botIp + "/walkBackward");
+        let url = URL(string: object.IP + "/walkBackward");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func leftAction(sender: UIButton!) {
         print("Left Clicked")
-        let url = URL(string: botIp + "/turnLeft");
+        let url = URL(string: object.IP + "/turnLeft");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func rightAction(sender: UIButton!) {
         print("Right Clicked")
-        let url = URL(string: botIp + "/turnRight");
+        let url = URL(string: object.IP + "/turnRight");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func bowAction(sender: UIButton!) {
         print("Bow Clicked")
-        let url = URL(string: botIp + "/bow");
+        let url = URL(string: object.IP + "/bow");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func bendBackAction(sender: UIButton!) {
         print("Bend Back Clicked")
-        let url = URL(string: botIp + "/bendBack");
+        let url = URL(string: object.IP + "/bendBack");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func jumpUpAction(sender: UIButton!) {
         print("Jump Up Clicked")
-        let url = URL(string: botIp + "/jumpUp");
+        let url = URL(string: object.IP + "/jumpUp");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func jumpBackAction(sender: UIButton!) {
         print("Jump Back Clicked")
-        let url = URL(string: botIp + "/jumpBack");
+        let url = URL(string: object.IP + "/jumpBack");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
     
     @objc func pushUpAction(sender: UIButton!) {
         print("Push Up Clicked")
-        let url = URL(string: botIp + "/pushUp");
+        let url = URL(string: object.IP + "/pushUp");
         let request = URLRequest(url: url!);
         webView.load(request);
+        print(url)
     }
 
 
