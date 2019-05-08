@@ -39,6 +39,15 @@ def action1(action1):
    elif action1 == "bendBack":
       message = "Bending Back"
       quad.bendBack()
+   elif action1 == "jumpUp":
+      message = "Jumping Up"
+      quad.jumpUp()
+   elif action1 ==  "jumpBack":
+      message = "Jumping Back"
+      quad.jumpBack()
+   elif action1 == "pushUp":
+      message = "Completed 5 push ups"
+      quad.pushUp()
    else:
       message = ""
 
