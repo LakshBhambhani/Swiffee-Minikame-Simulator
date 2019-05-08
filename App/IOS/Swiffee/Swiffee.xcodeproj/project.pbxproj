@@ -12,6 +12,7 @@
 		691DDCB922796B0E004D5884 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691DDCB822796B0E004D5884 /* SecondViewController.swift */; };
 		691DDCBC22796B0E004D5884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691DDCBA22796B0E004D5884 /* Main.storyboard */; };
 		691DDCBE22796B0F004D5884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691DDCBD22796B0F004D5884 /* Assets.xcassets */; };
+		693F294822815D6F00F31A7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693F294722815D6F00F31A7F /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		691DDCBB22796B0E004D5884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		691DDCBD22796B0F004D5884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		691DDCC222796B0F004D5884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		693F294722815D6F00F31A7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,10 @@
 				691DDCB422796B0E004D5884 /* AppDelegate.swift */,
 				691DDCB622796B0E004D5884 /* FirstViewController.swift */,
 				691DDCB822796B0E004D5884 /* SecondViewController.swift */,
-				691DDCBA22796B0E004D5884 /* Main.storyboard */,
 				691DDCBD22796B0F004D5884 /* Assets.xcassets */,
 				691DDCC222796B0F004D5884 /* Info.plist */,
+				691DDCBA22796B0E004D5884 /* Main.storyboard */,
+				693F294722815D6F00F31A7F /* SettingsViewController.swift */,
 			);
 			path = Swiffee;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				691DDCB922796B0E004D5884 /* SecondViewController.swift in Sources */,
 				691DDCB522796B0E004D5884 /* AppDelegate.swift in Sources */,
+				693F294822815D6F00F31A7F /* SettingsViewController.swift in Sources */,
 				691DDCB722796B0E004D5884 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
