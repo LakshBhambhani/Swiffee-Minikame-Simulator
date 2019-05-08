@@ -13,8 +13,5 @@ public class ControlPanel extends JPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 	}
-	
-//	public void close(JFrame frame) {
-//		
-//	}
+
 }

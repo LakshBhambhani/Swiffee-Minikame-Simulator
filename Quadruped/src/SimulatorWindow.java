@@ -230,6 +230,7 @@ public class SimulatorWindow extends JFrame{
 		    SimulatorWindow window = new SimulatorWindow();
 		    window.setBounds(0, 0, 1100, 700);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		    window.setResizable(false);
 		    
 		    
 //		    Simulator panel = new Simulator();
