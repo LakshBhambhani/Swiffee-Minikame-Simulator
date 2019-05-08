@@ -31,7 +31,7 @@ public class SimulatorMenu extends JMenuBar {
 	    kitItem.addActionListener(fileAction);
 	    helpItem = new JMenuItem("Help...");
 	    helpItem.addActionListener(fileAction);
-	    controlItem = new JMenuItem("Control Window");
+	    controlItem = new JMenuItem("Xbox Control");
 	    controlItem.addActionListener(fileAction);
 	    exitItem = new JMenuItem("Exit");
 	    exitItem.addActionListener(fileAction);
