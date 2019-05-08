@@ -30,4 +30,5 @@ public class ControlPanel extends JPanel {
 		frame.setVisible(false);
 		frame.dispose();
 	}
+
 }

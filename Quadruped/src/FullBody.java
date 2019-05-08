@@ -41,11 +41,11 @@ public class FullBody {
 		}
 		
 		
-		body = new Body(width/2 + 90, height/2 + 110, bodyImage);
-		leg1 = new Legs(width/2 + 30, height/2 + 110, legTL);
-		leg2 = new Legs(width/2 + 30, height/2 + 110, legTR);
-		leg3 = new Legs(width/2 + 30, height/2 + 110, legBL);
-		leg4 = new Legs(width/2 + 30, height/2 + 110, legBR);
+		body = new Body(430, 410, bodyImage);
+		leg1 = new Legs(430, 410, legTL);
+		leg2 = new Legs(430, 410, legTR);
+		leg3 = new Legs(430, 410, legBL);
+		leg4 = new Legs(430, 410, legBR);
 	}
 	
 	public void draw(Graphics2D g) {
