@@ -15,7 +15,7 @@ import javax.swing.JMenuItem;
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
-	private JMenuItem exitItem, loadItem, kitItem, helpItem;
+	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem;
 	
 	public SimulatorMenu(SimulatorWindow simulatorWindow) {
 	   
@@ -31,11 +31,14 @@ public class SimulatorMenu extends JMenuBar {
 	    kitItem.addActionListener(fileAction);
 	    helpItem = new JMenuItem("Help...");
 	    helpItem.addActionListener(fileAction);
+	    controlItem = new JMenuItem("Control Window");
+	    controlItem.addActionListener(fileAction);
 	    exitItem = new JMenuItem("Exit");
 	    exitItem.addActionListener(fileAction);
 	    fileMenu.add(loadItem);
 	    fileMenu.add(kitItem);
 	    fileMenu.add(helpItem);
+	    fileMenu.add(controlItem);
 	    fileMenu.addSeparator();
 	    fileMenu.add(exitItem);
 	    add(fileMenu);
@@ -58,6 +61,10 @@ public class SimulatorMenu extends JMenuBar {
 	      else if (m == helpItem)
 	      {
 	    	  
+	      }
+	      else if (m == controlItem)
+	      {
+	    	  ControlPanel controlPanel = new ControlPanel();
 	      }
 	      else if (m == exitItem)
 	      {

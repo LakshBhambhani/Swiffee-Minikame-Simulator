@@ -226,6 +226,7 @@ public class SimulatorWindow extends JFrame{
 
 
 	public static void main(String[] args) {
+		
 		    SimulatorWindow window = new SimulatorWindow();
 		    window.setBounds(0, 0, 1100, 700);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
