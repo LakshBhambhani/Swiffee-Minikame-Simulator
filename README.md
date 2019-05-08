@@ -23,6 +23,9 @@ Classes used:
 | SFTPBean | protocol for sending the code the user programmed to the robot |
 | ScpTo | calls SFTPBean to send code to robot |
 | ConnectToBot | executes the code on the robot |
+| ControlWindow | The window to use Xbox controller to control the bot |
+| XboxControl | Contains methods to use Xbox without instantiating Xbox many times |
+| XboxListener | This is where we listen to Xbox inputs and process it on the bot |
 
 Responsibilities:<br>
 Laksh works with the hardware and software regarding the robot. The classes like SFTPBean, ScptTo, and ConnectToBot are all used to send and execute code on the actual robot. He also works on the Andriod and IOS app to control the robot. For the simulator, he made the Java class which analyzes what the user codes. 
