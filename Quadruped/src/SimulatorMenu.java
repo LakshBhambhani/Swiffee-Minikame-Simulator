@@ -12,6 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import com.studiohartman.jamepad.ControllerUnpluggedException;
+
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
@@ -64,7 +66,12 @@ public class SimulatorMenu extends JMenuBar {
 	      }
 	      else if (m == controlItem)
 	      {
-	    	  ControlPanel controlPanel = new ControlPanel();
+	    	  try {
+				ControlPanel controlPanel = new ControlPanel();
+			} catch (ControllerUnpluggedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 	      }
 	      else if (m == exitItem)
 	      {
