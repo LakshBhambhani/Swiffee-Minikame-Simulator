@@ -68,7 +68,7 @@ public class SimulatorMenu extends JMenuBar {
 	      {
 	    	  try {
 				ControlPanel controlPanel = new ControlPanel();
-			} catch (ControllerUnpluggedException e1) {
+			} catch (ControllerUnpluggedException | IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
