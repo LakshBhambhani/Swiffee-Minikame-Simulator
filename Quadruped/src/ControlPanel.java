@@ -9,7 +9,7 @@ public class ControlPanel extends JPanel {
 	
 	JFrame frame;
 
-	public ControlPanel() throws ControllerUnpluggedException, IOException {
+	public ControlPanel() throws ControllerUnpluggedException, IOException, InterruptedException {
 		createFrame();
 		
 		XboxListener xbox = new XboxListener();

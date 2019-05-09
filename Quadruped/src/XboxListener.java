@@ -1,7 +1,6 @@
 import java.io.IOException;
-
 import javax.swing.JEditorPane;
-
+import java.util.concurrent.TimeUnit;
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
 public class XboxListener{
@@ -10,29 +9,72 @@ public class XboxListener{
 	JEditorPane web = new JEditorPane();
 	
 	String BOTIP = "http://192.168.0.28";
+	
+	int i = 0;
 
-	public void Listen() throws ControllerUnpluggedException, IOException {
-		if(controller.getRightTrigger() > 0.0) {
-			System.out.println("Right Trigger is Down");
-			web.setPage(BOTIP + "/moveForward");
+	public void Listen() throws ControllerUnpluggedException, IOException, InterruptedException {
+			if(controller.getRightTrigger() > 0.0) {
+				System.out.println("Right Trigger is Down");
+				while(controller.getRightTrigger() > 0.0) {
+					web.setPage(BOTIP + "/walkForward");
+					TimeUnit.MILLISECONDS.sleep(800);
+					System.out.println("Respawning");
+				}
+			}
+			if(controller.getLeftTrigger() > 0.0) {
+				System.out.println("Left Trigger is Down");
+				while(controller.getLeftTrigger() > 0.0) {
+					web.setPage(BOTIP + "/walkBackward");
+					TimeUnit.MILLISECONDS.sleep(1200);
+					System.out.println("Respawning");
+				}
+			}
+			if(controller.getLeftX() > 0.5) {
+				System.out.println("Left Stick is Left");
+				while(controller.getLeftX() > 0.5) {
+					web.setPage(BOTIP + "/turnLeft");
+					TimeUnit.MILLISECONDS.sleep(1200);
+					System.out.println("Respawning");
+				}
+			}
+			if(controller.getLeftX() < -0.5) {
+				System.out.println("Left Stick is Right");
+				while(controller.getLeftX() < -0.5) {
+					web.setPage(BOTIP + "/turnRight");
+					TimeUnit.MILLISECONDS.sleep(800);
+					System.out.println("Respawning");
+				}
+			}
+			if(controller.yPressed()) {
+					System.out.println("A Pressed");
+					web.setPage(BOTIP + "/bow");
+					TimeUnit.MILLISECONDS.sleep(1200);
+			}
+			if(controller.aPressed()) {
+					System.out.println("A Pressed");
+					web.setPage(BOTIP + "/bendBack");
+					TimeUnit.MILLISECONDS.sleep(1200);
+			}
+			if(controller.xPressed()) {
+					System.out.println("A Pressed");
+					web.setPage(BOTIP + "/homePos");
+					TimeUnit.MILLISECONDS.sleep(1200);
+			}
+			
+			
 		}
-		else if(controller.getLeftTrigger() > 0.0) {
-			System.out.println("Left Trigger is Down");
-			web.setPage(BOTIP + "/moveBackward");
-		}
-		else if(controller.getLeftX() > 0.0) {
-			System.out.println("Left Stick is Right");
-			web.setPage(BOTIP + "/turnRight");
-		}
-		else if(controller.getLeftX() < 0.0) {
-			System.out.println("Left Stick is Left");
-			web.setPage(BOTIP + "/turnLeft");
-		}
-		
-	}
 	
 	public boolean exit() throws ControllerUnpluggedException {
 		if(controller.bPressed()) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+	public boolean stopButtonPressed() throws ControllerUnpluggedException {
+		if(controller.aPressed()) {
 			return false;
 		}
 		else {
