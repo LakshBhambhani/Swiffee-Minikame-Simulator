@@ -13,14 +13,18 @@ import java.net.URL;
 import java.awt.event.*;
 import java.util.List;
 import java.awt.Image.*;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
+
+import com.jcraft.jsch.JSchException;
+
 import javax.swing.*;
+import java.io.*;
+import javax.imageio.*;
 
 /*
  * @author for main window: Megan
@@ -154,7 +158,19 @@ public class SimulatorWindow extends JFrame{
 	    ActionListener sendListener = new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
 	    	          if (e.getSource() == run){
-	    	                String str = programInput.getText();
+	    	        	  
+	    	        	ScpTo scpObject = new ScpTo();
+	    	      		ConnectToBot ctbObject = new ConnectToBot();
+	    	      		
+  	    	      		try {
+  		    	      		scpObject.sendTo();
+							ctbObject.remoteExecute();
+							terminal.setText(terminal.getText() + "\n" + "Success");
+						} catch (JSchException | IOException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+							terminal.setText(terminal.getText() + "\n" + "Failure! Running in Simulator");
+							String str = programInput.getText();
 	    	                List<String> returnValues = null;
 							try {
 								returnValues = Java.processFile(str);
@@ -179,6 +195,9 @@ public class SimulatorWindow extends JFrame{
 	    	                }
 	    	          buttonIsClicked = true;
 	    	    }
+						} 
+	    	  
+	    	                
 	    	};
 	    	
 	    run.addActionListener(sendListener);
@@ -226,6 +245,7 @@ public class SimulatorWindow extends JFrame{
 
 
 	public static void main(String[] args) {
+		
 		
 		    SimulatorWindow window = new SimulatorWindow();
 		    window.setBounds(0, 0, 1100, 700);
