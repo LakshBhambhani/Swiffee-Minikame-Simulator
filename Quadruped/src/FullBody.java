@@ -11,15 +11,18 @@ import javax.swing.ImageIcon;
 public class FullBody {
 	
 	private Image bodyImage;
-	private Image legTL, legTR, legBL, legBR; // In relation to the robot body
+	private static Image legTL, legTR, legBL, legBR; // In relation to the robot body
+	private static Image legTL2, legTR2, legBL2, legBR2; // Second set of images (legs bent)
 	private Body body;
-	private Legs leg1, leg2, leg3, leg4;
+	private static Legs leg1, leg2, leg3, leg4;
 	private int width, height;
+	private static Simulator simulator;
 	
 	public FullBody(Simulator simulator) {
 		
-		int bodyWidth = 0, bodyHeight = 0;
+//		int bodyWidth = 0, bodyHeight = 0;
 		
+		this.simulator = simulator;
 		width = simulator.getWidth();
 		height = simulator.getHeight();
 		
@@ -28,17 +31,23 @@ public class FullBody {
 		legTR = (new ImageIcon("leg2.png")).getImage();
 		legBL = (new ImageIcon("leg3.png")).getImage();
 		legBR = (new ImageIcon("leg4.png")).getImage();
-		BufferedImage bimg;
-		try {
-			bimg = ImageIO.read(new File("body.png"));
-			bodyWidth          = bimg.getWidth();
-			bodyHeight         = bimg.getHeight();
-			System.out.println(width/2);
-			System.out.println(bodyWidth);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		legTL2 = (new ImageIcon("leg5.png")).getImage();
+		legTR2 = (new ImageIcon("leg6.png")).getImage();
+		legBL2 = (new ImageIcon("leg7.png")).getImage();
+		legBR2 = (new ImageIcon("leg8.png")).getImage();
+		
+//		BufferedImage bimg;
+//		try {
+//			bimg = ImageIO.read(new File("body.png"));
+//			bodyWidth          = bimg.getWidth();
+//			bodyHeight         = bimg.getHeight();
+//			System.out.println(width/2);
+//			System.out.println(bodyWidth);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		
 		body = new Body(430, 410, bodyImage);
@@ -46,6 +55,7 @@ public class FullBody {
 		leg2 = new Legs(430, 410, legTR);
 		leg3 = new Legs(430, 410, legBL);
 		leg4 = new Legs(430, 410, legBR);
+		
 	}
 	
 	public void draw(Graphics2D g) {
@@ -55,4 +65,51 @@ public class FullBody {
 		leg3.draw(g);
 		leg4.draw(g);
 	}
+	
+	public static void moveForward() {
+		leg1.setImage(legTL2);
+		simulator.repaint();
+		
+	}
+	
+	public static void moveBackward() {
+		
+	}
+	
+	public static void turnLeft() {
+		
+	}
+	
+	public static void turnRight() {
+		
+	}
+	
+
+	public static void homePos() {
+		
+	}
+	
+	public static void bow() {
+		
+	}
+	
+	public static void bendBack() {
+		
+	}
+	
+	public static void pushUp() {
+		
+	}
+	
+	public static void jumpUp() {
+		
+	}
+
+	public static void jumpBack() {
+	
+	}
+
+
+
+
 }

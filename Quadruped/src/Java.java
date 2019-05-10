@@ -18,43 +18,43 @@ public class Java {
 	
 
 	private static void moveForward() {
-		Body.moveForward();
+		FullBody.moveForward();
 	}
 	
 	private static void moveBackward() {
-		Body.moveBackward();
+		FullBody.moveBackward();
 	}
 	
 	private static void turnLeft() {
-		Body.turnLeft();
+		FullBody.turnLeft();
 	}
 	
 	private static void turnRight() {
-		Body.turnRight();
+		FullBody.turnRight();
 	}
 	
 	private static void homePos() {
-		Body.homePos();
+		FullBody.homePos();
 	}
 	
 	private static void bow() {
-		Body.bow();
+		FullBody.bow();
 	}
 	
 	private static void bendBack() {
-		Body.bendBack();
+		FullBody.bendBack();
 	}
 	
 	private static void pushUp() {
-		Body.pushUp();
+		FullBody.pushUp();
 	}
 	
 	private static void jumpUp() {
-		Body.jumpUp();
+		FullBody.jumpUp();
 	}
 	
 	private static void jumpBack() {
-		Body.jumpBack();
+		FullBody.jumpBack();
 	}
 	
 	private static void createInt(String name, int value) {
