@@ -105,12 +105,7 @@ public class SimulatorMenu extends JMenuBar {
 	      }
 	      else if (m == controlItem)
 	      {
-	    	  try {
-				ControlPanel controlPanel = new ControlPanel();
-			} catch (ControllerUnpluggedException | IOException | InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+	    	  ControlPanelJframe.drawFrame();
 	      }
 	      else if (m == exitItem)
 	      {

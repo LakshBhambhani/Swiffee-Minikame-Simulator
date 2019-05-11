@@ -162,14 +162,21 @@ public class SimulatorWindow extends JFrame{
 	    	        	ScpTo scpObject = new ScpTo();
 	    	      		ConnectToBot ctbObject = new ConnectToBot();
 	    	      		
-//  	    	      		try {
-//  		    	      		scpObject.sendTo();
-//							ctbObject.remoteExecute();
-//							terminal.setText(terminal.getText() + "\n" + "Success");
-//						} catch (JSchException | IOException e1) {
+  	    	      		try {
+  	    	      			try {
+								saveToFile("Commands.txt", programInput);
+								System.out.println("Success, Saved File!");
+							} catch (Exception e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+  	    	      			scpObject.sendTo();
+							ctbObject.remoteExecute();
+							terminal.setText(terminal.getText() + "\n" + "Success");
+						} catch (JSchException | IOException e1) {
 							// TODO Auto-generated catch block
-							//e1.printStackTrace();
-							terminal.setText(terminal.getText() + "\n" + "Failure! Running in Simulator");
+							e1.printStackTrace();
+							terminal.setText(terminal.getText() + "\n" + "Failed to find bot! Running in Simulator");
 							String str = programInput.getText();
 	    	                List<String> returnValues = null;
 							try {
@@ -195,7 +202,7 @@ public class SimulatorWindow extends JFrame{
 	    	                }
 	    	          buttonIsClicked = true;
 	    	    }
-						//} 
+						} 
 	    	  
 	    	                
 	    	};
@@ -263,5 +270,21 @@ public class SimulatorWindow extends JFrame{
 		    
 		    
 		   
+	}
+	
+	void saveToFile(String fileName, JTextArea textField) throws Exception {
+		 File file = new File(fileName); 
+         
+	        if(file.delete()) 
+	        { 
+	            System.out.println("File deleted successfully"); 
+	        } 
+	        else
+	        { 
+	            System.out.println("Failed to delete the file"); 
+	   		 file = new File(fileName); 
+		   FileOutputStream out = new FileOutputStream(fileName, true);
+		   out.write(textField.getText().getBytes());
+		} 
 	}
 }
