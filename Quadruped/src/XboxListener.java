@@ -7,18 +7,26 @@ public class XboxListener{
 
 	XboxControl controller = new XboxControl();
 	JEditorPane web = new JEditorPane();
+	private CoordinateSystem coordinates;
 	
-	String BOTIP = "http://192.168.0.28";
+	String BOTIP = "http://172.20.10.3";
 	
 	int i = 0;
 
 	public void Listen() throws ControllerUnpluggedException, IOException, InterruptedException {
+			if(controller.rightBumperPressed()) {
+			System.out.println("Right Bumper Pressed");
+			web.setPage(BOTIP + "/homePos");
+			TimeUnit.MILLISECONDS.sleep(1200);
+			}
 			if(controller.getRightTrigger() > 0.0) {
+				int delay = 800;
 				System.out.println("Right Trigger is Down");
 				while(controller.getRightTrigger() > 0.0) {
 					web.setPage(BOTIP + "/walkForward");
-					TimeUnit.MILLISECONDS.sleep(800);
+					TimeUnit.MILLISECONDS.sleep(delay);
 					System.out.println("Respawning");
+					delay += 150;
 				}
 			}
 			if(controller.getLeftTrigger() > 0.0) {
@@ -57,7 +65,7 @@ public class XboxListener{
 			}
 			if(controller.xPressed()) {
 					System.out.println("A Pressed");
-					web.setPage(BOTIP + "/homePos");
+					web.setPage(BOTIP + "/walkForward");
 					TimeUnit.MILLISECONDS.sleep(1200);
 			}
 			

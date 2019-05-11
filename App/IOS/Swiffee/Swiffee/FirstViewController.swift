@@ -24,9 +24,9 @@ class FirstViewController: UIViewController, WKUIDelegate {
     let jumpBack = UIButton()
     let pushUp = UIButton()
     
-    let object = SettingsViewController()
+    @IBOutlet weak var textField: UITextField!
     
-    var botIp : String!
+    var botIp : String?
 
     
     override func viewDidLoad() {
@@ -35,6 +35,8 @@ class FirstViewController: UIViewController, WKUIDelegate {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .init(x: 1000, y: 1000, width: 0, height: 0), configuration: webConfiguration)
         webView.uiDelegate = self
+        
+        textField.delegate = self as! UITextFieldDelegate
 
         self.view.addSubview(forward)
         self.view.addSubview(stop)
@@ -46,8 +48,8 @@ class FirstViewController: UIViewController, WKUIDelegate {
         self.view.addSubview(jumpUp)
         self.view.addSubview(jumpBack)
         self.view.addSubview(pushUp)
+        self.view.addSubview(textField)
 
-        
         forward.setTitle("Forward", for: .normal)
         forward.setTitleColor(UIColor.blue, for: .normal)
         forward.translatesAutoresizingMaskIntoConstraints = false
@@ -148,15 +150,16 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func forwardAction(sender: UIButton!) {
         print("Forward Clicked")
-        let url = URL(string: object.IP + "/walkForward");
+        let url = URL(string: "http://" + textField.text! + "/walkForward");
         let request = URLRequest(url: url!);
         webView.load(request);
-        print(url)
+        print(url!)
+        
     }
     
     @objc func stopAction(sender: UIButton!) {
         print("Stop Clicked")
-        let url = URL(string: object.IP + "/homePos");
+        let url = URL(string: "http://" + textField.text! + "/homePos");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -164,7 +167,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func reverseAction(sender: UIButton!) {
         print("Reverse Clicked")
-        let url = URL(string: object.IP + "/walkBackward");
+        let url = URL(string: "http://" + textField.text! + "/walkBackward");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -172,7 +175,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func leftAction(sender: UIButton!) {
         print("Left Clicked")
-        let url = URL(string: object.IP + "/turnLeft");
+        let url = URL(string: "http://" + textField.text! + "/turnLeft");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -180,7 +183,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func rightAction(sender: UIButton!) {
         print("Right Clicked")
-        let url = URL(string: object.IP + "/turnRight");
+        let url = URL(string: "http://" + textField.text! + "/turnRight");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -188,7 +191,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func bowAction(sender: UIButton!) {
         print("Bow Clicked")
-        let url = URL(string: object.IP + "/bow");
+        let url = URL(string: "http://" + textField.text! + "/bow");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -196,7 +199,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func bendBackAction(sender: UIButton!) {
         print("Bend Back Clicked")
-        let url = URL(string: object.IP + "/bendBack");
+        let url = URL(string: "http://" + textField.text! + "/bendBack");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -204,7 +207,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func jumpUpAction(sender: UIButton!) {
         print("Jump Up Clicked")
-        let url = URL(string: object.IP + "/jumpUp");
+        let url = URL(string: "http://" + textField.text! + "/jumpUp");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -212,7 +215,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func jumpBackAction(sender: UIButton!) {
         print("Jump Back Clicked")
-        let url = URL(string: object.IP + "/jumpBack");
+        let url = URL(string: "http://" + textField.text! + "/jumpBack");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
@@ -220,7 +223,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
     
     @objc func pushUpAction(sender: UIButton!) {
         print("Push Up Clicked")
-        let url = URL(string: object.IP + "/pushUp");
+        let url = URL(string: "http://" + textField.text! + "/pushUp");
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)

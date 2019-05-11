@@ -17,10 +17,26 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.0.36" borderStyle="roundedRect" placeholder="IP of Quadruped" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQb-eN-91Z">
+                                <rect key="frame" x="8" y="52" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gQb-eN-91Z" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="fud-rx-hh2"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="gQb-eN-91Z" secondAttribute="trailing" constant="8" id="iCn-RR-HdD"/>
+                            <constraint firstItem="gQb-eN-91Z" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="8" id="lIk-3E-y0I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Control" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="textField" destination="gQb-eN-91Z" id="9ps-dz-AHJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,30 +49,30 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.0.36" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Da-jc-WOR">
+                                <rect key="frame" x="8" y="52" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Da-jc-WOR" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="8" id="Jvu-uq-dBy"/>
+                            <constraint firstItem="2Da-jc-WOR" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="Lni-N6-pFL"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="2Da-jc-WOR" secondAttribute="trailing" constant="8" id="yBn-aX-xqW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Code" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="textField" destination="2Da-jc-WOR" id="uTR-MH-IDQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="hcy-qZ-RQo">
-            <objects>
-                <viewController id="iSl-dV-5wI" customClass="SettingsViewController" customModule="Swiffee" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GLo-tI-UjF" customClass="UIScrollView" customModule="Swiffee" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="cFl-8J-wMf"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="rtX-Zc-cIA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oez-fc-SSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-756" y="-67"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -70,7 +86,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="iSl-dV-5wI" kind="relationship" relationship="viewControllers" id="26J-39-l90"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

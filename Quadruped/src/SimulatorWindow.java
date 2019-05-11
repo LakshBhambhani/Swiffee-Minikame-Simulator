@@ -162,13 +162,13 @@ public class SimulatorWindow extends JFrame{
 	    	        	ScpTo scpObject = new ScpTo();
 	    	      		ConnectToBot ctbObject = new ConnectToBot();
 	    	      		
-  	    	      		try {
-  		    	      		scpObject.sendTo();
-							ctbObject.remoteExecute();
-							terminal.setText(terminal.getText() + "\n" + "Success");
-						} catch (JSchException | IOException e1) {
+//  	    	      		try {
+//  		    	      		scpObject.sendTo();
+//							ctbObject.remoteExecute();
+//							terminal.setText(terminal.getText() + "\n" + "Success");
+//						} catch (JSchException | IOException e1) {
 							// TODO Auto-generated catch block
-							e1.printStackTrace();
+							//e1.printStackTrace();
 							terminal.setText(terminal.getText() + "\n" + "Failure! Running in Simulator");
 							String str = programInput.getText();
 	    	                List<String> returnValues = null;
@@ -195,7 +195,7 @@ public class SimulatorWindow extends JFrame{
 	    	                }
 	    	          buttonIsClicked = true;
 	    	    }
-						} 
+						//} 
 	    	  
 	    	                
 	    	};
