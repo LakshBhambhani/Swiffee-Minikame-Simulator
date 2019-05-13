@@ -42,24 +42,7 @@ public class ControlPanel extends JPanel
     g2.scale(ratioX,ratioY);
    
     g.drawImage(controller, 0, 0, 803, 604, this);
-    
-    XboxListener xbox = new XboxListener();
-	
-
-	
-	
-//	try {
-//		while(xbox.exit()){
-//			xbox.Listen();
-//		}
-//	}
-//	catch(ControllerUnpluggedException | IOException | InterruptedException e1) {
-//		System.out.println("Controller not connected");
-//	}
-//	
-//	
-//	ControlPanelJframe.close();
-     
+         
   }
   
   public void repaint(Graphics g) {

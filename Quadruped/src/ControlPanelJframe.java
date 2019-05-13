@@ -1,12 +1,14 @@
 import javax.swing.JFrame;
 
-public class ControlPanelJframe extends JFrame{
+import com.studiohartman.jamepad.ControllerUnpluggedException;
+
+public class ControlPanelJframe extends JFrame implements Runnable{
 	 static JFrame frame;
 	 
-	 public static void drawFrame() {
-
+	 public static void drawFrame(){
+		 
 		 	ControlPanel panel = new ControlPanel();
-		    frame = new JFrame("Square Move Practice");
+		    frame = new JFrame("Control Panel for Arm");
 		    frame.setVisible(true);
 		    frame.setResizable(false);
 		    frame.setSize(803, 634);
@@ -22,4 +24,10 @@ public class ControlPanelJframe extends JFrame{
 			frame.setVisible(false);
 			frame.dispose();
 		}
+
+	@Override
+	public void run() {
+		drawFrame();
+		System.out.println("JFrame thread is runnning");
+	}
 }
