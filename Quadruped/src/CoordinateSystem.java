@@ -6,6 +6,7 @@ public class CoordinateSystem
 {
   private Image picture;
   private AffineTransform coordTransform;
+  private Simulator simulator;
 
    //  0 degrees points east
   public CoordinateSystem(int x, int y, Image pic)
@@ -28,6 +29,7 @@ public class CoordinateSystem
     int w = picture.getWidth(null);
     int h = picture.getHeight(null);
     coordTransform.rotate(radians, w/2, h/2);
+//    simulator.repaint();
   }
 
   public void drawImage(Graphics g, Image picture)

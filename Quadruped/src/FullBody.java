@@ -1,9 +1,13 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -66,9 +70,13 @@ public class FullBody {
 		leg4.draw(g);
 	}
 	
-	public static void moveForward() {
-		leg1.setImage(legTL2);
-		simulator.repaint();
+	public static void moveForward() throws InterruptedException {
+		
+		for (double i = 0; i < 8; i += 1) {
+		leg1.rotate(Math.PI/180);
+		simulator.paintImmediately(0,0,800,800);
+		}
+		
 		
 	}
 	

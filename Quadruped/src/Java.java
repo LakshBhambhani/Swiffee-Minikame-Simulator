@@ -17,7 +17,7 @@ public class Java {
 	private static final String GREATERTHANEQUALTO = ">=";
 	
 
-	private static void moveForward() {
+	private static void moveForward() throws InterruptedException {
 		FullBody.moveForward();
 	}
 	

@@ -14,8 +14,8 @@ public class Legs {
 		this.y = y;
 	}
 	
-	public void setImage(Image leg) {
-		this.leg = leg;
+	public void rotate(double radians) {
+		coordinates.rotate(radians);
 	}
 	
 	public void draw(Graphics g) {

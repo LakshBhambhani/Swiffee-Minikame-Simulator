@@ -10,7 +10,10 @@ import javax.swing.ImageIcon;
 
 public class Simulator extends JPanel {
 	
+	FullBody fullBody;
+	
 	public Simulator() {
+		fullBody = new FullBody(this);
 	}
 
 	public void paintComponent(Graphics g) {	// Called automatically when the panel needs repainting
@@ -27,10 +30,7 @@ public class Simulator extends JPanel {
 	    
 	    setBackground(Color.WHITE);
 	    
-		FullBody fullBody = new FullBody(this);
 		fullBody.draw(g2);
 		
 	}
-
-	
 }

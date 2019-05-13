@@ -35,6 +35,7 @@ import javax.imageio.*;
 public class SimulatorWindow extends JFrame{
 	
 	private JTextArea programInput, terminal;
+	private JButton runOnBot;
 	private JButton run;
 	
 	private boolean inputIsClicked = false;
@@ -155,9 +156,9 @@ public class SimulatorWindow extends JFrame{
 	        }
 	    };
 	    
-	    ActionListener sendListener = new ActionListener() {
+	    ActionListener sendListenerForBot = new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
-	    	          if (e.getSource() == run){
+	    	          if (e.getSource() == runOnBot){
 	    	        	  
 	    	        	ScpTo scpObject = new ScpTo();
 	    	      		ConnectToBot ctbObject = new ConnectToBot();
@@ -207,7 +208,49 @@ public class SimulatorWindow extends JFrame{
 	    	                
 	    	};
 	    	
-	    run.addActionListener(sendListener);
+	    	 runOnBot = new JButton("Run On Bot"){
+	 	        {
+	 	            setSize(180, 75);
+	 	            setMaximumSize(getSize());
+	 	        }
+	 	    };
+	    	
+	    runOnBot.addActionListener(sendListenerForBot);
+	    
+	    ActionListener sendListener = new ActionListener() {
+	    	   public void actionPerformed(ActionEvent e) {
+	    	          if (e.getSource() == run){
+	    	     			String str = programInput.getText();
+	    	                List<String> returnValues = null;
+							try {
+								returnValues = Java.processFile(str);
+							} catch (InterruptedException e2) {
+								// TODO Auto-generated catch block
+								e2.printStackTrace();
+							}
+							boolean error = false;
+							for(int i = 0; i < returnValues.size(); i++) {
+								if(returnValues.get(i).toString().trim().equals("error")) {
+									System.out.println("Any errors: " + error);
+									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+									error = true;
+								}
+								else {
+									if(error != true){
+										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+									}
+								}
+ 	                	}
+	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
+	    	      		}
+	    	          buttonIsClicked = true;
+	    	    }
+						
+	    	  
+	    	                
+	    	};
+	    	
+	    	run.addActionListener(sendListener);
 	    	
 	    //Box containing the panel (pictures)
 	    Simulator panel = new Simulator();
@@ -222,6 +265,7 @@ public class SimulatorWindow extends JFrame{
 	    box2.add(programInputPane);
 	    box2.add(Box.createVerticalStrut(20));
 	    box2.add(run);
+	    box2.add(runOnBot);
 	    box2.add(Box.createVerticalStrut(20));
 	    terminalPane.setPreferredSize(new Dimension (200, 10));
 	    box2.add(terminalPane);
