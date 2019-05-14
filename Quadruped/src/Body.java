@@ -11,6 +11,10 @@ public class Body {
 		coordinates = new CoordinateSystem(x, y, body);
 	}
 	
+	public void shift (double x, double y) {
+		coordinates.shift(x, y);
+	}
+	
 	public void draw(Graphics g) {
 	  coordinates.drawImage(g, body);
 	}

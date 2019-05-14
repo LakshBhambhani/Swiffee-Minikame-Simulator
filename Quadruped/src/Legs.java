@@ -18,6 +18,10 @@ public class Legs {
 		coordinates.rotate(radians);
 	}
 	
+	public void shift(double x, double y) {
+		coordinates.shift(x, y);
+	}
+	
 	public void draw(Graphics g) {
 		coordinates.drawImage(g, leg);
 	}

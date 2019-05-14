@@ -105,7 +105,7 @@ public class SimulatorMenu extends JMenuBar {
 	      }
 	      else if (m == controlItem)
 	      {
-	    	  new ControlMultithread();
+//	    	  new ControlMultithread();
 	    	  //ControlPanelJframe.drawFrame();
 	      }
 	      else if (m == exitItem)
