@@ -2,6 +2,7 @@ import java.io.IOException;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
+// another runnable class for multithreading. Uses and starts xbox listener
 public class Xbox implements Runnable{
 
 	public Xbox() {

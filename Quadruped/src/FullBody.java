@@ -12,6 +12,9 @@ import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+/*
+ * Includes the complete body including legs and main body and you can see this on SImulator WIndow
+ */
 public class FullBody {
 	
 	private static Image bodyImage;

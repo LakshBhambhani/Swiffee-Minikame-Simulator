@@ -2,6 +2,9 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
+/*
+ * Basically the coordinate system. The animations are dependent on this class
+ */
 public class CoordinateSystem
 {
   private Image picture;
@@ -9,7 +12,7 @@ public class CoordinateSystem
   private Simulator simulator;
 
    //  0 degrees points east
-  public CoordinateSystem(int x, int y, Image pic)
+  public CoordinateSystem(int x, int y, Image pic) // constructor
   {
     picture = pic;
     coordTransform = new AffineTransform();
@@ -19,12 +22,12 @@ public class CoordinateSystem
     coordTransform.translate(x - w, y - h);
   }
 
-  public void shift(double dx, double dy)
+  public void shift(double dx, double dy) // shift
   {
     coordTransform.translate(dx, dy);
   }
 
-  public void rotate(double radians)
+  public void rotate(double radians) // rotate
   {
     int w = picture.getWidth(null);
     int h = picture.getHeight(null);
@@ -32,7 +35,7 @@ public class CoordinateSystem
 //    simulator.repaint();
   }
 
-  public void drawImage(Graphics g, Image picture)
+  public void drawImage(Graphics g, Image picture) // draws image
   {
     ((Graphics2D)g).drawImage(picture, coordTransform, null);
   }

@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
+/*
+ * Panel for Simulator WIndow class which extends JFrame
+ */
 
 public class Simulator extends JPanel {
 	

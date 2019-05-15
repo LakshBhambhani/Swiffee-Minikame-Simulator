@@ -1,6 +1,9 @@
 import java.awt.Image;
 import java.awt.Graphics;
 
+/*
+ * Legs class. Pretty staright forward. ALso uses coordinate system
+ */
 public class Legs {
 	
 	private Image leg; // Top left, top right, back left, back right

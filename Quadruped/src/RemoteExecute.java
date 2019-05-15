@@ -5,8 +5,11 @@ import com.jcraft.jsch.Session;
 
 import java.io.*;
 
+/*
+ * Used to remotely execute the file on the bot
+ */
 public class RemoteExecute {
-public static void main(String[] args) throws JSchException, IOException {
+public static void main(String[] args) throws JSchException, IOException {// exceptions that it throws while running the method
     JSch jSch = new JSch();
     String user = "pi";
     String host = "raspberrypi.local";

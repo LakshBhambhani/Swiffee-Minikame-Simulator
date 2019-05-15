@@ -3,13 +3,16 @@ import javax.swing.JEditorPane;
 import java.util.concurrent.TimeUnit;
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
+/*
+ * Transmits data to server over JEditorPane after inputs from xbox
+ */
 public class XboxListener{
 
 	XboxControl controller = new XboxControl();
 	JEditorPane web = new JEditorPane();
 	private CoordinateSystem coordinates;
 	
-	String BOTIP = "http://172.20.10.3";
+	String BOTIP = "http://192.168.0.28";
 	
 	int i = 0;
 
@@ -19,7 +22,7 @@ public class XboxListener{
 			web.setPage(BOTIP + "/homePos");
 			TimeUnit.MILLISECONDS.sleep(1200);
 			}
-			if(controller.getRightTrigger() > 0.0) {
+			if(controller.getRightTrigger() > 0.0) {//right trigger
 				int delay = 800;
 				System.out.println("Right Trigger is Down");
 				while(controller.getRightTrigger() > 0.0) {
@@ -29,7 +32,7 @@ public class XboxListener{
 					delay += 150;
 				}
 			}
-			if(controller.getLeftTrigger() > 0.0) {
+			if(controller.getLeftTrigger() > 0.0) {//left ttrigger
 				System.out.println("Left Trigger is Down");
 				while(controller.getLeftTrigger() > 0.0) {
 					web.setPage(BOTIP + "/walkBackward");
@@ -37,7 +40,7 @@ public class XboxListener{
 					System.out.println("Respawning");
 				}
 			}
-			if(controller.getLeftX() > 0.5) {
+			if(controller.getLeftX() > 0.5) {//left x
 				System.out.println("Left Stick is Left");
 				while(controller.getLeftX() > 0.5) {
 					web.setPage(BOTIP + "/turnLeft");
@@ -45,7 +48,7 @@ public class XboxListener{
 					System.out.println("Respawning");
 				}
 			}
-			if(controller.getLeftX() < -0.5) {
+			if(controller.getLeftX() < -0.5) {//left x
 				System.out.println("Left Stick is Right");
 				while(controller.getLeftX() < -0.5) {
 					web.setPage(BOTIP + "/turnRight");
@@ -53,17 +56,17 @@ public class XboxListener{
 					System.out.println("Respawning");
 				}
 			}
-			if(controller.yPressed()) {
+			if(controller.yPressed()) {// y pressed
 					System.out.println("Y Pressed");
 					web.setPage(BOTIP + "/bow");
 					TimeUnit.MILLISECONDS.sleep(1200);
 			}
-			if(controller.aPressed()) {
+			if(controller.aPressed()) {// a pressed
 					System.out.println("A Pressed");
 					web.setPage(BOTIP + "/bendBack");
 					TimeUnit.MILLISECONDS.sleep(1200);
 			}
-			if(controller.xPressed()) {
+			if(controller.xPressed()) {// x pressed
 					System.out.println("X Pressed");
 					web.setPage(BOTIP + "/walkForward");
 					TimeUnit.MILLISECONDS.sleep(1200);

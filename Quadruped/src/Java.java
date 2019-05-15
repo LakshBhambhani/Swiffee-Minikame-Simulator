@@ -3,12 +3,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+ * Programming class. This is what reads and compiles what the user has coded. 
+ */
 public class Java {
 	
+	// the list that is used to read the text from the textboxees
 	private String text;
 	private static List<Integer> values = new ArrayList<Integer>();
 	private static List<String> names = new ArrayList<String>();
 	
+	// some constants
 	private static final String EQUALS = "=";
 	private static final String LESSTHAN  = "<";
 	private static final String GREATERTHAN = ">";

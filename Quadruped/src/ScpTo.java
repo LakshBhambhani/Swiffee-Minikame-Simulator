@@ -5,6 +5,9 @@ import com.jcraft.jsch.ChannelSftp.LsEntry;
 import com.jcraft.jsch.JSchException;
 
 
+/*
+ * Sends the file to the bot
+ */
 public class ScpTo {
 
 	// main class let exec demo
@@ -14,7 +17,7 @@ public class ScpTo {
 		SFTPBean sftpBean = new SFTPBean();
 		ConnectToBot ctbObject = new ConnectToBot();
 
-		boolean blResult = sftpBean.connect("raspberrypi.local", 22, "pi", "quadruped");
+		boolean blResult = sftpBean.connect("raspberrypi.local", 22, "pi", "quadruped"); // uses sftp bean to communicate with the bot
 
 		if (blResult) {
 			System.out.println("Connection successful");

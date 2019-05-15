@@ -1,5 +1,8 @@
 import com.studiohartman.jamepad.*;
 
+/*
+ * A class for making Jamepad more easier
+ */
 public class XboxControl {
 	
 	public static ControllerManager controllers;
