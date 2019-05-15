@@ -16,10 +16,13 @@ import java.net.URISyntaxException;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
+/*
+ * responsible for the menubar on top of the simulator window
+ */
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
-	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem;
+	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem; // all jmenu items
 	
 	public SimulatorMenu(SimulatorWindow simulatorWindow) {
 	   

@@ -1,6 +1,10 @@
 import java.awt.Image;
 import java.awt.Graphics;
 
+/*
+ * Class for the body. Uses coordinate system to move around on SImulatorWindow
+ */
+
 public class Body {
 	
 	private Image body;

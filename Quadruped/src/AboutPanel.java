@@ -15,6 +15,10 @@ import javax.swing.*;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
+/*
+ * Description: The about panel to tell user what version of the simulator are they using and who built the simulator which is of
+ * course Megan and Me(Ha ha, find out who i am)
+ */
 public class AboutPanel extends JPanel {
 	
 	JFrame frame;

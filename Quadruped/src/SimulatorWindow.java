@@ -30,6 +30,9 @@ import javax.imageio.*;
  * @author for main window: Megan
  * @author for terminal & IDE placement: Laksh
  * 
+ * Description: basically the main window that user sees and uses. Contains terminal, IDE, a menu bar and the display area where the bot
+ * can be seen
+ * 
  */
 
 public class SimulatorWindow extends JFrame{
@@ -42,9 +45,11 @@ public class SimulatorWindow extends JFrame{
 	private boolean terminalIsClicked =  false;
 	private boolean buttonIsClicked = false;
 	
-	public SimulatorWindow() {
+	public SimulatorWindow() throws IOException {
 		super("Quadruped Simulator");
 		Java java = new Java();
+		
+//		super.setIconImage(ImageIO.read(new File("Icon.png")));
 		
 		setJMenuBar(new SimulatorMenu(this));
 				
@@ -295,7 +300,7 @@ public class SimulatorWindow extends JFrame{
 	}
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		
 		    SimulatorWindow window = new SimulatorWindow();

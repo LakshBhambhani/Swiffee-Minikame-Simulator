@@ -1,5 +1,9 @@
 import java.io.IOException;
 
+/*
+ * Sends and executes the file on the bot using other classes such as SCPto and ConnectToBot
+ */
+
 import com.jcraft.jsch.JSchException;
 
 public class SendAndExecute {
