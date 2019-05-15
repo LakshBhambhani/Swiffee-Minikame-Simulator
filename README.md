@@ -14,7 +14,7 @@ The only methods that work right now are "moveForward(); moveBackward(); turnLef
 
 If there is a problem, report the bug under "Help" and then click "Report a Bug".
 
-First, type in the code at the SwiffeeIDE and click "Run" once you are done to see the robot move. Don't worry about the "Run on Bot" button. You can also code in the terminal and make booleans and integers.
+First, type in the code at the SwiffeeIDE and click "Run" once you are done to see the robot move. Don't worry about the "Run on Bot" button. You can also code in the terminal and make booleans and integers. Read more about that in the Swiffee API
 
 ### Classes used:
 
