@@ -11,8 +11,12 @@ public class Body {
 		coordinates = new CoordinateSystem(x, y, body);
 	}
 	
-	public void shift (double x, double y) {
+	public void shift(double x, double y) {
 		coordinates.shift(x, y);
+	}
+	
+	public void rotate(double radians) {
+		coordinates.rotate(radians);
 	}
 	
 	public void draw(Graphics g) {
