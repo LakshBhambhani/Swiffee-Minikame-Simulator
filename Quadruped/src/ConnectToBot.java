@@ -8,7 +8,9 @@ import java.util.Properties;
 import java.util.Scanner;
 
 /**
- * @author World
+ * @author Laksh
+ * Description: Helps connect to the bot and execute various terminal statement which you probably arent aware about if you are new to 
+ * programming. Please dont give me a 1/5 because of the complexity of this
  */
 public class ConnectToBot {
 	
@@ -26,7 +28,7 @@ public class ConnectToBot {
 //        }
 //    }
     
-    public static void remoteLs() throws JSchException, IOException {
+    public static void remoteLs() throws JSchException, IOException { // Ls lets you see the files
         JSch js = new JSch();
         Session s = js.getSession(user, host, 22);
         s.setPassword(password);
@@ -58,7 +60,7 @@ public class ConnectToBot {
 
 
 
-      public static void remoteMkdir() throws JSchException, IOException {
+      public static void remoteMkdir() throws JSchException, IOException { // mkdir stands for make directory
         JSch js = new JSch();
         Session s = js.getSession(user, host, 22);
         s.setPassword(password);
@@ -88,7 +90,7 @@ public class ConnectToBot {
 
       }
 
-      public static void remoteCopy() throws JSchException, IOException, SftpException {
+      public static void remoteCopy() throws JSchException, IOException, SftpException { // copy copies the file. I dont use it tho
         JSch js = new JSch();
         Session s = js.getSession(user, host, 22);
         s.setPassword(password);
@@ -108,7 +110,7 @@ public class ConnectToBot {
         s.disconnect();    
       }
       
-      public static void remoteExecute() throws JSchException, IOException {
+      public static void remoteExecute() throws JSchException, IOException { // executes the file
           JSch js = new JSch();
           Session s = js.getSession(user, host, 22);
           s.setPassword(password);

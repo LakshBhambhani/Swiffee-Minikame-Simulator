@@ -10,6 +10,8 @@ import java.io.IOException;
  * Name: Laksh Bhambhani
  * Class: Java P4
  * Date: May 3rd, 2019
+ * 
+ * Description: 
  */
 public class ControlPanel extends JPanel
 {
@@ -28,7 +30,7 @@ public class ControlPanel extends JPanel
 	  super.setSize(803, 634);
   }
 
-  public void paintComponent(Graphics g)
+  public void paintComponent(Graphics g) // paints and repaints the xbox map image over and over again
   {
     super.paintComponent(g);  // Call JPanel's paintComponent method to paint the background
 
