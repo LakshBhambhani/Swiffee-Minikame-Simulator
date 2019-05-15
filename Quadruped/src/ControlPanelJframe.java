@@ -15,7 +15,7 @@ public class ControlPanelJframe extends JFrame implements Runnable{
 		    int width = frame.getWidth();
 		    int height = frame.getHeight();
 		    System.out.println(width);
-		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		    frame.getContentPane().add(panel);
 		    
 		}

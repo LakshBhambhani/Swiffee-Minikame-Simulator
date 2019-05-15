@@ -9,7 +9,7 @@ public class XboxListener{
 	JEditorPane web = new JEditorPane();
 	private CoordinateSystem coordinates;
 	
-	String BOTIP = "http://172.20.10.3";
+	String BOTIP = "http://192.168.0.28";
 	
 	int i = 0;
 
