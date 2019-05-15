@@ -266,9 +266,10 @@ public class FullBody {
 
 		}
 	}
-	
 
 	public static void homePos() {
+		simulator.reinitialize();
+		simulator.repaint();
 	}
 	
 	public static void bow() {

@@ -33,4 +33,9 @@ public class Simulator extends JPanel {
 		fullBody.draw(g2);
 		
 	}
+	
+	public void reinitialize() {
+		fullBody = null;
+		fullBody = new FullBody(this);
+	}
 }
