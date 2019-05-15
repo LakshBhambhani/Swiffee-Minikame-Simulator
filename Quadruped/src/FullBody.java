@@ -225,6 +225,46 @@ public class FullBody {
 	
 	public static void turnRight() {
 		
+		for (int i = 0; i < 30; i += 1) {
+			
+			fullBodyShift(-1, 0.5);
+			fullBodyRotate(Math.PI / 360);
+			
+			leg2.rotate(Math.PI / 180);
+			leg2.shift(-0.9, 2.3);
+			leg4.rotate(-Math.PI / 180);
+			leg4.shift(2.8, 0.9);
+			
+			leg1.rotate(Math.PI / 360);
+			leg1.shift(0, -0.2);
+			leg3.rotate(Math.PI / 360);
+			leg3.shift(-1.8, 0.7);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+			
+		}
+		
+		for (int i = 0; i < 30; i += 1) {
+
+			leg2.rotate(-Math.PI / 180);
+			leg2.shift(0.8, -2.2);
+			leg4.rotate(Math.PI / 180);
+			leg4.shift(-3, -0.8);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+
+		}
+		
+		for (int i = 0; i < 30; i += 1) {
+			
+			leg1.rotate(-Math.PI / 360);
+			leg1.shift(0.1, 0.3);
+			leg3.rotate(-Math.PI / 360);
+			leg3.shift(1.8, -0.8);
+
+			simulator.paintImmediately(0, 0, 800, 800);
+
+		}
 	}
 	
 
