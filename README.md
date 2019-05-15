@@ -8,7 +8,7 @@ This program makes a simulation of a Quadruped moving, but it can also be used t
 There is also a simulation of the Quadruped to mimic what it would look like in real life. To code, there is a simple IDE and a terminal to show how the Quadruped is working and if there are any errors. New coders can easily code with simple methods that can be used in many ways.
 
 ### Instructions:
-Open the window in class SimulatorWindow. and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language): <a href=https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/>JAVA API</a> or https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/
+Open the window in class SimulatorWindow and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language): <a href=https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/>JAVA API</a> or https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/
 
 The only methods that work right now are "moveForward(); moveBackward(); turnLeft(); turnRight();". To see an example, go to "File" in the top left and then "Open" and open Example.txt.
 
