@@ -23,7 +23,6 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
-      return message
    elif action1 == "turnLeft":
       message = "Turning Left"
       quad.turnLeft()
@@ -52,6 +51,7 @@ def action1(action1):
       message = ""
    
    if message == "Walking Forward":
+      return message
       quad.walkForward()
 
    templateData = {
