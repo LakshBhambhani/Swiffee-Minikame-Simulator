@@ -13,12 +13,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /*
- * Includes the complete body including legs and main body and you can see this on SImulator WIndow
+ * Includes the complete body including legs and main body and you can see this on Simulator Window
  */
 public class FullBody {
 	
 	private static Image bodyImage;
 	private static Image legTL, legTR, legBL, legBR; // In relation to the robot body
+	private static Image legTL2, legTR2, legBL2, legBR2; // Bent images
 	private static Body body;
 	private static Legs leg1, leg2, leg3, leg4;
 	private int width, height;
@@ -37,6 +38,11 @@ public class FullBody {
 		legTR = (new ImageIcon("leg2.png")).getImage();
 		legBL = (new ImageIcon("leg3.png")).getImage();
 		legBR = (new ImageIcon("leg4.png")).getImage();
+		
+		legTL2 = (new ImageIcon("leg5.png")).getImage();
+		legTR2 = (new ImageIcon("leg6.png")).getImage();
+		legBL2 = (new ImageIcon("leg7.png")).getImage();
+		legBR2 = (new ImageIcon("leg8.png")).getImage();
 		
 //		BufferedImage bimg;
 //		try {
@@ -60,6 +66,7 @@ public class FullBody {
 		
 	}
 	
+	// Draws all the objects (four legs and one body)
 	public void draw(Graphics2D g) {
 		body.draw(g);
 		leg1.draw(g);
@@ -68,6 +75,7 @@ public class FullBody {
 		leg4.draw(g);
 	}
 	
+	// Shifts the whole body
 	public static void fullBodyShift(double x, double y) {
 		body.shift(x, y);
 		leg1.shift(x, y);
@@ -77,7 +85,9 @@ public class FullBody {
 
 	}
 	
+	// Rotates the whole body
 	public static void fullBodyRotate(double radians) {
+
 		body.rotate(radians);
 		leg1.rotate(radians);
 		leg2.rotate(radians);
@@ -86,7 +96,20 @@ public class FullBody {
 
 	}
 	
-	public static void moveForward() throws InterruptedException {
+	/**
+	 * Changes the body image and "deletes" all legs by making objects null
+	 * @param image - the name of the image
+	 */
+	public static void fullBodyImage(String image) {
+		body.setImage(new ImageIcon(image).getImage());
+		leg1.setImage(null);
+		leg2.setImage(null);
+		leg3.setImage(null);
+		leg4.setImage(null);
+	}
+	
+	// Moves robot forward + leg animations
+	public static void moveForward() {
 		
 		// Moves front right and back left leg forward
 		for (int i = 0; i < 30; i += 1) {
@@ -135,6 +158,7 @@ public class FullBody {
 
 	}
 	
+	// Moves robot backwards + leg animations
 	public static void moveBackward() {
 
 		// Moves the back left and front right leg backwards
@@ -186,6 +210,7 @@ public class FullBody {
 		}
 	}
 	
+	// Turns robot left + leg animations
 	public static void turnLeft() {
 		for (int i = 0; i < 30; i += 1) {
 			
@@ -226,6 +251,7 @@ public class FullBody {
 		}
 	}
 	
+	// Turns robot right + leg animations
 	public static void turnRight() {
 		
 		for (int i = 0; i < 30; i += 1) {
@@ -269,27 +295,122 @@ public class FullBody {
 
 		}
 	}
-	
 
+	// Returns robot to the home position (centered and legs correctly placed)
 	public static void homePos() {
+		simulator.reinitialize();
+		simulator.repaint();
 	}
 	
+	// Animation showing robot bowing
+	// TODO smoothness?
 	public static void bow() {
+		leg3.setImage(legBL2);
+		leg4.setImage(legBR2);
 		
+		leg3.shift(20, -5);
+		leg4.shift(20, -5);
+		
+		simulator.repaint();
+		
+		for (int i = 0; i < 15; i++) {
+			leg3.rotate(Math.PI / 180);
+			leg3.shift(-3.2, 1.8);
+			leg4.rotate(-Math.PI / 180);
+			leg4.shift(3, 0.5);
+			
+			leg2.rotate(-Math.PI / 180);
+			leg2.shift(0.4, -2);
+			leg1.rotate(Math.PI / 180);
+			leg1.shift(-0.6, -0.8);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+		}
+		
+//		fullBodyImage("bow.png");
+//		
+//		simulator.repaint();
 	}
 	
+	// Animation showing robot bending back
+	// TODO smoothness?
 	public static void bendBack() {
 		
+		leg1.setImage(legTL2);
+		leg2.setImage(legTR2);
+		
+		leg1.shift(15, -5);
+		leg2.shift(30, 15);
+
+		simulator.repaint();
+		
+		for (int i = 0; i < 15; i++) {
+			leg3.rotate(Math.PI / 180);
+			leg3.shift(-3.45, 1.8);
+			leg4.rotate(-Math.PI / 180);
+			leg4.shift(3.2, 1);
+			
+			leg1.rotate(Math.PI / 180);
+			leg1.shift(-0.65, -0.8);
+			leg2.rotate(-Math.PI / 180);
+			leg2.shift(1, -2.8);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+		}
+		
+//		fullBodyImage("bendBack.png");
+//		
+//		simulator.repaint();
+
 	}
 	
+	// Animation showing robot doing push ups
 	public static void pushUp() {
 		
 	}
 	
-	public static void jumpUp() {
+	// Animation showing robot jumping up
+	// TODO runs twice so the images get set again and legs show up
+	public static void jumpUp() throws InterruptedException {
+
+		leg1.setImage(legTL2);
+		leg2.setImage(legTR2);
 		
+		leg1.shift(15, -5);
+		leg2.shift(30, 15);
+
+		simulator.repaint();
+		
+		for (int i = 0; i < 30; i++) {
+			
+			leg1.rotate(Math.PI / 180);
+			leg1.shift(-0.65, -0.8);
+			leg2.rotate(-Math.PI / 180);
+			leg2.shift(1.3, -2.8);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+		}
+		
+		for (int i = 0; i < 60; i++) {
+			
+			leg3.rotate(-Math.PI / 180);
+			leg3.shift(3.5, -2);
+			leg4.rotate(Math.PI / 180);
+			leg4.shift(-3.3, -1);
+			
+			simulator.paintImmediately(0, 0, 800, 800);
+		}
+		
+		TimeUnit.SECONDS.sleep(5);
+		fullBodyImage("jump1.png");
+		simulator.repaint();
+		
+//		TimeUnit.SECONDS.sleep(2);
+//		fullBodyImage("jump2.png");
+//		simulator.repaint();
 	}
 
+	// Animation showing robot jumping back (flips over)
 	public static void jumpBack() {
 	
 	}

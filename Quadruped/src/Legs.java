@@ -2,14 +2,14 @@ import java.awt.Image;
 import java.awt.Graphics;
 
 /*
- * Legs class. Pretty staright forward. ALso uses coordinate system
+ * Legs class. Pretty straight forward. Also uses coordinate system
  */
 public class Legs {
 	
-	private Image leg; // Top left, top right, back left, back right
+	private Image leg;
 	private CoordinateSystem coordinates;
 	private int x, y;
-	
+
 	public Legs(int x, int y, Image leg) {
 		this.leg = leg;
 		coordinates = new CoordinateSystem(x, y, leg);
@@ -37,5 +37,8 @@ public class Legs {
 		return y;
 	}
 
+	public void setImage(Image image) {
+		leg = image;
+	}
 
 }
