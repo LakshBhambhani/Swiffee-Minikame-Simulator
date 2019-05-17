@@ -50,6 +50,9 @@ def action1(action1):
       quad.pushUp()
    else:
       message = ""
+   
+   if message == "Walking Forward":
+      quad.walkForward()
 
    templateData = {
       'message' : message,
