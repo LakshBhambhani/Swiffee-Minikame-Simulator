@@ -22,7 +22,7 @@ public class Java {
 	private static final String GREATERTHANEQUALTO = ">=";
 	
 
-	private static void moveForward() throws InterruptedException {
+	private static void moveForward() {
 		FullBody.moveForward();
 	}
 	
@@ -54,7 +54,7 @@ public class Java {
 		FullBody.pushUp();
 	}
 	
-	private static void jumpUp() {
+	private static void jumpUp() throws InterruptedException {
 		FullBody.jumpUp();
 	}
 	
@@ -101,11 +101,11 @@ public class Java {
 			return "Completing 5 pushups";
 		}
 		else if(text.equals("jumpUp()")){
-			pushUp();
+			jumpUp();
 			return "Jumping Up";
 		}
 		else if(text.equals("jumpBack()")){
-			pushUp();
+			jumpBack();
 			return "Jumping Back";
 		}
 		else if(text.contains("=") && !text.contains("if")){

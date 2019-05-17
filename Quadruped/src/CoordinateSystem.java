@@ -32,7 +32,6 @@ public class CoordinateSystem
     int w = picture.getWidth(null);
     int h = picture.getHeight(null);
     coordTransform.rotate(radians, w/2, h/2);
-//    simulator.repaint();
   }
 
   public void drawImage(Graphics g, Image picture) // draws image

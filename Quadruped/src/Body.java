@@ -39,4 +39,8 @@ public class Body {
 	public int getY() {
 		return y;
 	}
+	
+	public void setImage(Image image) {
+		body = image;
+	}
 }

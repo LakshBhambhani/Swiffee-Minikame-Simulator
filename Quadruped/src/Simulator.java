@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
 /*
- * Panel for Simulator WIndow class which extends JFrame
+ * Panel for Simulator Window class which extends JFrame
  */
 
 public class Simulator extends JPanel {
