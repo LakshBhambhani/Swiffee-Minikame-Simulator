@@ -3,6 +3,7 @@ import java.awt.Graphics;
 
 /*
  * Legs class. Pretty straight forward. Also uses coordinate system
+ * @author Megan
  */
 public class Legs {
 	

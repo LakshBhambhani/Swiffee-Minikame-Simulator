@@ -5,7 +5,10 @@ import com.jcraft.jsch.ChannelSftp.LsEntry;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
-//class using for sftp function
+/**
+ * class using for sftp function
+ * @author Laksh
+ */
 public class SFTPBean {
 	//variable let using for sftp channel
 	private JSch mJschSession = null;
@@ -14,7 +17,7 @@ public class SFTPBean {
 	//sftp channel
 	private ChannelSftp mChannelSftp = null;
 
-	//connect fucntion let connect to sftp server
+	//connect function let connect to sftp server
 	//in here or any protocol please remember some the other variable very important
 	//timeout but in this demo i only demo with normal function.
 	//still having many function u can add for sftp: create, delete, set right.. for sftp server
