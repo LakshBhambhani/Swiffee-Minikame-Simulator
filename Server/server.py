@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import Quadruped
+import threading
 
 app = Flask(__name__)
 
@@ -23,8 +24,12 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
+      t1 = threading.Thread(target=quad.walkForward(), args=(10,)) 
+  
+    # starting thread 1 
+      t1.start() 
+    # starting thread 2 
       return message()
-      quad.walkForward()
    elif action1 == "turnLeft":
       message = "Turning Left"
       return message()
