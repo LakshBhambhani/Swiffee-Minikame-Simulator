@@ -96,7 +96,7 @@ public class SimulatorMenu extends JMenuBar {
 	      {
 	    	  if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
 	    		    try {
-						Desktop.getDesktop().browse(new URI("https://github.com/LakshBhambhani/Swiffee-Minikame-Simulator/issues/new"));
+						Desktop.getDesktop().browse(new URI("https://docs.google.com/forms/d/e/1FAIpQLSc1xsW7qJ0jekZKFMpLhvSA1gZLu_MZRPavHd68C66A3r8Ndg/viewform?usp=sf_link"));
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

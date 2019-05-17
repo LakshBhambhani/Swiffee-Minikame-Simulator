@@ -15,7 +15,7 @@ def main():
       'message': ""
       }
    # Pass the template data into the template main.html and return it to the user
-   return render_template('main.html', **templateData)
+   return message
    
 @app.route("/<action1>")
 def action1(action1):
@@ -55,8 +55,7 @@ def action1(action1):
       'message' : message,
    }
 
-   return render_template('main.html', **templateData)
-
+   return message
 
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port=80, debug=True)

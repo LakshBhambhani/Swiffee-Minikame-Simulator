@@ -36,7 +36,8 @@ class FirstViewController: UIViewController, WKUIDelegate {
         webView = WKWebView(frame: .init(x: 1000, y: 1000, width: 0, height: 0), configuration: webConfiguration)
         webView.uiDelegate = self
         
-        textField.delegate = self as! UITextFieldDelegate
+        textField.text! = "172.20.10.3"
+        
 
         self.view.addSubview(forward)
         self.view.addSubview(stop)
@@ -86,7 +87,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
         left.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         left.widthAnchor.constraint(equalToConstant: view.frame.size.width*3/8).isActive = true
         left.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        left.addTarget(self, action: #selector(leftAction), for: .touchUpInside)
+        left.addTarget(self, action: #selector(rightAction), for: .touchUpInside)
         
         right.setTitle("Right", for: .normal)
         right.setTitleColor(UIColor.blue, for: .normal)
@@ -95,7 +96,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
         right.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         right.widthAnchor.constraint(equalToConstant: view.frame.size.width*3/8).isActive = true
         right.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        right.addTarget(self, action: #selector(rightAction), for: .touchUpInside)
+        right.addTarget(self, action: #selector(leftAction), for: .touchUpInside)
 
         bow.setTitle("Bow", for: .normal)
         bow.setTitleColor(UIColor.blue, for: .normal)

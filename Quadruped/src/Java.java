@@ -10,16 +10,16 @@ public class Java {
 	
 	// the list that is used to read the text from the textboxees
 	private String text;
-	private static List<Integer> values = new ArrayList<Integer>();
-	private static List<String> names = new ArrayList<String>();
+	private static List<Integer> values = new ArrayList<Integer>();		// 1 common list for values of integer variables
+	private static List<String> names = new ArrayList<String>();		// 1 common list for names of Integer variables
 	
 	// some constants
-	private static final String EQUALS = "=";
-	private static final String LESSTHAN  = "<";
-	private static final String GREATERTHAN = ">";
-	private static final String NOTEQUALTO = "!=";
-	private static final String LESSTHANEQUALTO =  "<=";
-	private static final String GREATERTHANEQUALTO = ">=";
+	private static final String EQUALS = "=";							// equals constant. All constants are common for the class
+	private static final String LESSTHAN  = "<";						// less than constant
+	private static final String GREATERTHAN = ">";						// greater than constant
+	private static final String NOTEQUALTO = "!=";						// not equal to constant
+	private static final String LESSTHANEQUALTO =  "<=";				// less than equal to constant
+	private static final String GREATERTHANEQUALTO = ">=";				// greater than equal to constant
 	
 
 	private static void moveForward() throws InterruptedException {
