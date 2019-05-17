@@ -51,7 +51,7 @@ def action1(action1):
       message = ""
    
    if message == "Walking Forward":
-      return message
+      return message()
       quad.walkForward()
 
    templateData = {
