@@ -23,7 +23,7 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
-      quad.walkForward()
+      return message, quad.walkForward()
    elif action1 == "turnLeft":
       message = "Turning Left"
       quad.turnLeft()
