@@ -4,5 +4,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="jsch-0.1.49.jar"/>
 	<classpathentry kind="lib" path="Jamepad.jar"/>
+	<classpathentry kind="lib" path="jsoup-1.12.1.jar"/>
+	<classpathentry kind="lib" path="src0_82.jar"/>
+	<classpathentry kind="lib" path="htmlparser.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
