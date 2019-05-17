@@ -54,7 +54,7 @@ public class Java {
 		FullBody.pushUp();
 	}
 	
-	private static void jumpUp() throws InterruptedException {
+	private static void jumpUp() {
 		FullBody.jumpUp();
 	}
 	
@@ -128,16 +128,18 @@ public class Java {
 			return "In sleep for " + timeDelay + " seconds";
 		}
 		else if(text.contains("if")) {
-			String conditionStatement = text.substring(text.indexOf("f") + 2).trim();
+			String conditionStatement = text.substring(text.indexOf("f") + 2, text.indexOf("{") - 1).trim();
 			System.out.println("Condition Statement: " + conditionStatement);
 			String condition1 = "";
 			String condition2 = "";
 			String operator = "";
+			String nextStatement = text.substring(text.indexOf("{") + 1, text.indexOf("}"));
+			System.out.println("Next Statement: " + nextStatement);
 			int whitespaces = 0;
 			for(int i = 0; i < conditionStatement.length(); i++) {
 				if(Character.isWhitespace(conditionStatement.charAt(i))){
 					whitespaces++;
-					
+					// if hi == 5; {asdf};
 				}
 				else {
 					if(whitespaces == 0) {
@@ -155,12 +157,41 @@ public class Java {
 			System.out.println("condition1: " + condition1);
 			System.out.println("operator: " + operator);
 			System.out.println("condition2: " + condition2);
-				
-		}
-		else {
+			
+			String value1 = condition1;
+			String value2 = condition2;
+			
+			if (Character.isLetter(condition1.charAt(0))) {
+				value1 = String.valueOf(values.get(names.indexOf(condition1)));
+			}
+			
+			if (Character.isLetter(condition2.charAt(0))) {
+				value2 = String.valueOf(values.get(names.indexOf(condition1)));
+			}
+			
+			int numValue1 = Integer.parseInt(value1);
+			int numValue2 = Integer.parseInt(value2);
+			
+			if (operator.equals("==") && numValue1 == numValue2) {
+				return process(nextStatement);
+			} else if (operator.contentEquals("<") && numValue1 < numValue2) {
+				return process(nextStatement);
+			} else if (operator.contentEquals(">") && numValue1 > numValue2) {
+				return process(nextStatement);
+			} else if (operator.contentEquals("!=") && numValue1 != numValue2) {
+				return process(nextStatement);
+			} else if (operator.contentEquals("<=") && numValue1 <= numValue2) {
+				return process(nextStatement);
+			} else if (operator.contentEquals(">=") && numValue1 >= numValue2) {
+				return process(nextStatement);
+			} else {
+				return "Statement is false";
+			}
+
+		} else {
 			return "error";
 		}
-		return "";
+
 	}
 	
 	public static List<String> processFile(String fileText) throws InterruptedException {

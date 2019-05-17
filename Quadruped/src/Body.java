@@ -2,7 +2,8 @@ import java.awt.Image;
 import java.awt.Graphics;
 
 /*
- * Class for the body. Uses coordinate system to move around on SImulatorWindow
+ * Class for the body. Uses coordinate system to move around on Simulator
+ * @author Megan
  */
 
 public class Body {
@@ -11,24 +12,28 @@ public class Body {
 	private CoordinateSystem coordinates;
 	private int x, y;
 	
-	public Body(int x, int y, Image body) { // constructor
+	// constructor
+	public Body(int x, int y, Image body) { 
 		this.body = body;
 		coordinates = new CoordinateSystem(x, y, body);
 		this.x = x;
 		this.y = y;
 	}
 	
-	public void shift(double x, double y) { // used to move it x and y
+	// used to move it x and y
+	public void shift(double x, double y) {
 		coordinates.shift(x, y);
 		this.x += x;
 		this.y += y;
 	}
 	
-	public void rotate(double radians) { // used to rotate in one place
+	// used to rotate in one place
+	public void rotate(double radians) {
 		coordinates.rotate(radians);
 	}
 	
-	public void draw(Graphics g) { // used to print it to the window
+	// used to print it to the window
+	public void draw(Graphics g) {
 	  coordinates.drawImage(g, body);
 	}
 	

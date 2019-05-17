@@ -1,5 +1,6 @@
 /*
- * Description: Uses various runnable objects to create diffferent threads and run them at the samee time. DOsent work tho.
+ * Description: Uses various runnable objects to create different threads and run them at the same time. Doesn't work though.
+ * @author Laksh
  */
 public class ControlMultithread extends Thread{
 	

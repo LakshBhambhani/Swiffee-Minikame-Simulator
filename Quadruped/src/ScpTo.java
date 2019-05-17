@@ -12,7 +12,6 @@ public class ScpTo {
 
 	// main class let exec demo
 	public static void sendTo() throws JSchException, IOException {
-		// TODO Auto-generated method stub
 		//now we start up run
 		SFTPBean sftpBean = new SFTPBean();
 		ConnectToBot ctbObject = new ConnectToBot();

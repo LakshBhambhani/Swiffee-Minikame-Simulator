@@ -16,25 +16,28 @@ import javax.swing.*;
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
 /*
- * Description: The about panel to tell user what version of the simulator are they using and who built the simulator which is of
- * course Megan and Me(Ha ha, find out who i am)
+ * Description: The about panel to tell user what version of the simulator they are using and who built the simulator
+ * @author of course Megan and Me(Ha ha, find out who i am)
  */
 public class AboutPanel extends JPanel {
-	
+
 	JFrame frame;
-    private BufferedImage image;
-	
-	public String release = "v1.0.1";
+	private BufferedImage image;
 
-	public AboutPanel() throws ControllerUnpluggedException, IOException, InterruptedException { // all exceptions that it faces
-		
-        ImageIcon icon = new ImageIcon("/body.png");
+	public String release = "v1.0.2";
 
-		JOptionPane.showMessageDialog(null, "Version: " + release + "\nDevelopers: Megan Choy, Laksh Bhambhani :)","About", JOptionPane.OK_OPTION, icon);
+	// all exceptions that it faces
+	public AboutPanel() throws ControllerUnpluggedException, IOException, InterruptedException {
+
+		ImageIcon icon = new ImageIcon("/body.png");
+
 		// the message
+		JOptionPane.showMessageDialog(null, "Version: " + release + "\nDevelopers: Megan Choy, Laksh Bhambhani :)",
+				"About", JOptionPane.OK_OPTION, icon);
 	}
-	 
-	public void close() { // close method. done when window is closed
+
+	// close method. done when window is closed
+	public void close() {
 		frame.setVisible(false);
 		frame.dispose();
 	}
