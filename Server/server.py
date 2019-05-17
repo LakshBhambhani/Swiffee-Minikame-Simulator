@@ -32,7 +32,6 @@ def action1(action1):
       return message()
    elif action1 == "turnLeft":
       message = "Turning Left"
-      return message()
       quad.turnLeft()
    elif action1 == "turnRight":
       message = "Turning Right"
