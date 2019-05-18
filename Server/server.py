@@ -20,9 +20,9 @@ def main():
 
 
 
-@app.route('/foo')
+@app.route('/status')
 def foo():
-    return 'Hello Foo!'
+    return message
    
 @app.route("/<action1>")
 def action1(action1):
