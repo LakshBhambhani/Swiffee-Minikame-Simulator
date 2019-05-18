@@ -17,6 +17,12 @@ def main():
       }
    # Pass the template data into the template main.html and return it to the user
    return message
+
+
+
+@app.route('/foo')
+def foo():
+    return 'Hello Foo!'
    
 @app.route("/<action1>")
 def action1(action1):
@@ -24,7 +30,7 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
-      return "0.0.0.0/status"
+      return redirect(url_for('foo'))   
    elif action1 == "turnLeft":
       message = "Turning Left"
       quad.turnLeft()
