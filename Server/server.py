@@ -35,7 +35,7 @@ def action1(action1):
    def do_work(value):
         # do something that takes a long time
         import time
-        time.sleep(20)
+        time.sleep(5)
 
    
    if action1 == "walkForward":
