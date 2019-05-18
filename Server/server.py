@@ -21,9 +21,8 @@ def main():
 
 
 @app.route('/status')
-def status():
+def foo():
     return message
-    quad.walkForward()
    
 @app.route("/<action1>")
 def action1(action1):
@@ -31,7 +30,7 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
-      return redirect(url_for('status'))   
+      return redirect(url_for('foo'))   
    elif action1 == "turnLeft":
       message = "Turning Left"
       quad.turnLeft()
