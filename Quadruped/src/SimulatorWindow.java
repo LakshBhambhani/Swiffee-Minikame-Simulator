@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -13,6 +14,8 @@ import java.net.URL;
 import java.awt.event.*;
 import java.util.List;
 import java.awt.Image.*;
+import java.awt.Toolkit;
+
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -25,6 +28,7 @@ import com.jcraft.jsch.JSchException;
 import javax.swing.*;
 import java.io.*;
 import javax.imageio.*;
+import com.apple.eawt.Application;
 
 /*
  * @author for main window: Megan
@@ -48,9 +52,7 @@ public class SimulatorWindow extends JFrame{
 	public SimulatorWindow() throws IOException {
 		super("Quadruped Simulator");
 		Java java = new Java();
-		
-//		super.setIconImage(ImageIO.read(new File("Icon.png")));
-		
+				
 		setJMenuBar(new SimulatorMenu(this));
 				
 		setUpGUI();
@@ -58,6 +60,10 @@ public class SimulatorWindow extends JFrame{
 		terminal.setText("Terminal");
 		
 		this.setIconImage(new ImageIcon("Icon.png").getImage());
+		
+		Application application = Application.getApplication();
+		Image image = Toolkit.getDefaultToolkit().getImage("Icon.png");
+		application.setDockIconImage(image);
 		
 		refresh();
 		
