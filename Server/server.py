@@ -34,8 +34,7 @@ def action1(action1):
    global message
    def do_work():
         # do something that takes a long time
-        import time
-        time.sleep(5)
+        quad.walkForward()
 
    
    if action1 == "walkForward":
