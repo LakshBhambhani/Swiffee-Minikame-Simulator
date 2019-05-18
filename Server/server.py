@@ -27,7 +27,7 @@ def foo():
    #t1.start()
    return message + 'start'
   
-def do_work():
+def walkForward():
         # do something that takes a long time
         quad.walkForward()
 
@@ -38,7 +38,7 @@ def action1(action1):
    if action1 == "walkForward":
       message = "Walking Forward"
       #return redirect(url_for('foo'))
-      thread = threading.Thread(target=do_work)
+      thread = threading.Thread(target=walkForward())
       thread.start()
       return 'started'   
    elif action1 == "turnLeft":
