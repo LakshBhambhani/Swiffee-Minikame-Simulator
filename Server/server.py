@@ -23,8 +23,8 @@ def walkForward():
 
 @app.route('/status')
 def foo():
-   t1 = threading.Thread(target=walkForward(), args=()) 
-   t1.start()
+   #t1 = threading.Thread(target=walkForward(), args=()) 
+   #t1.start()
    return message + 'start'
   
 
