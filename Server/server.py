@@ -32,7 +32,7 @@ def foo():
 def action1(action1):
    # Convert the pin from the URL into an integer:
    global message
-   def do_work(value):
+   def do_work():
         # do something that takes a long time
         import time
         time.sleep(5)
@@ -41,7 +41,7 @@ def action1(action1):
    if action1 == "walkForward":
       message = "Walking Forward"
       #return redirect(url_for('foo'))
-      thread = Thread(target=do_work, kwargs={'value': request.args.get('value', 20)}
+      thread = Thread(target=do_work)
       thread.start()
       return 'started'   
    elif action1 == "turnLeft":
