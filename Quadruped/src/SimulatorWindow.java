@@ -173,16 +173,51 @@ public class SimulatorWindow extends JFrame{
  	        	  String str = programInput.getText();
  	        	  String[] inputs = str.split(";");
  	        	  for(int i = 0; i < inputs.length; i++) {						
- 	        		 if(inputs[i].toString().equals("moveForward()")) {
+ 	        		 if(inputs[i].toString().trim().equals("moveForward()")) {
 						if(URLReader.readFromURL("walkForward")) {
 							FullBody.moveForward();
 						}
  	        		 }
- 	        		if(inputs[i].toString().equals("turnLeft()")) {
+ 	        		 if(inputs[i].toString().trim().equals("turnLeft()")) {
 						if(URLReader.readFromURL("turnLeft")) {
 							FullBody.turnLeft();
 						}
  	        		 }
+ 	        		if(inputs[i].toString().trim().equals("turnRight()")) {
+						if(URLReader.readFromURL("turnRight")) {
+							FullBody.turnRight();
+						}
+ 	        		 }
+ 	        		 if(inputs[i].toString().trim().equals("homePos()")) {
+						if(URLReader.readFromURL("homePos")) {
+							FullBody.homePos();
+						}
+ 	        		 }
+ 	        		if(inputs[i].toString().trim().equals("bow()")) {
+						if(URLReader.readFromURL("bow")) {
+							FullBody.bow();
+						}
+ 	        		 }
+ 	        		 if(inputs[i].toString().trim().equals("bendBack()")) {
+						if(URLReader.readFromURL("bendBack")) {
+							FullBody.bendBack();
+						}
+ 	        		 }
+ 	        		if(inputs[i].toString().trim().equals("jumpUp()")) {
+						if(URLReader.readFromURL("jumpUp")) {
+							FullBody.jumpUp();
+						}
+ 	        		 }
+ 	        		if(inputs[i].toString().trim().equals("jumpBack()")) {
+						if(URLReader.readFromURL("jumpBack")) {
+							FullBody.jumpBack();
+						}
+ 	        		 }
+ 	        		 if(inputs[i].toString().trim().equals("pushUp()")) {
+						if(URLReader.readFromURL("pushUp")) {
+							FullBody.pushUp();
+						}
+ 	        		 } 	        		 
  	        	  }
 	    	   }
 //	    	          if (e.getSource() == runOnBot){

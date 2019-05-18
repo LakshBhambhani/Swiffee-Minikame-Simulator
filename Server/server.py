@@ -60,37 +60,37 @@ def action1(action1):
       thread.start()
       return message + ' started' 
    elif action1 == "turnRight":
-      message = "Turning Right"
+      message = "turnRight"
       thread = threading.Thread(target=turnRight)
       thread.start()
       return message + ' started' 
    elif action1 == "homePos":
-      message = "Switching to Home Position"
+      message = "homePos"
       thread = threading.Thread(target=homePos)
       thread.start()
       return message + ' started' 
    elif action1 == "bow":
-      message = "Bowing"
+      message = "bow"
       thread = threading.Thread(target=bow)
       thread.start()
       return message + ' started' 
    elif action1 == "bendBack":
-      message = "Bending Back"
+      message = "bendBack"
       thread = threading.Thread(target=bendBack)
       thread.start()
       return message + ' started' 
    elif action1 == "jumpUp":
-      message = "Jumping Up"
+      message = "jumpUp"
       thread = threading.Thread(target=jumpUp)
       thread.start()
       return message + ' started' 
    elif action1 ==  "jumpBack":
-      message = "Jumping Back"
+      message = "jumpBack"
       thread = threading.Thread(target=jumpBack)
       thread.start()
       return message + ' started' 
    elif action1 == "pushUp":
-      message = "Completed 5 push ups"
+      message = "pushUp"
       thread = threading.Thread(target=pushUp)
       thread.start()
       return message + ' started' 
