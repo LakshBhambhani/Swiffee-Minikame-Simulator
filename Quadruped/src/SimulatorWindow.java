@@ -15,16 +15,13 @@ import java.awt.event.*;
 import java.util.List;
 import java.awt.Image.*;
 import java.awt.Toolkit;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-
 import com.jcraft.jsch.JSchException;
-
 import javax.swing.*;
 import java.io.*;
 import javax.imageio.*;
@@ -172,52 +169,98 @@ public class SimulatorWindow extends JFrame{
 	    
 	    ActionListener sendListenerForBot = new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
-	    	          if (e.getSource() == runOnBot){
+ 	        	  System.out.println("Run from bot pressed");
+ 	        	  String str = programInput.getText();
+ 	        	  String[] inputs = str.split(";");
+ 	        	  for(int i = 0; i < inputs.length; i++) {						
+ 	        		 if(inputs[i].toString().equals("moveForward()")) {
+						if(URLReader.readFromURL("walkForward")) {
+							FullBody.moveForward();
+						}
+ 	        		 }
+ 	        		if(inputs[i].toString().equals("turnLeft()")) {
+						if(URLReader.readFromURL("turnLeft")) {
+							FullBody.turnLeft();
+						}
+ 	        		 }
+ 	        	  }
+	    	   }
+//	    	          if (e.getSource() == runOnBot){
+//	    	        	  String str = programInput.getText();
+//	    	                List<String> returnValues = null;
+//							try {
+//								returnValues = Java.processFile(str);
+//							} catch (InterruptedException e2) {
+//								// TODO Auto-generated catch block
+//								e2.printStackTrace();
+//							}
+//							boolean error = false;
+//							for(int i = 0; i < returnValues.size(); i++) {
+//								if(returnValues.get(i).toString().trim().equals("error")) {
+//									System.out.println("Any errors: " + error);
+//									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+//									error = true;
+//								}
+//								else {
+//									if(error != true){
+//										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+//										if(returnValues.get(i).toString().equals("Moving Forward")) {
+//											if(URLReader.readFromURL("walkForward")) {
+//												FullBody.moveForward();
+//											}
+//										}
+//									}
+//								}
+//	                	}
+//	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
+//	    	      		}
+//	    	          buttonIsClicked = true;
+//	    	          }
 	    	        	  
-	    	        	ScpTo scpObject = new ScpTo();
-	    	      		ConnectToBot ctbObject = new ConnectToBot();
-	    	      		
-  	    	      		try {
-  	    	      			try {
-								saveToFile("Commands.txt", programInput);
-								System.out.println("Success, Saved File!");
-							} catch (Exception e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-  	    	      			scpObject.sendTo();
-							ctbObject.remoteExecute();
-							terminal.setText(terminal.getText() + "\n" + "Success");
-						} catch (JSchException | IOException e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-							terminal.setText(terminal.getText() + "\n" + "Failed to find bot! Running in Simulator");
-							String str = programInput.getText();
-	    	                List<String> returnValues = null;
-							try {
-								returnValues = Java.processFile(str);
-							} catch (InterruptedException e2) {
-								// TODO Auto-generated catch block
-								e2.printStackTrace();
-							}
-							boolean error = false;
-							for(int i = 0; i < returnValues.size(); i++) {
-								if(returnValues.get(i).toString().trim().equals("error")) {
-									System.out.println("Any errors: " + error);
-									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
-									error = true;
-								}
-								else {
-									if(error != true){
-										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
-									}
-								}
-    	                	}
-	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
-	    	                }
-	    	          buttonIsClicked = true;
-	    	    }
-						} 
+//	    	        	ScpTo scpObject = new ScpTo();
+//	    	      		ConnectToBot ctbObject = new ConnectToBot();
+//	    	      		
+//  	    	      		try {
+//  	    	      			try {
+//								saveToFile("Commands.txt", programInput);
+//								System.out.println("Success, Saved File!");
+//							} catch (Exception e1) {
+//								// TODO Auto-generated catch block
+//								e1.printStackTrace();
+//							}
+//  	    	      			scpObject.sendTo();
+//							ctbObject.remoteExecute();
+//							terminal.setText(terminal.getText() + "\n" + "Success");
+//						} catch (JSchException | IOException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//							terminal.setText(terminal.getText() + "\n" + "Failed to find bot! Running in Simulator");
+//							String str = programInput.getText();
+//	    	                List<String> returnValues = null;
+//							try {
+//								returnValues = Java.processFile(str);
+//							} catch (InterruptedException e2) {
+//								// TODO Auto-generated catch block
+//								e2.printStackTrace();
+//							}
+//							boolean error = false;
+//							for(int i = 0; i < returnValues.size(); i++) {
+//								if(returnValues.get(i).toString().trim().equals("error")) {
+//									System.out.println("Any errors: " + error);
+//									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+//									error = true;
+//								}
+//								else {
+//									if(error != true){
+//										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+//									}
+//								}
+//    	                	}
+//	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
+//	    	                }
+//	    	          buttonIsClicked = true;
+//	    	    }
+//						} 
 	    	  
 	    	                
 	    	};
@@ -233,7 +276,7 @@ public class SimulatorWindow extends JFrame{
 	    
 	    ActionListener sendListener = new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
-	    	          if (e.getSource() == run){
+	        	  	System.out.println("RUn pressed");
 	    	     			String str = programInput.getText();
 	    	                List<String> returnValues = null;
 							try {
@@ -256,12 +299,8 @@ public class SimulatorWindow extends JFrame{
 								}
  	                	}
 	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
-	    	      		}
-	    	          buttonIsClicked = true;
-	    	    }
-						
-	    	  
-	    	                
+	    	            	buttonIsClicked = true;
+	    	   }       
 	    	};
 	    	
 	    	run.addActionListener(sendListener);

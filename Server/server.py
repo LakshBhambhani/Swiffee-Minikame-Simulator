@@ -50,12 +50,12 @@ def action1(action1):
    # Convert the pin from the URL into an integer:
    global message
    if action1 == "walkForward":
-      message = "Walking Forward"
+      message = "walkForward"
       thread = threading.Thread(target=walkForward)
       thread.start()
       return message + ' started'   
    elif action1 == "turnLeft":
-      message = "Turning Left"
+      message = "turnLeft"
       thread = threading.Thread(target=turnLeft)
       thread.start()
       return message + ' started' 
