@@ -18,13 +18,15 @@ def main():
    # Pass the template data into the template main.html and return it to the user
    return message
 
-
+def walkForward():
+   quad.walkForward()
 
 @app.route('/status')
 def foo():
-   quad.walkForward()
-   return message + 'done'
-   
+   return message + 'start'
+   t1 = threading.Thread(target=walkForward(), args=()) 
+   t1.start()
+
 @app.route("/<action1>")
 def action1(action1):
    # Convert the pin from the URL into an integer:
