@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import Quadruped
+import threading
 
 app = Flask(__name__)
 
@@ -23,6 +24,7 @@ def action1(action1):
    global message
    if action1 == "walkForward":
       message = "Walking Forward"
+      window.location.href = '0.0.0.0/status';
    elif action1 == "turnLeft":
       message = "Turning Left"
       quad.turnLeft()
