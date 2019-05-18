@@ -23,9 +23,10 @@ def walkForward():
 
 @app.route('/status')
 def foo():
-   return message + 'start'
    t1 = threading.Thread(target=walkForward(), args=()) 
    t1.start()
+   return message + 'start'
+  
 
 @app.route("/<action1>")
 def action1(action1):
