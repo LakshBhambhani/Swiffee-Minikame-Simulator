@@ -27,16 +27,14 @@ def foo():
    #t1.start()
    return message + 'start'
   
+def do_work():
+        # do something that takes a long time
+        quad.walkForward()
 
 @app.route("/<action1>")
 def action1(action1):
    # Convert the pin from the URL into an integer:
    global message
-   def do_work():
-        # do something that takes a long time
-        quad.walkForward()
-
-   
    if action1 == "walkForward":
       message = "Walking Forward"
       #return redirect(url_for('foo'))
