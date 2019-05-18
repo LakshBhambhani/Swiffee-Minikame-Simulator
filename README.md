@@ -10,11 +10,11 @@ There is also a simulation of the Quadruped to mimic what it would look like in 
 ### Instructions:
 Open the window in class SimulatorWindow and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language): <a href=https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/>JAVA API</a> or https://lakshbhambhani.github.io/Swiffee-Minikame-Simulator/
 
-The only methods that work right now are "moveForward(); moveBackward(); turnLeft(); turnRight();". To see an example, go to "File" in the top left and then "Open" and open Example.txt.
+The only methods that work right now are "moveForward(); moveBackward(); turnLeft(); turnRight(); homePos();". To see an example, go to "File" in the top left and then "Open" and open Commands.txt.
 
 If there is a problem, report the bug under "Help" and then click "Report a Bug".
 
-First, type in the code at the SwiffeeIDE and click "Run" once you are done to see the robot move. Don't worry about the "Run on Bot" button. You can also code in the terminal and make booleans and integers. Read more about that in the Swiffee API
+First, type in the code at the SwiffeeIDE and click "Run" once you are done to see the robot move. Don't worry about the "Run on Bot" button. You can also code in the terminal and make booleans and integers. Read more about that in the Swiffee API.
 
 ### Classes used:
 
