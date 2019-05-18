@@ -22,7 +22,7 @@ def main():
 
 @app.route('/status')
 def foo():
-    return message
+    return 'Hello Foo!'
    
 @app.route("/<action1>")
 def action1(action1):
