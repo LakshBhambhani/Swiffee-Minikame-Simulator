@@ -23,6 +23,7 @@ def main():
 @app.route('/status')
 def foo():
     return 'Hello Foo!'
+    quad.walkForward()
    
 @app.route("/<action1>")
 def action1(action1):
