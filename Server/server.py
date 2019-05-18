@@ -38,7 +38,7 @@ def action1(action1):
    if action1 == "walkForward":
       message = "Walking Forward"
       #return redirect(url_for('foo'))
-      thread = threading.Thread(target=walkForward())
+      thread = threading.Thread(target=walkForward)
       thread.start()
       return 'started'   
    elif action1 == "turnLeft":
