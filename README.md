@@ -48,7 +48,7 @@ Laksh works with the hardware and software regarding the robot. The classes like
 Megan works on the simulator, animations, and the other requirements like the ReadME and UML diagram. She works with the classes regarding to the simulator graphics and window and the images like Body and Legs.
 
 ## Want to know more?
-Read the <a href="lakshbhambhani.github.io/SwiffeeDocs">Swiffee Docs</a>
+Read the <a href="https://lakshbhambhani.github.io/SwiffeeDocs/">Swiffee Docs</a>
 
 ## License
 
