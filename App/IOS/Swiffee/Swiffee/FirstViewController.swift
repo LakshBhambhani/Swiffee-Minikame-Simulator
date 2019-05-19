@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class FirstViewController: UIViewController, WKUIDelegate {
+class FirstViewController: UIViewController, WKUIDelegate, UITextFieldDelegate {
     
     var webView: WKWebView!
 
@@ -37,6 +37,7 @@ class FirstViewController: UIViewController, WKUIDelegate {
         webView.uiDelegate = self
         
         textField.text! = "172.20.10.3"
+        self.textField.delegate = self
         
 
         self.view.addSubview(forward)
@@ -228,6 +229,11 @@ class FirstViewController: UIViewController, WKUIDelegate {
         let request = URLRequest(url: url!);
         webView.load(request);
         print(url)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
 
