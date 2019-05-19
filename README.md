@@ -20,19 +20,27 @@ First, type in the code at the SwiffeeIDE and click "Run" once you are done to s
 
 | Class Name | Description |
 | --- | --- |
-| Java | the analyzer of the code the user inputs |
-| SimulatorWindow | the window and graphics of the Quadruped |
-| Simulator | the panel drawing the body and legs of the Quadruped |
+| About Panel | Displays the version of the software you are using plus names of devlopers |
 | Body | the blueprint class representing the body of the Quadruped |
-| Legs | the blueprint class representing the legs of the Quadruped |
-| FullBody | the class instantiating the Body and Legs classes |
-| SFTPBean | protocol for sending the code the user programmed to the robot |
-| ScpTo | calls SFTPBean to send code to robot |
 | ConnectToBot | executes the code on the robot |
-| ControlWindow | The window to use Xbox controller to control the bot |
+| ControlMultithread | Tries to run XboxListener and Xbox Map Window together using multithreading |
+| ControlPanel | Displays the XboxMap to user |
+| ControlPanelJFrame | The window to use Xbox controller to control the bot |
+| CoordinateSystem | Used to display animations in Swiffee |
+| FullBody | the class instantiating the Body and Legs classes |
+| Java | the analyzer of the code the user inputs |
+| Legs | the blueprint class representing the legs of the Quadruped |
+| RemoteExecute | Remotely executes files on the bot using Jsch(ssh) |
+| ScpTo | calls SFTPBean to send code to robot |
+| SettingsPanel | User can change the IP of the bot from here |
+| SFTPBean | protocol for sending the code the user programmed to the robot |
+| Simulator | the panel drawing the body and legs of the Quadruped |
+| SimulatorMenu | Contains the Menubar options for Swiffee |
+| SimulatorWindow | the window and graphics of the Quadruped |
+| URLReader | Reads the text on a URL. Helps us know whether Bot is moving or no |
+| Xbox | A runnable class used for listening during Multithreading |
 | XboxControl | Contains methods to use Xbox without instantiating Xbox many times |
 | XboxListener | This is where we listen to Xbox inputs and process it on the bot |
-| URLReader | Reads the text on a URL. Helps us know whether Bot is moving or no |
 
 ### Responsibilities:<br>
 Laksh works with the hardware and software regarding the robot. The classes like SFTPBean, ScptTo, and ConnectToBot are all used to send and execute code on the actual robot. He also works on the Andriod and IOS app to control the robot. For the simulator, he made the Java class which analyzes what the user codes. 
