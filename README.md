@@ -45,7 +45,10 @@ First, type in the code at the SwiffeeIDE and click "Run" once you are done to s
 ### Responsibilities:<br>
 Laksh works with the hardware and software regarding the robot. The classes like SFTPBean, ScptTo, and ConnectToBot are all used to send and execute code on the actual robot. He also works on the Andriod and IOS app to control the robot. For the simulator, he made the Java class which analyzes what the user codes. Also Xbox Listeners are made by him.
 <br><br>
-Megan works on the simulator, animations, and the other requirements like the ReadME and UML diagram. She works with the classes regarding to the simulator graphics and window and the images like Body and Legs. 
+Megan works on the simulator, animations, and the other requirements like the ReadME and UML diagram. She works with the classes regarding to the simulator graphics and window and the images like Body and Legs.
+
+## Want to know more?
+Read the <a href="lakshbhambhani.github.io/SwiffeeDocs">Swiffee Docs</a>
 
 ## License
 
