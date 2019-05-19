@@ -10,7 +10,7 @@ public class URLReader {
 
 	public static boolean readFromURL(String action) {
 		try {
-			StringExtractor se = new StringExtractor("http://192.168.0.28/" + action);
+			StringExtractor se = new StringExtractor("http://" + SimulatorWindow.botIP + "/" + action);
 			String content = se.extractStrings(false);
 			System.out.println(content);
 			System.out.println("================================================");

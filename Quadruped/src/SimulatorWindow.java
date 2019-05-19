@@ -42,6 +42,8 @@ public class SimulatorWindow extends JFrame{
 	private JButton runOnBot;
 	private JButton run;
 	
+	static String botIP = "172.20.10.3";	// this static variable can be accessed easily from any outside class and be modif
+													// ied as this is the IP that the simulator will connect to
 	private boolean inputIsClicked = false;
 	private boolean terminalIsClicked =  false;
 	private boolean buttonIsClicked = false;

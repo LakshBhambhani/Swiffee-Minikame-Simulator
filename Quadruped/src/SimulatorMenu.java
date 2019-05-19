@@ -23,7 +23,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
-	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem; // all jmenu items
+	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem, settingsItem; // all jmenu items
 	
 	public SimulatorMenu(SimulatorWindow simulatorWindow) {
 	   
@@ -39,6 +39,7 @@ public class SimulatorMenu extends JMenuBar {
 	    aboutItem.addActionListener(fileAction);
 	    exitItem = new JMenuItem("Exit");
 	    exitItem.addActionListener(fileAction);
+	    
 	    fileMenu.add(loadItem);
 	    fileMenu.add(aboutItem);
 	    fileMenu.addSeparator();
@@ -62,9 +63,12 @@ public class SimulatorMenu extends JMenuBar {
 	    kitItem.addActionListener(fileAction);
 	    bugItem = new JMenuItem("Report a bug");
 	    bugItem.addActionListener(fileAction);
+	    settingsItem = new JMenuItem("Settings");
+	    settingsItem.addActionListener(fileAction);
 	    helpMenu.add(apiItem);
 	    helpMenu.add(kitItem);
 	    helpMenu.add(bugItem);
+	    helpMenu.add(settingsItem);
 	    add(helpMenu);
 	}
 	
@@ -110,6 +114,10 @@ public class SimulatorMenu extends JMenuBar {
 	      else if (m == controlItem)
 	      {
 	    	  new ControlMultithread();
+	      }
+	      else if (m == settingsItem)
+	      {
+	    	  new SettingsPanel();
 	      }
 	      else if (m == exitItem)
 	      {
