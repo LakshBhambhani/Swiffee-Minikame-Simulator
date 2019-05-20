@@ -315,14 +315,9 @@ public class FullBody {
 		simulator.repaint();
 	}
 	
-<<<<<<< HEAD
-	/**
-	 * Animations for making the robot bowing
-	 * ToDo: Making it more smooth
-	 */
-=======
-	// Animation showing robot bowing
->>>>>>> 75412ff0a57997abff8de329c15466367cc9ad58
+/**
+ * Animation for making the robot bow
+ */
 	public static void bow() {
 		leg3.setImage(legBL2);
 		leg4.setImage(legBR2);

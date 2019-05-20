@@ -19,7 +19,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
 /**
  * responsible for the menubar on top of the simulator window
  * @author Megan
- *
+ */
 
 public class SimulatorMenu extends JMenuBar {
 
