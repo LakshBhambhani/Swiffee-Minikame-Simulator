@@ -24,7 +24,7 @@ public class FullBody {
 	private static Image legTL2, legTR2, legBL2, legBR2; // Bent images
 	private static Body body;
 	private static Legs leg1, leg2, leg3, leg4;
-	private static int counter = 0;
+	private static int counter = 0; // So that some methods aren't called twice
 //	private int width, height;
 	private static Simulator simulator;
 	
@@ -315,10 +315,14 @@ public class FullBody {
 		simulator.repaint();
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * Animations for making the robot bowing
 	 * ToDo: Making it more smooth
 	 */
+=======
+	// Animation showing robot bowing
+>>>>>>> 75412ff0a57997abff8de329c15466367cc9ad58
 	public static void bow() {
 		leg3.setImage(legBL2);
 		leg4.setImage(legBR2);
@@ -342,7 +346,11 @@ public class FullBody {
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
 		
-		fullBodyImage("bow.png");
+		body.setImage(new ImageIcon("bowBody.png").getImage());
+		leg1.shift(0, -5);
+		leg2.shift(5, 0);
+		leg3.shift(-3, 0);
+		leg4.shift(-3, -5);
 		
 		simulator.repaint();
 	}
@@ -375,9 +383,11 @@ public class FullBody {
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
 		
-//		fullBodyImage("bendBack.png");
-//		
-//		simulator.repaint();
+		body.setImage(new ImageIcon("bendBackBody.png").getImage());	
+		leg1.shift(0, 3);
+		leg3.shift(5, 3);
+		
+		simulator.repaint();
 
 	}
 	
@@ -423,24 +433,47 @@ public class FullBody {
 			}
 
 			counter++;
-		} else {
-			counter = 0;
+			
+		for (int i = 0; i < 150; i++) {
+			fullBodyImage("jump1.png");
+			simulator.paintImmediately(0, 0, 800, 800);
 		}
-		fullBodyImage("jump1.png");
-		simulator.repaint();
+		
+		for (int i = 0; i < 150; i++) {
+			fullBodyImage("jump1.5.png");
+			simulator.paintImmediately(0, 0, 800, 800);
+		}
 
 		fullBodyImage("jump2.png");
 		simulator.repaint();
+		
+		} else {
+			counter = 0;
+		}
+		
 	}
 
 	/**
 	 * Animations for making the robot flip
 	 */
 	public static void jumpBack() {
-		jumpUp();
-		
-		fullBodyImage("jump3.png");
-		simulator.repaint();
+
+		if (counter == 0) {
+			jumpUp();
+
+			for (int i = 0; i < 150; i++) {
+				fullBodyImage("jump2.5.png");
+				simulator.paintImmediately(0, 0, 800, 800);
+			}
+			
+			fullBodyImage("jump3.png");
+			simulator.repaint();
+
+			counter++;
+			
+		} else {
+			counter = 0;
+		}
 	}
 
 
