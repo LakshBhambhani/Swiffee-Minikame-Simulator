@@ -401,11 +401,11 @@
                 </a>
                 <ul class="blockList">
                   <li class="blockList">
-                    <h4>if(boolean test)</h4>
+                    <h4>if boolean test {method};</h4>
                     <pre>if(boolean test)</pre>
                     <dl>
                       <dt><span class="throwsLabel">Usage:</span></dt>
-                      <dd><code>if something (parameter) is true, then execute the code under the condition</code></dd>
+                      <dd><code>if something (parameter) is true, then execute the code in between the brackets</code></dd>
                       <dt><span class="throwsLabel">Example:</span></dt>
                       <dd><code>
                             <table class="memberSummary" border="0" cellpadding="3" cellspacing="0"
@@ -416,15 +416,15 @@
                             </tr>
                             <tr id="i0" class="altColor">
                               <td class="colLast">
-                                <code>bool test = true;<br>if(test);<br>System.out.println("true");</code>
+                                <code>bool test = true;<br>if test {System.out.println("true")};</code>
                         </td>
                         <td class="colFirst"><code>true</code></td>
                         </tr>
                         <tr id="i1" class="rowColor">
                           <td class="colLast">
-                            <code>bool test = false;<br>if(test);<br>System.out.println("false");</code>
+                            <code>bool test = false;<br>if test {System.out.println("false")};</code>
                           </td>
-                          <td class="colFirst"><code>false</code></td>
+                          <td class="colFirst"><code>(no output)</code></td>
                         </tr>
                         </table>
                         </code></dd>
