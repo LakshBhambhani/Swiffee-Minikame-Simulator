@@ -2,12 +2,17 @@
 import org.htmlparser.parserapplications.StringExtractor;
 import org.htmlparser.util.ParserException;
 
-/*
+/**
  * Reads the text on a url. Helps us know about the aknowledgement from the bot once it 
  */
 
 public class URLReader {
 
+	/**
+	 * USed to get text from a specific url
+	 * @param action
+	 * @return
+	 */
 	public static boolean readFromURL(String action) {
 		try {
 			StringExtractor se = new StringExtractor("http://" + SimulatorWindow.botIP + "/" + action);

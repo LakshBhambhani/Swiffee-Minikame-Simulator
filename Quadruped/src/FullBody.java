@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-/*
+/**
  * Includes the complete body including legs and main body and you can see this on Simulator Window
  * @author Megan
  */
@@ -111,7 +111,9 @@ public class FullBody {
 		leg4.setImage(null);
 	}
 	
-	// Moves robot forward + leg animations
+	/**
+	 * Moves the robot forward
+	 */
 	public static void moveForward() {
 		
 		// Moves front right and back left leg forward
@@ -161,7 +163,9 @@ public class FullBody {
 
 	}
 	
-	// Moves robot backwards + leg animations
+	/**
+	 * Moves the robot backward
+	 */
 	public static void moveBackward() {
 
 		// Moves the back left and front right leg backwards
@@ -213,7 +217,9 @@ public class FullBody {
 		}
 	}
 	
-	// Turns robot left + leg animations
+	/**
+	 * Turns the robot to its left side
+	 */
 	public static void turnLeft() {
 		for (int i = 0; i < 30; i += 1) {
 			
@@ -254,7 +260,9 @@ public class FullBody {
 		}
 	}
 	
-	// Turns robot right + leg animations
+	/**
+	 * turns the robot to it's right side
+	 */
 	public static void turnRight() {
 		
 		for (int i = 0; i < 30; i += 1) {
@@ -299,14 +307,18 @@ public class FullBody {
 		}
 	}
 
-	// Returns robot to the home position (centered and legs correctly placed)
+	/**
+	 * Robot returns to home position
+	 */
 	public static void homePos() {
 		simulator.reinitialize();
 		simulator.repaint();
 	}
 	
-	// Animation showing robot bowing
-	// TODO smoothness?
+	/**
+	 * Animations for making the robot bowing
+	 * ToDo: Making it more smooth
+	 */
 	public static void bow() {
 		leg3.setImage(legBL2);
 		leg4.setImage(legBR2);
@@ -335,8 +347,10 @@ public class FullBody {
 		simulator.repaint();
 	}
 	
-	// Animation showing robot bending back
-	// TODO smoothness?
+	/**
+	 * makes the robot bend back
+	 * Todo: smoothen it
+	 */
 	public static void bendBack() {
 		
 		leg1.setImage(legTL2);
@@ -367,13 +381,16 @@ public class FullBody {
 
 	}
 	
-	// Animation showing robot doing push ups
+	/**
+	 * Animations for showing the robot complete pushup
+	 */
 	public static void pushUp() {
 		
 	}
 	
-	// Animation showing robot jumping up
-	// TODO runs twice so the images get set again and legs show up
+	/**
+	 * Animations for showing the robot jump up
+	 */
 	public static void jumpUp() {
 
 		if (counter == 0) {
@@ -416,7 +433,9 @@ public class FullBody {
 		simulator.repaint();
 	}
 
-	// Animation showing robot jumping back (flips over)
+	/**
+	 * Animations for making the robot flip
+	 */
 	public static void jumpBack() {
 		jumpUp();
 		

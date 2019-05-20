@@ -6,6 +6,11 @@ import java.io.IOException;
 
 import com.jcraft.jsch.JSchException;
 
+/**
+ * Just a class for testing send and execute together. Not used anywhere in the code
+ * @author lakshbhambhani
+ *
+ */
 public class SendAndExecute {
 	
 	public static void main(String[] args) throws JSchException, IOException {

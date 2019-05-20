@@ -27,7 +27,7 @@ import java.io.*;
 import javax.imageio.*;
 import com.apple.eawt.Application;
 
-/*
+/**
  * @author for main window: Megan
  * @author for terminal & IDE placement: Laksh
  * 

@@ -15,9 +15,9 @@ import javax.swing.*;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
-/*
+/**
  * Description: The about panel to tell user what version of the simulator they are using and who built the simulator
- * @author of course Megan and Me(Ha ha, find out who i am)
+ * @author Megan, Laksh
  */
 public class AboutPanel extends JPanel {
 
@@ -26,7 +26,12 @@ public class AboutPanel extends JPanel {
 
 	public String release = "v1.0.2";
 
-	// all exceptions that it faces
+	/**
+	 * Constructor for About panel which tells the user about the version and the developers
+	 * @throws ControllerUnpluggedException
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public AboutPanel() throws ControllerUnpluggedException, IOException, InterruptedException {
 
 		ImageIcon icon = new ImageIcon("/body.png");
@@ -36,7 +41,9 @@ public class AboutPanel extends JPanel {
 				"About", JOptionPane.OK_OPTION, icon);
 	}
 
-	// close method. done when window is closed
+	/**
+	 * Close method when close button is pressed
+	 */
 	public void close() {
 		frame.setVisible(false);
 		frame.dispose();

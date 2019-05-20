@@ -7,9 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 
-/*
+/**
+ * 
  * Panel for Simulator Window class which extends JFrame
  * @author Megan
+ *
  */
 
 public class Simulator extends JPanel {
@@ -20,7 +22,9 @@ public class Simulator extends JPanel {
 		fullBody = new FullBody(this);
 	}
 
-	// Called automatically when the panel needs repainting
+	/**
+	 * Called automatically when panel needs to repaint itself
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
@@ -39,7 +43,9 @@ public class Simulator extends JPanel {
 		
 	}
 	
-	// Redrawing the body
+	/**
+	 * redrawing the body
+	 */
 	public void reinitialize() {
 		fullBody = null;
 		fullBody = new FullBody(this);

@@ -5,8 +5,9 @@ import com.jcraft.jsch.Session;
 
 import java.io.*;
 
-/*
+/**
  * Used to remotely execute the file on the bot
+ * @author lakshbhambhani
  */
 public class RemoteExecute {
 public static void main(String[] args) throws JSchException, IOException {// exceptions that it throws while running the method

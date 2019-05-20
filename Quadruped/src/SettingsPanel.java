@@ -2,8 +2,16 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+ * Settings panel helps user set the ip of the bot so that user can upload code from simulator and also control the bot using xbox
+ * @author lakshbhambhani
+ *
+ */
 public class SettingsPanel {
 
+	/**
+	 * Settings panel constructor. Uses JOptionPane
+	 */
     public SettingsPanel(){
         final JFrame parent = new JFrame();
         

@@ -1,0 +1,16 @@
+moveForward();
+turnLeft();
+turnLeft();
+turnLeft();
+fly = 5;
+if fly >= 3 {moveBackward()};
+turnRight();
+if 670 < 1000 {bow()};
+homePos();
+bendBack();
+homePos();
+jumpUp();
+homePos();
+jumpBack();
+homePos();
+pushUp();

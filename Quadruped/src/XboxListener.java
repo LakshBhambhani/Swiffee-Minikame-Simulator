@@ -3,8 +3,9 @@ import javax.swing.JEditorPane;
 import java.util.concurrent.TimeUnit;
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
-/*
+/**
  * Transmits data to server over JEditorPane after inputs from xbox
+ * @author lakshbhambhani
  */
 public class XboxListener{
 
@@ -15,7 +16,13 @@ public class XboxListener{
 	String BOTIP = "http://" + SimulatorWindow.botIP;
 	
 	int i = 0;
-
+	
+	/**
+	 * Listens to xbox
+	 * @throws ControllerUnpluggedException
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public void Listen() throws ControllerUnpluggedException, IOException, InterruptedException {
 			if(controller.rightBumperPressed()) {
 			System.out.println("Right Bumper Pressed");
@@ -75,6 +82,11 @@ public class XboxListener{
 			
 		}
 	
+	/**
+	 * used to exit listener
+	 * @return
+	 * @throws ControllerUnpluggedException
+	 */
 	public boolean exit() throws ControllerUnpluggedException {
 		if(controller.bPressed()) {
 			return false;
@@ -84,6 +96,11 @@ public class XboxListener{
 		}
 	}
 	
+	/**
+	 * returns true if the stop button is pressed
+	 * @return
+	 * @throws ControllerUnpluggedException
+	 */
 	public boolean stopButtonPressed() throws ControllerUnpluggedException {
 		if(controller.aPressed()) {
 			return false;

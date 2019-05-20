@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-/*
+/**
  * Basically the coordinate system. The animations are dependent on this class.
  * @author creator of the Walker Lab
  */
@@ -12,8 +12,13 @@ public class CoordinateSystem {
 	private AffineTransform coordTransform;
 	private Simulator simulator;
 
-	// 0 degrees points east
-	// constructor
+	/**
+	 * 0 degrees points east
+	 * Costructor
+	 * @param x
+	 * @param y
+	 * @param pic
+	 */
 	public CoordinateSystem(int x, int y, Image pic) {
 		picture = pic;
 		coordTransform = new AffineTransform();
@@ -23,19 +28,30 @@ public class CoordinateSystem {
 		coordTransform.translate(x - w, y - h);
 	}
 
-	// shift
+	/**
+	 * Shift
+	 * @param dx
+	 * @param dy
+	 */
 	public void shift(double dx, double dy) {
 		coordTransform.translate(dx, dy);
 	}
 
-	// rotate
+	/**
+	 * Rotate
+	 * @param radians
+	 */
 	public void rotate(double radians) {
 		int w = picture.getWidth(null);
 		int h = picture.getHeight(null);
 		coordTransform.rotate(radians, w / 2, h / 2);
 	}
 
-	// draws image
+	/**
+	 * Draws image
+	 * @param g
+	 * @param picture
+	 */
 	public void drawImage(Graphics g, Image picture) {
 		((Graphics2D) g).drawImage(picture, coordTransform, null);
 	}

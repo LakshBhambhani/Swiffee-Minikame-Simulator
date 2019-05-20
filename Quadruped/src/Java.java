@@ -3,8 +3,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/*
+/**
  * Programming class. This is what reads and compiles what the user has coded. 
+ * @author lakshbhambhani
  */
 public class Java {
 	
@@ -21,52 +22,93 @@ public class Java {
 	private static final String LESSTHANEQUALTO =  "<=";				// less than equal to constant
 	private static final String GREATERTHANEQUALTO = ">=";				// greater than equal to constant
 	
-
+	
+	/**
+	 * Helps full body move forward
+	 */
 	private static void moveForward() {
 		FullBody.moveForward();
 	}
 	
+	/**
+	 * Helps full body move backward
+	 */
 	private static void moveBackward() {
 		FullBody.moveBackward();
 	}
-	
+
+	/**
+	 * Helps full body turn left
+	 */
 	private static void turnLeft() {
 		FullBody.turnLeft();
 	}
-	
+
+	/**
+	 * Helps full body turn right
+	 */
 	private static void turnRight() {
 		FullBody.turnRight();
 	}
-	
+
+	/**
+	 * Helps full body move to home position
+	 */
 	private static void homePos() {
 		FullBody.homePos();
 	}
-	
+
+	/**
+	 * Helps full body bow
+	 */
 	private static void bow() {
 		FullBody.bow();
 	}
-	
+
+	/**
+	 * Helps full body bend back
+	 */
 	private static void bendBack() {
 		FullBody.bendBack();
 	}
-	
+
+	/**
+	 * Helps full body do 5 push ups
+	 */
 	private static void pushUp() {
 		FullBody.pushUp();
 	}
-	
+
+	/**
+	 * Helps full body jump up
+	 */
 	private static void jumpUp() {
 		FullBody.jumpUp();
 	}
-	
+
+	/**
+	 * Helps full body jump back a.k.a flip
+	 */
 	private static void jumpBack() {
 		FullBody.jumpBack();
 	}
-	
+
+	/**
+	 * Used to create integers
+	 * @param name
+	 * @param value
+	 */
 	private static void createInt(String name, int value) {
 		names.add(name);
 		values.add(value);
 	}
 	
+	/**
+	 * used to process text from textbox
+	 * @param text
+	 * @return
+	 * @throws InterruptedException
+	 */
 	public static String process(String text) throws InterruptedException {
 		if(text.equals("moveForward()")){
 			moveForward();
@@ -195,6 +237,12 @@ public class Java {
 
 	}
 	
+	/**
+	 * Used to process text from a file so indrirectly get text from textbox and save it to a file and then process ut
+	 * @param fileText
+	 * @return
+	 * @throws InterruptedException
+	 */
 	public static List<String> processFile(String fileText) throws InterruptedException {
 		
 		System.out.println("Processing from file");

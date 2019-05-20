@@ -16,15 +16,20 @@ import java.net.URISyntaxException;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
 
-/*
+/**
  * responsible for the menubar on top of the simulator window
  * @author Megan
+ *
  */
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
 	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem, settingsItem; // all jmenu items
 	
+	/**
+	 * Simulator menu constructor
+	 * @param simulatorWindow
+	 */
 	public SimulatorMenu(SimulatorWindow simulatorWindow) {
 	   
 		this.simulatorWindow = simulatorWindow;
@@ -72,6 +77,11 @@ public class SimulatorMenu extends JMenuBar {
 	    add(helpMenu);
 	}
 	
+	/**
+	 * File action is an action listener that is executed when an option from the menubar is chosen
+	 * @author lakshbhambhani
+	 *
+	 */
 	private class FileAction implements ActionListener {
 	    private String pathname = System.getProperty("user.dir") + "/";
 
@@ -147,6 +157,9 @@ public class SimulatorMenu extends JMenuBar {
 	      }
 	    }
 
+	    /**
+	     * Used to load text into the IDE of Simulator Window
+	     */
 	    private void loadText() {
 	    	String line = "";
 	    	String text = "";

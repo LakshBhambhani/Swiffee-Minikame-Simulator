@@ -12,7 +12,12 @@ public class Body {
 	private CoordinateSystem coordinates;
 	private int x, y;
 	
-	// constructor
+	/**
+	 * Constructor for body
+	 * @param x
+	 * @param y
+	 * @param body
+	 */
 	public Body(int x, int y, Image body) { 
 		this.body = body;
 		coordinates = new CoordinateSystem(x, y, body);
@@ -20,31 +25,52 @@ public class Body {
 		this.y = y;
 	}
 	
-	// used to move it x and y
+	/**
+	 * Used to move it to x and y
+	 * @param x
+	 * @param y
+	 */
 	public void shift(double x, double y) {
 		coordinates.shift(x, y);
 		this.x += x;
 		this.y += y;
 	}
 	
-	// used to rotate in one place
+	/**
+	 * used to rotate it in one place
+	 * @param radians
+	 */
 	public void rotate(double radians) {
 		coordinates.rotate(radians);
 	}
 	
-	// used to print it to the window
+	/**
+	 * Used to print it to the window
+	 * @param g
+	 */
 	public void draw(Graphics g) {
 	  coordinates.drawImage(g, body);
 	}
 	
+	/**
+	 * returnx x coordinate of the body
+	 * @return
+	 */
 	public int getX() {
 		return x;
 	}
 	
+	/**
+	 * returns y coordinate of the body
+	 */
 	public int getY() {
 		return y;
 	}
 	
+	/**
+	 * sets image of the body
+	 * @param image
+	 */
 	public void setImage(Image image) {
 		body = image;
 	}

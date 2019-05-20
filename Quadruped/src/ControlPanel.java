@@ -7,7 +7,7 @@ import java.awt.event.*;
 import java.awt.image.ImageObserver;
 import java.io.IOException;
 
-/* 
+/**
  * Description: The panel to show the buttons of the xbox controller
  * @author Megan (Laksh doesn't know how graphics work) and Laksh
  */
@@ -24,7 +24,9 @@ public class ControlPanel extends JPanel {
 		super.setSize(803, 634);
 	}
 
-	//paints and repaints the xbox map image over and over again
+	/**
+	 * paints and repaints the XboxMap image over and over again
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
@@ -41,6 +43,10 @@ public class ControlPanel extends JPanel {
 
 	}
 
+	/**
+	 * Repainting method
+	 * @param g
+	 */
 	public void repaint(Graphics g) {
 		g.drawImage(controller, 0, 0, 803, 604, this);
 	}

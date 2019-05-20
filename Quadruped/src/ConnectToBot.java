@@ -30,7 +30,11 @@ public class ConnectToBot {
 //        }
 //    }
 
-	// List, lets you see the files
+	/**
+	 * Stands for list. Lets you see the files in a specific directory
+	 * @throws JSchException
+	 * @throws IOException
+	 */
 	public static void remoteLs() throws JSchException, IOException {
 		JSch js = new JSch();
 		Session s = js.getSession(user, host, 22);
@@ -61,7 +65,11 @@ public class ConnectToBot {
 
 	}
 
-	// mkdir stands for make directory
+	/**
+	 * mkdir stands for make directory
+	 * @throws JSchException
+	 * @throws IOException
+	 */
 	public static void remoteMkdir() throws JSchException, IOException {
 		JSch js = new JSch();
 		Session s = js.getSession(user, host, 22);
@@ -92,7 +100,12 @@ public class ConnectToBot {
 
 	}
 
-	// copy copies the file. I dont use it tho
+	/**
+	 * copies the file
+	 * @throws JSchException
+	 * @throws IOException
+	 * @throws SftpException
+	 */
 	public static void remoteCopy() throws JSchException, IOException, SftpException {
 		JSch js = new JSch();
 		Session s = js.getSession(user, host, 22);
@@ -113,7 +126,11 @@ public class ConnectToBot {
 		s.disconnect();
 	}
 
-	// executes the file
+	/**
+	 * executes the file
+	 * @throws JSchException
+	 * @throws IOException
+	 */
 	public static void remoteExecute() throws JSchException, IOException {
 		JSch js = new JSch();
 		Session s = js.getSession(user, host, 22);

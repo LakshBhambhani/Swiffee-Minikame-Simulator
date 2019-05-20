@@ -17,10 +17,17 @@ public class SFTPBean {
 	//sftp channel
 	private ChannelSftp mChannelSftp = null;
 
-	//connect function let connect to sftp server
-	//in here or any protocol please remember some the other variable very important
-	//timeout but in this demo i only demo with normal function.
-	//still having many function u can add for sftp: create, delete, set right.. for sftp server
+	/**
+	 *connect function let connect to sftp server
+	 *in here or any protocol please remember some the other variable very important
+	 *timeout but in this demo i only demo with normal function.
+	 *still having many function u can add for sftp: create, delete, set right.. for sftp server
+	 * @param strHostAddress
+	 * @param iPort
+	 * @param strUserName
+	 * @param strPassword
+	 * @return
+	 */
 	public boolean connect(String strHostAddress, int iPort, String strUserName, String strPassword) {
 		boolean blResult = false;
 
@@ -56,7 +63,11 @@ public class SFTPBean {
 		return blResult;
 	}
 
-	//list file on sftp server
+	/**
+	 * List file on sftp server
+	 * @param strPath
+	 * @return
+	 */
 	public Vector<LsEntry> listFile(String strPath) {
 		Vector<LsEntry> vtFile = null;
 
@@ -68,7 +79,12 @@ public class SFTPBean {
 		return vtFile;
 	}
 
-	//download file
+	/**
+	 * download file
+	 * @param strSftpFile
+	 * @param strLocalFile
+	 * @return
+	 */
 	public boolean downloadFile(String strSftpFile, String strLocalFile) {
 		boolean blResult = false;
 
@@ -81,7 +97,12 @@ public class SFTPBean {
 		return blResult;
 	}
 
-	//upload file
+	/**
+	 * upload file
+	 * @param strLocalFile
+	 * @param strSftpFile
+	 * @return
+	 */
 	public boolean uploadFile(String strLocalFile, String strSftpFile) {
 		boolean blResult = false;
 
@@ -94,7 +115,9 @@ public class SFTPBean {
 		return blResult;
 	}
 
-	//close session
+	/**
+	 * close session
+	 */
 	public void close() {
 		try {
 			this.mChannelSftp.disconnect();

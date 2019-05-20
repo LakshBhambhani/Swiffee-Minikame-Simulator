@@ -5,12 +5,18 @@ import com.jcraft.jsch.ChannelSftp.LsEntry;
 import com.jcraft.jsch.JSchException;
 
 
-/*
+/**
  * Sends the file to the bot
+ * @author lakshbhambhani
+ *
  */
 public class ScpTo {
 
-	// main class let exec demo
+	/**
+	 * Sends the file to the host
+	 * @throws JSchException
+	 * @throws IOException
+	 */
 	public static void sendTo() throws JSchException, IOException {
 		//now we start up run
 		SFTPBean sftpBean = new SFTPBean();
