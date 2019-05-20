@@ -25,7 +25,7 @@ import com.jcraft.jsch.JSchException;
 import javax.swing.*;
 import java.io.*;
 import javax.imageio.*;
-import com.apple.eawt.Application;
+//import com.apple.eawt.Application;
 
 /*
  * @author for main window: Megan
@@ -60,9 +60,9 @@ public class SimulatorWindow extends JFrame{
 		
 		this.setIconImage(new ImageIcon("Icon.png").getImage());
 		
-		Application application = Application.getApplication();
-		Image image = Toolkit.getDefaultToolkit().getImage("Icon.png");
-		application.setDockIconImage(image);
+//		Application application = Application.getApplication();
+//		Image image = Toolkit.getDefaultToolkit().getImage("Icon.png");
+//		application.setDockIconImage(image);
 		
 		refresh();
 		
