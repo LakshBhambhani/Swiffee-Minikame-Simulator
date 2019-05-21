@@ -50,14 +50,48 @@ class SecondViewController: UIViewController, WKUIDelegate {
         run.bottomAnchor.constraint(equalTo: IDE.topAnchor, constant: 8).isActive = true
         run.widthAnchor.constraint(equalToConstant: 100).isActive = true
         run.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        run.addTarget(self, action: #selector(runAction), for: .touchUpInside)
     }
     
     @objc func runAction(sender: UIButton!) {
         print("Run Clicked")
-        let url = URL(string: textField.text! + "/run");
-        let request = URLRequest(url: url!);
-        webView.load(request);
-        print(url)
+        let commands = IDE.text!.components(separatedBy: ";")
+        for command in commands{
+            var executingCommand: String
+            if command == "MoveForward()" {
+                executingCommand = "walkForward"
+            }
+            if command == "MoveBackward()" {
+                executingCommand = "moveBackward"
+            }
+            if command == "TurnLeft()" {
+                executingCommand = "turnLeft"
+            }
+            if command == "TurnRight()" {
+                executingCommand = "turnRight"
+            }
+            if command == "Bow()" {
+                executingCommand = "bow"
+            }
+            if command == "BendBack()" {
+                executingCommand = "bendBack"
+            }
+            if command == "JumpUp()" {
+                executingCommand = "jumpUp"
+            }
+            if command == "JumpBack()" {
+                executingCommand = "jumpBack"
+            }
+            if command == "PushUp()" {
+                executingCommand = "pushUp"
+            }
+            print(command)
+            let url = URL(string: textField.text! + "/run");
+            let request = URLRequest(url: url!);
+            webView.load(request);
+            print(url)
+        }
+
     }
 
 
