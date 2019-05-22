@@ -21,6 +21,9 @@ def main():
 def walkForward():
    quad.walkForward()
 
+def walkForward():
+   quad.walkBackward()
+
 def turnLeft():
    quad.turnLeft()
 
@@ -53,7 +56,12 @@ def action1(action1):
       message = "walkForward"
       thread = threading.Thread(target=walkForward)
       thread.start()
-      return message + ' started'   
+      return message + ' started' 
+   elif action1 == "walkBackward":
+      message = "walkBackward"
+      thread = threading.Thread(target=walkBackward)
+      thread.start()
+      return message + ' started' 
    elif action1 == "turnLeft":
       message = "turnLeft"
       thread = threading.Thread(target=turnLeft)
