@@ -1,16 +1,16 @@
 # Swiffee - Minikame Simulator
 
 @author Laksh Bhambhani, Megan Choy
-@date April 9, 2019
+@date April 9, 2019 - May 22, 2019
 
 This program makes a simulation of a Quadruped moving, but it can also be used to move the robot in real life. To move the robot, the user will use pre-made methods. Kids who would like to try testing a Quadruped, but don't have one, can use this simulation. It is also useful to try coding and using robots in an easy and simple way. 
 
 There is also a simulation of the Quadruped to mimic what it would look like in real life. To code, there is a simple IDE and a terminal to show how the Quadruped is working and if there are any errors. New coders can easily code with simple methods that can be used in many ways.
 
 ### Instructions:
-Open the window in class SimulatorWindow and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language): <a href=https://lakshbhambhani.github.io/SwiffeeAPI/>JAVA API</a> or https://lakshbhambhani.github.io/SwiffeeAPI/
+Open the window in folder Quadruped then class SimulatorWindow and start coding with The Java API (no need to worry, you need to code in java and you definitely know this language): <a href=https://lakshbhambhani.github.io/SwiffeeAPI/>JAVA API</a> or https://lakshbhambhani.github.io/SwiffeeAPI/
 
-The only methods that work right now are "moveForward(); moveBackward(); turnLeft(); turnRight(); homePos();". To see an example, go to "File" in the top left and then "Open" and open Commands.txt.
+To see an example, go to "File" in the top left and then "Open" and open Commands.txt.
 
 If there is a problem, report the bug under "Help" and then click "Report a Bug".
 
@@ -43,7 +43,7 @@ First, type in the code at the SwiffeeIDE and click "Run" once you are done to s
 | XboxListener | This is where we listen to Xbox inputs and process it on the bot |
 
 ### Responsibilities:<br>
-Laksh works with the hardware and software regarding the robot. The classes like SFTPBean, ScptTo, and ConnectToBot are all used to send and execute code on the actual robot. He also works on the Andriod and IOS app to control the robot. For the simulator, he made the Java class which analyzes what the user codes. Also Xbox Listeners are made by him.
+Laksh works with the hardware and software regarding the robot. The classes like SFTPBean, ScptTo, and ConnectToBot are all used to send and execute code on the actual robot. He also works on the Android and IOS app to control the robot. For the simulator, he made the Java class which analyzes what the user codes. Also Xbox Listeners are made by him.
 <br><br>
 Megan works on the simulator, animations, and the other requirements like the ReadME and UML diagram. She works with the classes regarding to the simulator graphics and window and the images like Body and Legs.
 
