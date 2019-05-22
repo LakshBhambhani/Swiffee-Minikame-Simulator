@@ -303,7 +303,7 @@ class Quadruped():
 
         for x in range(5):
             kit.servo[5].angle = 150    #FL FOOT
-            kit.servo[11].angle = 30   #BR FOOT
+            kit.servo[11].angle = 50   #BR FOOT
 
             time.sleep(0.8)
 
