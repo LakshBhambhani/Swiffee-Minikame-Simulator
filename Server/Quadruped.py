@@ -54,6 +54,44 @@ class Quadruped():
 
         print('Walking Forward')
 
+    def walkBackward(self):
+        kit.servo[7].angle = 90
+        kit.servo[9].angle = 90
+       
+
+        time.sleep(0.2)
+        
+        kit.servo[6].angle = 110
+        kit.servo[8].angle = 150
+        kit.servo[4].angle = 20
+        kit.servo[10].angle = 60
+
+        time.sleep(0.2)
+
+        kit.servo[7].angle = 70
+        kit.servo[9].angle = 70
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 130
+        kit.servo[11].angle = 130
+
+        time.sleep(0.2)
+
+        kit.servo[6].angle = 150
+        kit.servo[8].angle = 110
+        kit.servo[4].angle = 60
+        kit.servo[10].angle = 20
+
+        time.sleep(0.2)
+
+        kit.servo[5].angle = 110
+        kit.servo[11].angle = 110
+
+        time.sleep(0.2)
+
+        print('Walking Backward')
+
     def turnLeft(self):
         kit.servo[5].angle = 130
         kit.servo[11].angle = 130
