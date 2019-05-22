@@ -1,7 +1,7 @@
 # Swiffee - Minikame Simulator
 
 @author Laksh Bhambhani, Megan Choy
-@date April 9, 2019
+@date April 9, 2019 - May 22, 2019
 
 This program makes a simulation of a Quadruped moving, but it can also be used to move the robot in real life. To move the robot, the user will use pre-made methods. Kids who would like to try testing a Quadruped, but don't have one, can use this simulation. It is also useful to try coding and using robots in an easy and simple way. 
 
