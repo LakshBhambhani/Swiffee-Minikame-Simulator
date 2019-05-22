@@ -295,3 +295,9 @@ class Quadruped():
 #         kit.servo[9].angle = 0     #BL FOOT
 #         kit.servo[11].angle = 180   #BR FOOT
 
+    def dance(self):
+        kit.servo[4].angle = 0     #FL HIP
+        kit.servo[6].angle = 180    #FR HIP
+        kit.servo[8].angle = 180    #BL HIP
+        kit.servo[10].angle = 0    #BR HIP
+

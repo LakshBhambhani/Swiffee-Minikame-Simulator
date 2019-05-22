@@ -48,6 +48,9 @@ def jumpBack():
 def pushUp():
    quad.pushUp()
 
+def dance():
+   quad.dance()
+
 @app.route("/<action1>")
 def action1(action1):
    # Convert the pin from the URL into an integer:
@@ -100,6 +103,11 @@ def action1(action1):
    elif action1 == "pushUp":
       message = "pushUp"
       thread = threading.Thread(target=pushUp)
+      thread.start()
+      return message + ' started' 
+   elif action1 == "dance":
+      message = "dance"
+      thread = threading.Thread(target=dance)
       thread.start()
       return message + ' started' 
    else:
