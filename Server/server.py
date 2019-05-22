@@ -21,7 +21,7 @@ def main():
 def walkForward():
    quad.walkForward()
 
-def walkForward():
+def walkBackward():
    quad.walkBackward()
 
 def turnLeft():
