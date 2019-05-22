@@ -323,6 +323,13 @@ class Quadruped():
 
             time.sleep(0.2)
 
+    def dance(self):
+        homePos()
+        kit.servo[4].angle = 140     #FL HIP
+        kit.servo[6].angle = 180    #FR HIP
+        kit.servo[8].angle = 40    #BL HIP
+        kit.servo[10].angle = 0    #BR HIP
+
         
         
 
