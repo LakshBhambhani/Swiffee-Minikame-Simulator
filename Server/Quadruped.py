@@ -334,11 +334,21 @@ class Quadruped():
         kit.servo[11].angle = 110   #BR FOOT
         print('switching to home position')
 
-        kit.servo[4].angle = 170     #FL HIP
-        kit.servo[6].angle = 180    #FR HIP
-        kit.servo[8].angle = 180    #BL HIP
-        kit.servo[10].angle = 140    #BR HIP
+        for x in range(4):
+            kit.servo[4].angle = 170     #FL HIP
+            kit.servo[6].angle = 180    #FR HIP
+            kit.servo[8].angle = 180    #BL HIP
+            kit.servo[10].angle = 140    #BR HIP
 
+            time.sleep(0.3)
+
+            kit.servo[4].angle = 0     #FL HIP
+            kit.servo[6].angle = 0    #FR HIP
+            kit.servo[8].angle = 0    #BL HIP
+            kit.servo[10].angle = 0    #BR HIP
+
+
+       
         
         
 
