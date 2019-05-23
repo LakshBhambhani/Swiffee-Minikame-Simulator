@@ -113,8 +113,8 @@ def action1(action1):
       thread = threading.Thread(target=dance)
       thread.start()
       return message + ' started' 
-   elif action1 == "demo":
-      message = "demo"
+   elif action1 == "swerve":
+      message = "swerve"
       thread = threading.Thread(target=swerve)
       thread.start()
       return message + ' started' 
