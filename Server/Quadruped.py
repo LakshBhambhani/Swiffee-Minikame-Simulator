@@ -323,7 +323,7 @@ class Quadruped():
 
             time.sleep(0.2)
 
-    def demo(self):
+    def swerve(self):
         kit.servo[4].angle = 40     #FL HIP
         kit.servo[5].angle = 110    #FL FOOT
         kit.servo[6].angle = 130    #FR HIP
@@ -334,7 +334,7 @@ class Quadruped():
         kit.servo[11].angle = 110   #BR FOOT
         print('switching to home position')
 
-        for x in range(4):
+        for x in range(2):
             kit.servo[4].angle = 170     #FL HIP
             kit.servo[6].angle = 180    #FR HIP
             kit.servo[8].angle = 180    #BL HIP

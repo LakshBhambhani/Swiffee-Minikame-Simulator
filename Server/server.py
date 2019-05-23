@@ -51,8 +51,8 @@ def pushUp():
 def dance():
    quad.dance()
 
-def demo():
-   quad.demo()
+def swerve():
+   quad.swerve()
 
 @app.route("/<action1>")
 def action1(action1):
@@ -115,7 +115,7 @@ def action1(action1):
       return message + ' started' 
    elif action1 == "demo":
       message = "demo"
-      thread = threading.Thread(target=demo)
+      thread = threading.Thread(target=swerve)
       thread.start()
       return message + ' started' 
    else:
