@@ -309,19 +309,19 @@ class Quadruped():
             kit.servo[5].angle = 110    #FL FOOT
             kit.servo[11].angle = 110   #BR FOOT
 
-            time.sleep(1)
+            time.sleep(0.2)
 
             kit.servo[7].angle = 20    #FL FOOT
             kit.servo[9].angle = 120   #BR FOOT
 
-            time.sleep(1)
+            time.sleep(0.2)
 
             kit.servo[7].angle = 70    #FL FOOT
             kit.servo[9].angle = 70   #BR FOOT
             kit.servo[5].angle = 150    #FL FOOT
             kit.servo[11].angle = 50   #BR FOOT
 
-            time.sleep(1)
+            time.sleep(0.2)
 
     def swerve(self):
         kit.servo[4].angle = 40     #FL HIP
