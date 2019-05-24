@@ -44,17 +44,22 @@ Laksh works with the hardware and software regarding the robot. The classes like
 Megan works on the simulator, animations, and the other requirements like the ReadME and UML diagram. She works with the classes regarding to the simulator graphics and window and the images like Body and Legs.
 
 ### Credit:
-# Jsch
+#### Jsch
 JSch allows you to connect to an ssh server and use port forwarding. We use this to connect to the bot directly and access files or write files instead of connecting to the bot's server and directly triggering commands.
 
-# Jamepad
+#### Jamepad
 A library to use gamepads in Java in a better way. Cloned from William A Hartman. We use this library to listen to xbox inputs which is connected to the simulator via your computer.
 
-# Jsoup
+#### Jsoup
 Jsoup is a Java library for working with real-world HTML. It provides a very convenient API for extracting and manipulating data, using the best of DOM, CSS, and jquery-like methods. Used for connecting to Bot's server.
 
-# Html Parser
+#### Html Parser
 HTML Parser is used to get the text which is on a specific URL. Used to read the message on the bot's status page which tells you what it is doing. If bot is doing the command, then Simulator will also be forced to show the same animation.
+
+### Known Bugs:
+Animations for bow, bendBack, jumpUp, jumpBack are not the best...
+The legs of the quadruped on the simulator can sometimes "come off" when used too much.
+Method pushUp only works on the robot (does nothing on the simulator).
 
 ## Want to know more?
 Read the <a href="https://lakshbhambhani.github.io/SwiffeeDocs/">Swiffee Docs</a>
