@@ -313,30 +313,37 @@ public class SimulatorWindow extends JFrame{
 	    
 	    ActionListener sendListener = new ActionListener() {
 	    	   public void actionPerformed(ActionEvent e) {
-	        	  	System.out.println("RUn pressed");
-	    	     			String str = programInput.getText();
-	    	                List<String> returnValues = null;
-							try {
-								returnValues = Java.processFile(str);
-							} catch (InterruptedException e2) {
-								// TODO Auto-generated catch block
-								e2.printStackTrace();
+	        	  	System.out.println("Run pressed");
+	        	  	System.out.println("Text: " + programInput.getText());
+	        	  	if(!programInput.getText().equals("")) {
+	        	  		String str = programInput.getText();
+    	                List<String> returnValues = null;
+						try {
+							returnValues = Java.processFile(str);
+						} catch (InterruptedException e2) {
+							// TODO Auto-generated catch block
+							e2.printStackTrace();
+						}
+						boolean error = false;
+						for(int i = 0; i < returnValues.size(); i++) {
+							if(returnValues.get(i).toString().trim().equals("error")) {
+								System.out.println("Any errors: " + error);
+								terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
+								error = true;
 							}
-							boolean error = false;
-							for(int i = 0; i < returnValues.size(); i++) {
-								if(returnValues.get(i).toString().trim().equals("error")) {
-									System.out.println("Any errors: " + error);
+							else {
+								if(error != true){
 									terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
-									error = true;
 								}
-								else {
-									if(error != true){
-										terminal.setText(terminal.getText() + "\n" + returnValues.get(i).toString());
-									}
-								}
- 	                	}
-	    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
-	    	            	buttonIsClicked = true;
+							}
+	                	}
+    	            	terminal.setText(terminal.getText() + "\nuser@terminal:");
+    	            	buttonIsClicked = true;
+	        	  	}
+	        	  	else {
+	        	  		
+	        	  	}
+	    	     			
 	    	   }       
 	    	};
 	    	
