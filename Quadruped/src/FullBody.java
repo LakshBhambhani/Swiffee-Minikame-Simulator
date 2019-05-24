@@ -36,16 +36,16 @@ public class FullBody {
 //		width = simulator.getWidth();
 //		height = simulator.getHeight();
 		
-		bodyImage = (new ImageIcon("body.png")).getImage();
-		legTL = (new ImageIcon("leg1.png")).getImage();
-		legTR = (new ImageIcon("leg2.png")).getImage();
-		legBL = (new ImageIcon("leg3.png")).getImage();
-		legBR = (new ImageIcon("leg4.png")).getImage();
+		bodyImage = (new ImageIcon(FullBody.class.getResource("/resources/body.png"))).getImage();
+		legTL = (new ImageIcon(FullBody.class.getResource("/resources/leg1.png"))).getImage();
+		legTR = (new ImageIcon(FullBody.class.getResource("/resources/leg2.png"))).getImage();
+		legBL = (new ImageIcon(FullBody.class.getResource("/resources/leg3.png"))).getImage();
+		legBR = (new ImageIcon(FullBody.class.getResource("/resources/leg4.png"))).getImage();
 		
-		legTL2 = (new ImageIcon("leg5.png")).getImage();
-		legTR2 = (new ImageIcon("leg6.png")).getImage();
-		legBL2 = (new ImageIcon("leg7.png")).getImage();
-		legBR2 = (new ImageIcon("leg8.png")).getImage();
+		legTL2 = (new ImageIcon(FullBody.class.getResource("/resources/leg5.png"))).getImage();
+		legTR2 = (new ImageIcon(FullBody.class.getResource("/resources/leg6.png"))).getImage();
+		legBL2 = (new ImageIcon(FullBody.class.getResource("/resources/leg7.png"))).getImage();
+		legBR2 = (new ImageIcon(FullBody.class.getResource("/resources/leg8.png"))).getImage();
 		
 //		BufferedImage bimg;
 //		try {

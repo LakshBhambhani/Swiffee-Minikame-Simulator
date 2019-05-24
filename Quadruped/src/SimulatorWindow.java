@@ -58,10 +58,10 @@ public class SimulatorWindow extends JFrame{
 		programInput.setText("Swiffee IDE");
 		terminal.setText("Terminal");
 		
-		this.setIconImage(new ImageIcon("Icon.png").getImage());
+		this.setIconImage(new ImageIcon(SimulatorWindow.class.getResource("/resources/Icon.png")).getImage());
 		
 //		Application application = Application.getApplication();
-//		Image image = Toolkit.getDefaultToolkit().getImage("Icon.png");
+//		Image image = Toolkit.getDefaultToolkit().getImage(SimulatorWindow.class.getResource("/resources/Icon.png");
 //		application.setDockIconImage(image);
 		
 		refresh();

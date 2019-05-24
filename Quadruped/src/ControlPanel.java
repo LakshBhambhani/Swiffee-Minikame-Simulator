@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class ControlPanel extends JPanel {
 
-	private Image controller = new ImageIcon("XboxMap.jpg").getImage();
+	private Image controller = new ImageIcon(ControlPanel.class.getResource("/resources/XboxMap.jpg")).getImage();
 
 	public static int width;
 	public static int height;
