@@ -104,7 +104,7 @@ public class FullBody {
 	 * @param image - the name of the image
 	 */
 	public static void fullBodyImage(String image) {
-		body.setImage(new ImageIcon(image).getImage());
+		body.setImage(new ImageIcon(FullBody.class.getResource("/resources/" +image)).getImage());
 		leg1.setImage(null);
 		leg2.setImage(null);
 		leg3.setImage(null);
@@ -341,7 +341,7 @@ public class FullBody {
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
 		
-		body.setImage(new ImageIcon("bowBody.png").getImage());
+		body.setImage(new ImageIcon(FullBody.class.getResource("/resources/bowBody.png")).getImage());
 		leg1.shift(0, -5);
 		leg2.shift(5, 0);
 		leg3.shift(-3, 0);
@@ -378,7 +378,7 @@ public class FullBody {
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
 		
-		body.setImage(new ImageIcon("bendBackBody.png").getImage());	
+		body.setImage(new ImageIcon(FullBody.class.getResource("/resources/bendBackBody.png")).getImage());	
 		leg1.shift(0, 3);
 		leg3.shift(5, 3);
 		
@@ -429,12 +429,12 @@ public class FullBody {
 
 			counter++;
 			
-		for (int i = 0; i < 150; i++) {
+		for (int i = 0; i < 70; i++) {
 			fullBodyImage("jump1.png");
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
 		
-		for (int i = 0; i < 150; i++) {
+		for (int i = 0; i < 30; i++) {
 			fullBodyImage("jump1.5.png");
 			simulator.paintImmediately(0, 0, 800, 800);
 		}
@@ -456,7 +456,7 @@ public class FullBody {
 		if (counter == 0) {
 			jumpUp();
 
-			for (int i = 0; i < 150; i++) {
+			for (int i = 0; i < 30; i++) {
 				fullBodyImage("jump2.5.png");
 				simulator.paintImmediately(0, 0, 800, 800);
 			}
