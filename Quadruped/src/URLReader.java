@@ -3,7 +3,7 @@ import org.htmlparser.parserapplications.StringExtractor;
 import org.htmlparser.util.ParserException;
 
 /**
- * Reads the text on a url. Helps us know about the aknowledgement from the bot once it 
+ * Reads the text on a url. Helps us know about the acknowledgement from the bot once it moves
  */
 
 public class URLReader {
