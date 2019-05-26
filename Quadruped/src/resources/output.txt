@@ -2,17 +2,3 @@ Output printing starts now
 Server started.
 Listening for connections on port : 8080 ...
 
-803
-Right Bumper Pressed
-Right Trigger is Down
-Respawning
-Left Trigger is Down
-Respawning
-Left Trigger is Down
-Respawning
-Left Trigger is Down
-Respawning
-Left Stick is Left
-Respawning
-Left Stick is Right
-Respawning
