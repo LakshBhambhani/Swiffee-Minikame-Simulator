@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javax.swing.JFrame;
 
 import com.studiohartman.jamepad.ControllerUnpluggedException;
@@ -24,6 +26,24 @@ public class ControlPanelJframe extends JFrame implements Runnable {
 		System.out.println(width);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().add(panel);
+		
+		Thread t1 = new Thread(new Runnable() {
+			public void run() {
+				XboxListener xbox = new XboxListener();
+				try {
+					while(xbox.exit()){
+						panel.repaint();
+						xbox.Listen();
+					}
+					frame.dispose();
+				}
+				catch(ControllerUnpluggedException | IOException | InterruptedException e1) {
+					System.out.println("Controller not connected");
+				}
+			}
+		});
+		t1.start();
+		t1.yield();
 
 	}
 

@@ -14,7 +14,6 @@ public class LocalServerThread extends Thread{
 	public LocalServerThread() {
 		Socket socket = new Socket();
 		Thread localServer = new Thread(new LocalServer(socket));// creates a thread
-		Thread window = new Thread();// creates a thread
 		localServer.start();
 		localServer.yield();
 	}
