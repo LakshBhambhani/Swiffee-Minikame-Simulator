@@ -1,9 +1,11 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
@@ -24,7 +26,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
 public class SimulatorMenu extends JMenuBar {
 
 	private SimulatorWindow simulatorWindow;
-	private JMenuItem exitItem, loadItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem, settingsItem; // all jmenu items
+	private JMenuItem exitItem, loadItem, saveItem, kitItem, helpItem, controlItem, bugItem, aboutItem, apiItem, settingsItem; // all jmenu items
 	
 	/**
 	 * Simulator menu constructor
@@ -40,12 +42,15 @@ public class SimulatorMenu extends JMenuBar {
 	    FileAction fileAction = new FileAction();
 	    loadItem = new JMenuItem("Open...");
 	    loadItem.addActionListener(fileAction);
+	    saveItem = new JMenuItem("Save");
+	    saveItem.addActionListener(fileAction);
 	    aboutItem = new JMenuItem("About...");
 	    aboutItem.addActionListener(fileAction);
 	    exitItem = new JMenuItem("Exit");
 	    exitItem.addActionListener(fileAction);
 	    
 	    fileMenu.add(loadItem);
+	    fileMenu.add(saveItem);
 	    fileMenu.add(aboutItem);
 	    fileMenu.addSeparator();
 	    fileMenu.add(exitItem);
@@ -91,6 +96,10 @@ public class SimulatorMenu extends JMenuBar {
 	      if (m == loadItem)
 	      {
 	        loadText();
+	      }
+	      else if (m == saveItem)
+	      {
+	        saveAs();
 	      }
 	      else if (m == kitItem)
 	      {
@@ -206,4 +215,33 @@ public class SimulatorMenu extends JMenuBar {
 	        
 	    }
 	}
+	
+	 public void saveAs() {
+
+	      final JFileChooser saveAs = new JFileChooser();
+	      saveAs.setApproveButtonText("Save");
+	      int actionDialog = saveAs.showOpenDialog(this);
+	      if (actionDialog != JFileChooser.APPROVE_OPTION) {
+	         return;
+	      }
+
+	      File fileName = new File(saveAs.getSelectedFile() + ".txt");
+	      BufferedWriter outFile = null;
+	      try {
+	         outFile = new BufferedWriter(new FileWriter(fileName));
+
+	         SimulatorWindow.programInput.write(outFile);   
+
+	      } catch (IOException ex) {
+	         ex.printStackTrace();
+	      } finally {
+	         if (outFile != null) {
+	            try {
+	               outFile.close();
+	            } catch (IOException e) {
+	        
+	            }
+	         }
+	      }
+	   }
 }

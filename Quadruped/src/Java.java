@@ -27,70 +27,90 @@ public class Java {
 	 * Helps full body move forward
 	 */
 	private static void moveForward() {
-		FullBody.moveForward();
+		if(LocalURLReader.readFromURL("moveForward")) {
+			FullBody.moveForward();
+		}
 	}
 	
 	/**
 	 * Helps full body move backward
 	 */
 	private static void moveBackward() {
-		FullBody.moveBackward();
+		if(LocalURLReader.readFromURL("moveBackward")) {
+			FullBody.moveBackward();
+		}	
 	}
 
 	/**
 	 * Helps full body turn left
 	 */
 	private static void turnLeft() {
-		FullBody.turnLeft();
+		if(LocalURLReader.readFromURL("turnLeft")) {
+			FullBody.turnLeft();
+		}	
 	}
 
 	/**
 	 * Helps full body turn right
 	 */
 	private static void turnRight() {
-		FullBody.turnRight();
+		if(LocalURLReader.readFromURL("turnRight")) {
+			FullBody.turnRight();
+		}	
 	}
 
 	/**
 	 * Helps full body move to home position
 	 */
 	private static void homePos() {
-		FullBody.homePos();
+		if(LocalURLReader.readFromURL("homePos")) {
+			FullBody.homePos();
+		}	
 	}
 
 	/**
 	 * Helps full body bow
 	 */
 	private static void bow() {
-		FullBody.bow();
+		if(LocalURLReader.readFromURL("bow")) {
+			FullBody.bow();
+		}	
 	}
 
 	/**
 	 * Helps full body bend back
 	 */
 	private static void bendBack() {
-		FullBody.bendBack();
+		if(LocalURLReader.readFromURL("bendBack")) {
+			FullBody.bendBack();
+		}	
 	}
 
 	/**
 	 * Helps full body do 5 push ups
 	 */
 	private static void pushUp() {
-		FullBody.pushUp();
+		if(LocalURLReader.readFromURL("pushUp")) {
+			FullBody.pushUp();
+		}	
 	}
 
 	/**
 	 * Helps full body jump up
 	 */
 	private static void jumpUp() {
-		FullBody.jumpUp();
+		if(LocalURLReader.readFromURL("jumpUp")) {
+			FullBody.jumpUp();
+		}	
 	}
 
 	/**
 	 * Helps full body jump back a.k.a flip
 	 */
 	private static void jumpBack() {
-		FullBody.jumpBack();
+		if(LocalURLReader.readFromURL("jumpBack")) {
+			FullBody.jumpBack();
+		}	
 	}
 
 	/**

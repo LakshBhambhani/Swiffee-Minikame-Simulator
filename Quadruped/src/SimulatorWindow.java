@@ -38,7 +38,7 @@ import javax.imageio.*;
 
 public class SimulatorWindow extends JFrame{
 	
-	private JTextArea programInput, terminal;
+	public static JTextArea programInput, terminal;
 	private JButton runOnBot;
 	private JButton run;
 	
@@ -61,7 +61,7 @@ public class SimulatorWindow extends JFrame{
 		this.setIconImage(new ImageIcon(SimulatorWindow.class.getResource("/resources/Icon.png")).getImage());
 		
 //		Application application = Application.getApplication();
-//		Image image = Toolkit.getDefaultToolkit().getImage(SimulatorWindow.class.getResource("/resources/Icon.png");
+//		Image image = Toolkit.getDefaultToolkit().getImage(SimulatorWindow.class.getResource("/resources/Icon.png"));
 //		application.setDockIconImage(image);
 		
 		refresh();
@@ -394,11 +394,18 @@ public class SimulatorWindow extends JFrame{
 
 	public static void main(String[] args) throws IOException {
 		
+			
 		
 		    SimulatorWindow window = new SimulatorWindow();
 		    window.setBounds(0, 0, 1100, 700);
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		    window.setResizable(false);
+		    
+		    File file = new File("src/resources/output.txt"); 
+		    FileOutputStream fos = new FileOutputStream(file);
+		    PrintStream ps = new PrintStream(fos);
+		    System.setOut(ps);
+		    System.out.println("Output printing starts now");
 		    
 		    
 //		    Simulator panel = new Simulator();
@@ -408,6 +415,9 @@ public class SimulatorWindow extends JFrame{
 //		    y.add(panel);
 		    
 		    window.setVisible(true);										// makes the window visible
+		    
+			new LocalServerThread();
+
 		    
 		    
 		   
