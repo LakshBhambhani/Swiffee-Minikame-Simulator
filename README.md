@@ -29,6 +29,9 @@ First, type in the code at the SwiffeeIDE and click "Run" once you are done to s
 | FullBody | the class instantiating the Body and Legs classes |
 | Java | the analyzer of the code the user inputs |
 | Legs | the blueprint class representing the legs of the Quadruped |
+| LocalServer | a local server to test server commands for running the bot |
+| LocalServerThread | A class for multithreading the localServer so that it doesn't affect GUI |
+| LocalURLReader | Used for reading text on localServer URL | 
 | SettingsPanel | User can change the IP of the bot from here |
 | Simulator | the panel drawing the body and legs of the Quadruped |
 | SimulatorMenu | Contains the Menubar options for Swiffee |
