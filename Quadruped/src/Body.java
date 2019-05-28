@@ -1,9 +1,10 @@
 import java.awt.Image;
 import java.awt.Graphics;
 
-/*
+/**
  * Class for the body. Uses coordinate system to move around on Simulator
  * @author Megan
+ * @date 5/26/19
  */
 
 public class Body {

@@ -10,6 +10,7 @@ import java.io.IOException;
 /**
  * Description: The panel to show the buttons of the xbox controller
  * @author Laksh
+ * @date 5/26/19
  */
 public class ControlPanel extends JPanel {
 

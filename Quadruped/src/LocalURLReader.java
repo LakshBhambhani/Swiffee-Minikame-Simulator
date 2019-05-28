@@ -4,6 +4,8 @@ import org.htmlparser.util.ParserException;
 
 /**
  * Reads the text on a url. Helps us know about the acknowledgement from the bot once it moves
+ * @author lakshbhambhani
+ * @date 5/26/19
  */
 
 public class LocalURLReader {

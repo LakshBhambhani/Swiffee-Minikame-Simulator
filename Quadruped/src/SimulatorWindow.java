@@ -33,7 +33,7 @@ import javax.imageio.*;
  * 
  * Description: basically the main window that user sees and uses. Contains terminal, IDE, a menu bar and the display area where the bot
  * can be seen
- * 
+ * @date 5/26/19
  */
 
 public class SimulatorWindow extends JFrame{
@@ -48,6 +48,10 @@ public class SimulatorWindow extends JFrame{
 	private boolean terminalIsClicked =  false;
 	private boolean buttonIsClicked = false;
 	
+	/**
+	 * Constructor for Simulator Window
+	 * @throws IOException
+	 */
 	public SimulatorWindow() throws IOException {
 		super("Quadruped Simulator");
 		Java java = new Java();
@@ -68,6 +72,9 @@ public class SimulatorWindow extends JFrame{
 		
 	}
 	
+	/**
+	 * Sets the GUI up. Puts window with the bot in one place, the IDE and the terminal and the two buttons
+	 */
 	private void setUpGUI() {
 		
 	    programInput = new JTextArea(15, 20);
@@ -379,19 +386,34 @@ public class SimulatorWindow extends JFrame{
 	    
 	}
 	
+	/**
+	 * Refresh method for IDE
+	 */
 	public void refresh() {
 	    String text = programInput.getText();
 	}
 	
+	/**
+	 * Action performed method for window
+	 * @param e
+	 */
 	public void actionPerformed(ActionEvent e) {
 	    refresh();
 	}
 	
+	/**
+	 * Used for setting programInput text
+	 * @param text
+	 */
 	public void setText(String text) {
 		programInput.setText(text);
 	}
 
-
+	/**
+	 * Main method for our project. Creates the frame, creates the file for output and initializes localServer
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		
 			
@@ -401,7 +423,7 @@ public class SimulatorWindow extends JFrame{
 		    window.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		    window.setResizable(false);
 		    
-		    File file = new File("src/resources/output.txt"); 
+		    File file = new File("output.txt"); 
 		    FileOutputStream fos = new FileOutputStream(file);
 		    PrintStream ps = new PrintStream(fos);
 		    System.setOut(ps);
@@ -423,6 +445,12 @@ public class SimulatorWindow extends JFrame{
 		   
 	}
 	
+	/**
+	 * Save to file method for SimulatorWindow
+	 * @param fileName
+	 * @param textField
+	 * @throws Exception
+	 */
 	void saveToFile(String fileName, JTextArea textField) throws Exception {
 		 File file = new File(fileName); 
          

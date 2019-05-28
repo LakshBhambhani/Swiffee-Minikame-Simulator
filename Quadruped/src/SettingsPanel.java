@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 /**
  * Settings panel helps user set the ip of the bot so that user can upload code from simulator and also control the bot using xbox
  * @author lakshbhambhani
+ * @date 5/26/19
  *
  */
 public class SettingsPanel {

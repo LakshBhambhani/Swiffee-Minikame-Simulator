@@ -18,6 +18,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
 /**
  * Description: The about panel to tell user what version of the simulator they are using and who built the simulator
  * @author Megan, Laksh
+ * @date 5/26/19
  */
 public class AboutPanel extends JPanel {
 

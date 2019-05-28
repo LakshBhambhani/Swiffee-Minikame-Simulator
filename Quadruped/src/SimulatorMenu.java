@@ -22,6 +22,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
  * responsible for the menubar on top of the simulator window
  * 
  * @author Megan and Laksh
+ * @date 5/26/19s
  */
 
 public class SimulatorMenu extends JMenuBar {

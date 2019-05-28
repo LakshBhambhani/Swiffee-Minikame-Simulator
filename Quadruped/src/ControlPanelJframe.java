@@ -7,6 +7,7 @@ import com.studiohartman.jamepad.ControllerUnpluggedException;
 /**
  * Contains the main Frame that uses the Control Panel. This is a runnable object which means that a thread can be made from it
  * @author Laksh
+ * @date 5/26/19
  */
 public class ControlPanelJframe extends JFrame implements Runnable {
 	static JFrame frame;

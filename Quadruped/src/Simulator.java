@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  * 
  * Panel for Simulator Window class which extends JFrame
  * @author Megan
- *
+ * @date 5/26/19
  */
 
 public class Simulator extends JPanel {

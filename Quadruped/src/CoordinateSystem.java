@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 /**
  * Basically the coordinate system. The animations are dependent on this class.
  * @author creator of the Walker Lab
+ * @date 5/26/19
  */
 public class CoordinateSystem {
 	

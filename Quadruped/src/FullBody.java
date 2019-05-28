@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 /**
  * Includes the complete body including legs and main body and you can see this on Simulator Window
  * @author Megan
+ * @date 5/26/19
  */
 public class FullBody {
 	

@@ -14,25 +14,26 @@ import java.util.StringTokenizer;
 /**
  * Initializes a local server on the user machine
  * @author ssaurel
+ * @date 5/26/19
  *
  */
 public class LocalServer extends Thread implements Runnable{ 
 	
 	static final File WEB_ROOT = new File(".");
-	static final String DEFAULT_FILE = "src/resources/main.html";
-	static final String FILE_NOT_FOUND = "src/resources/404.html";
-	static final String METHOD_NOT_SUPPORTED = "src/resources/not_supported.html";
+	static final String DEFAULT_FILE = "templates/main.html";
+	static final String FILE_NOT_FOUND = "templates/404.html";
+	static final String METHOD_NOT_SUPPORTED = "templates/not_supported.html";
 	
-	static final String MOVE_FORWARD = "src/resources/moveforward.html";
-	static final String MOVE_BACKWARD = "src/resources/movebackward.html";
-	static final String TURN_LEFT = "src/resources/turnleft.html";
-	static final String TURN_RIGHT = "src/resources/turnright.html";
-	static final String BOW = "src/resources/bow.html";
-	static final String BEND_BACK = "src/resources/bendback.html";
-	static final String JUMP_UP = "src/resources/jumpup.html";
-	static final String JUMP_BACK = "src/resources/jumpback.html";
-	static final String PUSH_UP = "src/resources/pushup.html";
-	static final String HOME_POS = "src/resources/homepos.html";
+	static final String MOVE_FORWARD = "templates/moveforward.html";
+	static final String MOVE_BACKWARD = "templates/movebackward.html";
+	static final String TURN_LEFT = "templates/turnleft.html";
+	static final String TURN_RIGHT = "templates/turnright.html";
+	static final String BOW = "templates/bow.html";
+	static final String BEND_BACK = "templates/bendback.html";
+	static final String JUMP_UP = "templates/jumpup.html";
+	static final String JUMP_BACK = "templates/jumpback.html";
+	static final String PUSH_UP = "templates/pushup.html";
+	static final String HOME_POS = "templates/homepos.html";
 	
 	// port to listen connection
 	static final int PORT = 8080;

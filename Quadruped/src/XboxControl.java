@@ -2,6 +2,8 @@ import com.studiohartman.jamepad.*;
 
 /**
  * A class for making Jamepad more easier
+ * @author lakshbhambhani
+ * @date 5/26/19
  */
 public class XboxControl {
 	
