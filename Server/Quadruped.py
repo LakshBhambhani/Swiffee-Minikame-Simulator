@@ -350,8 +350,8 @@ class Quadruped():
             time.sleep(0.8)
 
     def demo(self):
-        homePos()
-        walkForward(self)
+        self.homePos()
+        self.walkForward(self)
         time.sleep(1)
         walkBackward(self)
         time.sleep(1)
