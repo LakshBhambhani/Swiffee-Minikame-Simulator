@@ -38,6 +38,7 @@ public class XboxListener{
 					TimeUnit.MILLISECONDS.sleep(delay);
 					System.out.println("Respawning");
 					delay += 150;
+					web.setPage(BOTIP);
 				}
 			}
 			if(controller.getLeftTrigger() > 0.0) {//left ttrigger
@@ -46,6 +47,7 @@ public class XboxListener{
 					web.setPage(BOTIP + "/walkBackward");
 					TimeUnit.MILLISECONDS.sleep(1200);
 					System.out.println("Respawning");
+					web.setPage(BOTIP);
 				}
 			}
 			if(controller.getLeftX() > 0.5) {//left x
@@ -54,6 +56,7 @@ public class XboxListener{
 					web.setPage(BOTIP + "/turnLeft");
 					TimeUnit.MILLISECONDS.sleep(1200);
 					System.out.println("Respawning");
+					web.setPage(BOTIP);
 				}
 			}
 			if(controller.getLeftX() < -0.5) {//left x
@@ -62,22 +65,26 @@ public class XboxListener{
 					web.setPage(BOTIP + "/turnRight");
 					TimeUnit.MILLISECONDS.sleep(800);
 					System.out.println("Respawning");
+					web.setPage(BOTIP);
 				}
 			}
 			if(controller.yPressed()) {// y pressed
 					System.out.println("Y Pressed");
 					web.setPage(BOTIP + "/bow");
 					TimeUnit.MILLISECONDS.sleep(1200);
+					web.setPage(BOTIP);
 			}
 			if(controller.aPressed()) {// a pressed
 					System.out.println("A Pressed");
 					web.setPage(BOTIP + "/bendBack");
 					TimeUnit.MILLISECONDS.sleep(1200);
+					web.setPage(BOTIP);
 			}
 			if(controller.xPressed()) {// x pressed
 					System.out.println("X Pressed");
 					web.setPage(BOTIP + "/walkForward");
 					TimeUnit.MILLISECONDS.sleep(1200);
+					web.setPage(BOTIP);
 			}
 			
 			

@@ -56,8 +56,8 @@ class SecondViewController: UIViewController, WKUIDelegate {
     @objc func runAction(sender: UIButton!) {
         print("Run Clicked")
         let commands = IDE.text!.components(separatedBy: ";")
+        var executingCommand: String
         for command in commands{
-            var executingCommand: String
             if command == "MoveForward()" {
                 executingCommand = "walkForward"
             }
@@ -85,8 +85,11 @@ class SecondViewController: UIViewController, WKUIDelegate {
             if command == "PushUp()" {
                 executingCommand = "pushUp"
             }
+            else{
+                executingCommand = ""
+            }
             print(command)
-            let url = URL(string: textField.text! + "/run");
+            let url = URL(string: textField.text! + "/" + executingCommand);
             let request = URLRequest(url: url!);
             webView.load(request);
             print(url)

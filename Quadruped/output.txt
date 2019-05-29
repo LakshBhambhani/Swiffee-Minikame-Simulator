@@ -1,0 +1,52 @@
+Output printing starts now
+Server started.
+Listening for connections on port : 8080 ...
+
+803
+Right Bumper Pressed
+IP Changed to: 192.168.0.28
+803
+Right Bumper Pressed
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Right Trigger is Down
+Respawning
+Left Trigger is Down
+Respawning
+Left Trigger is Down
+Respawning
+Respawning
+Left Trigger is Down
+Respawning
+Left Trigger is Down
+Respawning
+Respawning
+Respawning
+Respawning
+Respawning
+Respawning
+Respawning
+Respawning
+Respawning
+Left Trigger is Down
+Respawning
