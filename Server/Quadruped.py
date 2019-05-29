@@ -353,19 +353,19 @@ class Quadruped():
         self.homePos()
         self.walkForward()
         time.sleep(1)
-        walkBackward(self)
+        self.walkBackward()
         time.sleep(1)
-        turnLeft(self)
+        self.turnLeft()
         time.sleep(1)
-        turnRight(self)
+        self.turnRight()
         time.sleep(1)
-        bow(self)
+        self.bow()
         time.sleep(1)
-        bendBack(self);
+        self.bendBack();
         time.sleep(1)
-        pushUp(self)
+        self.pushUp()
         time.sleep(1)
-        jumpBack(self)
+        self.jumpBack()
         time.sleep(1)
 
 
