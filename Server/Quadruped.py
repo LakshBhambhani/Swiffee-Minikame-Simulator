@@ -351,7 +351,7 @@ class Quadruped():
 
     def demo(self):
         self.homePos()
-        self.walkForward(self)
+        self.walkForward()
         time.sleep(1)
         walkBackward(self)
         time.sleep(1)
