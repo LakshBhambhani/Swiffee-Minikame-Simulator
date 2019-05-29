@@ -371,12 +371,10 @@ class Quadruped():
     def sayHi(self):
         self.homePos()        
         kit.servo[7].angle = 0     #FR FOOT
-        kit.servo[6].angle = 50
-        time.sleep(0.5)
-        kit.servo[6].angle = 160
-        kit.servo[6].angle = 50
-        time.sleep(0.5)
-        kit.servo[6].angle = 160
+        for x in range(5):
+            kit.servo[6].angle = 50
+            time.sleep(0.3)
+            kit.servo[6].angle = 160
 
 
 
