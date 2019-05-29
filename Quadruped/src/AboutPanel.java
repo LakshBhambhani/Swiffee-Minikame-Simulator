@@ -25,7 +25,7 @@ public class AboutPanel extends JPanel {
 	JFrame frame;
 	private BufferedImage image;
 
-	public String release = "v1.0.2";
+	public String release = "v1.0.3";
 
 	/**
 	 * Constructor for About panel which tells the user about the version and the developers

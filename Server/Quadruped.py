@@ -349,6 +349,25 @@ class Quadruped():
 
             time.sleep(0.8)
 
+    def demo(self):
+        homePos(self)
+        walkForward(self)
+        time.sleep(1)
+        walkBackward(self)
+        time.sleep(1)
+        turnLeft(self)
+        time.sleep(1)
+        turnRight(self)
+        time.sleep(1)
+        bow(self)
+        time.sleep(1)
+        bendBack(self);
+        time.sleep(1)
+        pushUp(self)
+        time.sleep(1)
+        jumpBack(self)
+        time.sleep(1)
+
 
        
         

@@ -54,6 +54,9 @@ def dance():
 def swerve():
    quad.swerve()
 
+def demo():
+   quad.demo()
+
 @app.route("/<action1>")
 def action1(action1):
    # Convert the pin from the URL into an integer:
@@ -116,6 +119,11 @@ def action1(action1):
    elif action1 == "swerve":
       message = "swerve"
       thread = threading.Thread(target=swerve)
+      thread.start()
+      return message + ' started' 
+   elif action1 == "demo":
+      message = "demo"
+      thread = threading.Thread(target=demo)
       thread.start()
       return message + ' started' 
    else:
