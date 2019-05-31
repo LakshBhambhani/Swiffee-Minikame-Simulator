@@ -373,7 +373,7 @@ class Quadruped():
         kit.servo[7].angle = 0     #FR FOOT
         for x in range(5):
             kit.servo[6].angle = 80
-            time.sleep(0.5)
+            time.sleep(1)
             kit.servo[6].angle = 150
 
 
