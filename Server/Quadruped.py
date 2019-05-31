@@ -372,9 +372,9 @@ class Quadruped():
         self.homePos()        
         kit.servo[7].angle = 0     #FR FOOT
         for x in range(5):
-            kit.servo[6].angle = 50
+            kit.servo[6].angle = 100
             time.sleep(0.3)
-            kit.servo[6].angle = 160
+            kit.servo[6].angle = 150
 
 
 
